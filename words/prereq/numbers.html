@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Numbers &#8212; Book of Primes</title>
   
@@ -15,54 +14,54 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'words/prereq/numbers';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -70,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Sets" href="sets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,23 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -101,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -131,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Book of Primes - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Book of Primes - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -159,9 +171,12 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="sets.html">Sets</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Numbers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="prereq.html">Preliminaries</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sets.html">Sets</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algebra.html">Algebra</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../prod.html">Productive Numbers</a></li>
 </ul>
 
@@ -171,14 +186,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -187,14 +207,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,26 +336,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -369,67 +383,62 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numbers">
-<h1>Numbers<a class="headerlink" href="#numbers" title="Permalink to this heading">#</a></h1>
+  <section id="numbers">
+<h1>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h1>
 <p>Everyone knows what numbers are. County things. But what does that really mean?</p>
 <section id="peano-arithmetic">
-<h2>Peano Arithmetic<a class="headerlink" href="#peano-arithmetic" title="Permalink to this heading">#</a></h2>
-<p>A lot of maths is about taking a very obvious concept and giving it a meticulous definition. This process is called \textit{axiomitazation}. Naturally, mathematicians have spent quite a lot of time axiomiatizing numbers.</p>
-<p>Numbers are so fundamental that you can’t really define them in terms of anything else. So you basically have to start from nothing. Conveniently, nothing is itself a number: \textit{zero}. So the first stage of axiomitazing numbers is to simply demand that zero is a number. Symbolically,</p>
-<p>\begin{equation}
-0 \in \NN \tag{PA0}
-\end{equation}</p>
-<p>OK great. We have our first number. The next stage of axiomiatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number <span class="math notranslate nohighlight">\(n\)</span> to the ``next’’ number. This is called the successor function, written <span class="math notranslate nohighlight">\(S(n)\)</span>. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren’t allowed to call it that yet. Instead, we can now say that <span class="math notranslate nohighlight">\(S(0)\)</span> is number and that this is the \textit{definition} of one. Then we can get <span class="math notranslate nohighlight">\(S(S(0))\)</span> and call it two. And so on and so on and so on. In summary, if <span class="math notranslate nohighlight">\(n\)</span> is a number, then so is <span class="math notranslate nohighlight">\(S(n)\)</span>. Symbolically, this is:</p>
-<p>\begin{equation}
-n \in \NN \implies S(n) \in \NN \tag{PA1}
-\end{equation}</p>
-<p>Intuively, we think of numbers arranging themselves on a line that stretches out foreover. We know this line continues forever because we know we can always just add one more to it. We need to make sure that <span class="math notranslate nohighlight">\(S\)</span> behaves in the same way so that it never produces an old number and makes numbers go in circles. A concise way of expressing this is that different numbers have different successors. Symbollically,</p>
-<p>\begin{equation}
-n \neq m \implies S(n) \neq S(m) \tag{PA2}
-\end{equation}</p>
-<p>That just about completes our definition of numbers. All we need now is something to do with them. Let’s try addition. Take a moment to think about what adding really means and try to find a way of expressing it using only <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(S\)</span>. Once upon a time, some dude called Peano did exactly this and ended up coming up with following two conditions. Actually, there’s some disagreement about whether it was Peano or some other dude called Dedekin. But who cares - they’re both dead now anyway. What lives on are the following two equations:</p>
-<p>\begin{equation}\label{eq:PA3}
-0 + m = m \tag{PA3}
-\end{equation}</p>
-<p>\begin{equation}\label{eq:PA4}
-S(n) + m = S(n+m) \tag{PA4}
-\end{equation}</p>
-<p>The equation \ref{eq:PA3} shouldn’t come as much of a surprise. The second equation \ref{eq:PA4}, is a little weirder. Doesn’t using <span class="math notranslate nohighlight">\(+\)</span> on both sides of the equals sign mean we’re defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying \ref{eq:PA4}, you’ll eventually hit rock bottom. That’s where \eqref{eq:PA3} comes in. Such symbolic witchcraft is called \textit{recursion}. Let’s see it in action as we prove our first theorem!</p>
-<p>\begin{theorem}
-<span class="math notranslate nohighlight">\(1 + 1 = 2\)</span>
-\end{theorem}</p>
-<p>\begin{proof}</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Remember that we defined $1$ as $S(0)$. So we start with $$S(0) + S(0)$$
-
-Now set $n = 0$ and $m = S(0)$, so that we can apply \eqref{eq:PA4} and get: $$S(0) + S(0) \stackrel{\eqref{eq:PA4}}{=} S(0 + S(0))$$
-
-Now we can apply \eqref{eq:PA3} to get: $$S(0 + S(0)) \stackrel{\eqref{eq:PA3}}{=} S(S(0))$$
-
-But $S(S(0))$ is the definition of $2$, so we&#39;re done!
+<h2>Peano Arithmetic<a class="headerlink" href="#peano-arithmetic" title="Link to this heading">#</a></h2>
+<p>A lot of maths is about taking a very obvious concept and giving it a meticulous definition. This process is called <em>axiomitazation</em>. Naturally, mathematicians have spent quite a lot of time axiomiatizing numbers.</p>
+<p>Numbers are so fundamental that you can’t really define them in terms of anything else. So you basically have to start from nothing. Conveniently, nothing is itself a number: <em>zero</em>. So the first stage of axiomitazing numbers is to simply demand that zero is a number. Symbolically,</p>
+<div class="math notranslate nohighlight" id="equation-pa0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-pa0" title="Link to this equation">#</a></span>\[    0 \in \NN \]</div>
+<p>OK great. We have our first number. The next stage of axiomiatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number $n$ to the ``next’’ number. This is called the successor function, written $S(n)$. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren’t allowed to call it that yet. Instead, we can now say that $S(0)$ is number and that this is the \textit{definition} of one. Then we can get $S(S(0))$ and call it two. And so on and so on and so on. In summary, if $n$ is a number, then so is $S(n)$. Symbolically, this is:</p>
+<div class="math notranslate nohighlight" id="equation-pa1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-pa1" title="Link to this equation">#</a></span>\[    n \in \NN \implies S(n) \in \NN \]</div>
+<p>Intuively, we think of numbers arranging themselves on a line that stretches out foreover. We know this line continues forever because we know we can always just add one more to it. We need to make sure that $S$ behaves in the same way so that it never produces an old number and makes numbers go in circles. A concise way of expressing this is that different numbers have different successors. Symbollically,</p>
+<div class="math notranslate nohighlight" id="equation-pa2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-pa2" title="Link to this equation">#</a></span>\[    n \neq m \implies S(n) \neq S(m) \]</div>
+<p>That just about completes our definition of numbers. All we need now is something to do with them. Let’s try addition. Take a moment to think about what adding really means and try to find a way of expressing it using only $0$ and $S$. Once upon a time, some dude called Peano did exactly this and ended up coming up with following two conditions. Actually, there’s some disagreement about whether it was Peano or some other dude called Dedekin. But who cares - they’re both dead now anyway. What lives on are the following two equations:</p>
+<div class="math notranslate nohighlight" id="equation-pa3">
+<span class="eqno">(4)<a class="headerlink" href="#equation-pa3" title="Link to this equation">#</a></span>\[    0 + m = m \]</div>
+<div class="math notranslate nohighlight" id="equation-pa4">
+<span class="eqno">(5)<a class="headerlink" href="#equation-pa4" title="Link to this equation">#</a></span>\[    S(n) + m = S(n+m) \]</div>
+<p>The equation <a class="reference internal" href="#equation-pa3">(4)</a> shouldn’t come as much of a surprise. The second equation <a class="reference internal" href="#equation-pa4">(5)</a>, is a little weirder. Doesn’t using $+$ on both sides of the equals sign mean we’re defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying <a class="reference internal" href="#equation-pa4">(5)</a>, you’ll eventually hit rock bottom. That’s where \eqref{eq:PA3} comes in. Such symbolic witchcraft is called <em>recursion</em>. Let’s see it in action as we prove our first theorem!</p>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span></p>
+<section class="theorem-content" id="proof-content">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$1 + 1 = 2$
 </pre></div>
 </div>
-<p>\end{proof}</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Remember that we defined $1$ as $S(0)$. So we start with $$S(0) + S(0)$$</p>
+<p>Now set $n = 0$ and $m = S(0)$, so that we can apply <a class="reference internal" href="#equation-pa4">(5)</a> and get: $$S(0) + S(0) = S(0 + S(0))$$</p>
+<p>Now we can apply <a class="reference internal" href="#equation-pa3">(4)</a> to get: $$S(0 + S(0)) = S(S(0))$$</p>
+<p>But $S(S(0))$ is the definition of $2$, so we’re done!</p>
+</div>
 <p>You’ll have to trust me that wasn’t as much a waste of time as it may have felt. While proving things directly with these axioms is rather tedious, the important thing is that we are able to do so having started with effectively nothing. The logic game is all about maximizing the bang for your axiomatic buck, and there really is quite a lot of bang with Peano arithmetic. Not only can you do any sum you like, but you can also go on to define multiplication with just two equations (one for zero, one for everything else just like before) and much more.</p>
-<p>To be able to prove slightly more interesting facts about numbers, we do need one last axiom called \textit{induction}. Actually, its a placeholder for infinitely many different axioms but don’t worry too much about that. The idea behind induction is that if every number inherits some property from its predecessor, then every number will posess that property. Imagine there was some family curse that couldn’t be cured and was eternally passed down by the sucessor function. Then every number would be cursed. Symbolically, this is written as</p>
-<p>\begin{equation}
-\phi(0) \land (\forall x, \phi(x) \implies \phi(S(x))) \implies \forall n, \phi(n) \tag{PA5}
-\end{equation}</p>
-<p><span class="math notranslate nohighlight">\(\phi(n)\)</span> is a placeholder for the curse/property we’re interested in. Let’s see induction in action with another quick theorem, <span class="math notranslate nohighlight">\(n + 0 = n\)</span>. Don’t be fooled into thinking this could be immediately proven with \eqref{eq:PA3} because doing so would assume <span class="math notranslate nohighlight">\(n + m = m + n\)</span>, which we are yet to prove (but could also be done with induction in case you want to try).</p>
-<p>\begin{theorem}
-<span class="math notranslate nohighlight">\(n + 0 = n\)</span>
-\end{theorem}</p>
-<p>\begin{proof}
-We are setting <span class="math notranslate nohighlight">\(\phi(n)\)</span> to be the statement <span class="math notranslate nohighlight">\(n + 0 = n\)</span>. To use induction, we need to prove it seperately for <span class="math notranslate nohighlight">\(0\)</span> and then for everything else. The <span class="math notranslate nohighlight">\(0\)</span> case really is just \eqref{eq:PA3}: <span class="math notranslate nohighlight">\(0 + 0 = 0\)</span>.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The remaining case is more interesting. We can assume that $x + 0 = x$. Now we must show $S(x) + 0$.  By \eqref{eq:PA4}, $S(x) + 0 = S(x+0)$. Now using our assumption $S(x + 0) = S(x)$, so we are done.
+<p>To be able to prove slightly more interesting facts about numbers, we do need one last axiom called <em>induction</em>. Actually, its a placeholder for infinitely many different axioms but don’t worry too much about that. The idea behind induction is that if every number inherits some property from its predecessor, then every number will posess that property. Imagine there was some family curse that couldn’t be cured and was eternally passed down by the sucessor function. Then every number would be cursed. Symbolically, this is written as</p>
+<div class="math notranslate nohighlight" id="equation-pa5">
+<span class="eqno">(6)<a class="headerlink" href="#equation-pa5" title="Link to this equation">#</a></span>\[    \phi(0) \land (\forall x, \phi(x) \implies \phi(S(x))) \implies \forall n, \phi(n) \]</div>
+<p>$\phi(n)$ is a placeholder for the curse/property we’re interested in. Let’s see induction in action with another quick theorem, $n + 0 = n$. Don’t be fooled into thinking this could be immediately proven with <a class="reference internal" href="#equation-pa3">(4)</a> because doing so would assume $n + m = m + n$, which we are yet to prove (but could also be done with induction in case you want to try).</p>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span></p>
+<section class="theorem-content" id="proof-content">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$n + 0 = n$
 </pre></div>
 </div>
-<p>\end{proof}</p>
-<p>If you want to learn more about Peano Arithmetic, I recommend playing the natural numbers game. It’s where I learnt about all this and enjoyed it a lot.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. We are setting $\phi(n)$ to be the statement $n + 0 = n$. To use induction, we need to prove it seperately for $0$ and then for everything else. The $0$ case really is just <a class="reference internal" href="#equation-pa3">(4)</a>: $0 + 0 = 0$.</p>
+<p>The remaining case is more interesting. We can assume that $x + 0 = x$. Now we must show $S(x) + 0$.  By <a class="reference internal" href="#equation-pa4">(5)</a>, $S(x) + 0 = S(x+0)$. Now using our assumption $S(x + 0) = S(x)$, so we are done.</p>
+</div>
+<p>If you want to learn more about Peano Arithmetic, I recommend playing the natural numbers game (link). It’s where I learnt about all this and enjoyed it a lot.</p>
 <p>Before ending on too positive of a note, I want to trash talk the Peano axioms a bit. From a logical point of view, its great news that we have condensed so many numbers into so few rules. But don’t you feel a small nagging sense of sadness to watch the weird and wonderful world of numbers being so coldly reduced into an endless sucession of symbolic successors? Well, I certainly do. That’s why I present to you my solution: a slightly more complicated set of mechanical manipulations that take numbers back to their roots. But you’ll have to be patient. We’re not even halfway through this rambling introduction.</p>
 <section id="number-bases">
-<h3>Number Bases<a class="headerlink" href="#number-bases" title="Permalink to this heading">#</a></h3>
+<h3>Number Bases<a class="headerlink" href="#number-bases" title="Link to this heading">#</a></h3>
 </section>
 </section>
 </section>
@@ -459,11 +468,10 @@ We are setting <span class="math notranslate nohighlight">\(\phi(n)\)</span> to 
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="sets.html"
@@ -483,17 +491,16 @@ We are setting <span class="math notranslate nohighlight">\(\phi(n)\)</span> to 
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -526,9 +533,10 @@ By Prod Gang
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -552,8 +560,8 @@ By Prod Gang
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
