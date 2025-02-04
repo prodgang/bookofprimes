@@ -1,6 +1,5 @@
 ---
 jupytext:
-  formats: md:myst
   text_representation:
     extension: .md
     format_name: myst
@@ -10,6 +9,7 @@ kernelspec:
   name: python3
 ---
 
+
 # Productive Numbers
 What's your favorite prod?
 
@@ -18,7 +18,7 @@ What's your favorite prod?
 Set-up code (ignore)
 
 ```{code-cell} ipython3
-:tags: [hide-code]
+:tags: [hide-input]
 
 import plotly.graph_objects as go  
 import networkx as nx
@@ -104,16 +104,22 @@ def d2tree_plotly(n):
         plot_bgcolor="rgba(0,0,0,0)"  # Transparent plot area
     )
     fig.show()
-
 ```
 
 ```{code-cell} ipython3
+:tags: [hide-input]
+
+import os
 import ipywidgets as widgets
 from IPython.display import display
 
-def update_plot(n):
-    d2tree_plotly(n)
+if os.getenv("JUPYTER_BOOK_BUILD"):
+    # Skip execution during build (or perform build-specific actions)
+    print("Skipping execution in build process")
+else:   
+    def update_plot(n):
+        d2tree_plotly(n)
 
-slider = widgets.IntSlider(value=5, min=1, max=50, step=1, description="n:")
-widgets.interactive(update_plot, n=slider)
+    slider = widgets.IntSlider(value=5, min=1, max=50, step=1, description="n:")
+    widgets.interactive(update_plot, n=slider)
 ```
