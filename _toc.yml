@@ -2,9 +2,12 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: words/intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: newfile
+- file: words/prereq/prereq
+  sections:
+    - file: words/prereq/sets
+    - file: words/prereq/numbers
+    - file: words/prereq/algebra
+- file: words/prod
+
