@@ -5,7 +5,7 @@ For unrelated reasons, I came across this thing called group theory. A group is 
 
 A group is a set where the cool trick is that you have the ability to (a) do nothing, (b) undo everything that you can do and (c) something boring called associativity which I call \textit{chalkboard grease} because it just makes the symbol shunting easier. Kind of like the ability ...
 
-$\mathbb{N}$ is nearly a group, but not quite. You can do nothing with it (add zero or times by one), but you can't undo (subtract or divide) because that would take you out of $\mathbb{N}$ (into $\mathbb{Z}$ or $\\mathbb{Q}^+$).  But that's OK because $\ZZ$ and $\mathbb{Q}^+$ both are groups, playing tricks with addition and multiplication respectively. 
+$\mathbb{N}$ is nearly a group, but not quite. You can do nothing with it (add zero or times by one), but you can't undo (subtract or divide) because that would take you out of $\mathbb{N}$ (into $\mathbb{Z}$ or $\\mathbb{Q}^+$).  But that's OK because $\mathbb{Z}$ and $\mathbb{Q}^+$ both are groups, playing tricks with addition and multiplication respectively. 
 
 Equipping a set with an operation makes it possible to view that set in many different lights.  Algebra is really fun because it teaches you to see how things are shaped by their possible operations (if you choose to accept some abstraction).  Anyway, the upshot of all this is that a set looks extremely different depending on what trick you're doing with it. Since numbers is sets, then numbers look differently depending on whether you're adding them or multiplying them. Let's take a closer look that.
 

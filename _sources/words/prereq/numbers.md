@@ -47,7 +47,7 @@ That just about completes our definition of numbers. All we need now is somethin
 The equation {eq}`PA3` shouldn't come as much of a surprise. The second equation {eq}`PA4`, is a little weirder. Doesn't using $+$ on both sides of the equals sign mean we're defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying {eq}`PA4`, you'll eventually hit rock bottom. That's where \eqref{eq:PA3} comes in. Such symbolic witchcraft is called *recursion*. Let's see it in action as we prove our first theorem!
 
 ````{prf:theorem} 
-    $1 + 1 = 2$
+$1 + 1 = 2$
 ````
 
 ````{prf:proof}
@@ -70,13 +70,13 @@ To be able to prove slightly more interesting facts about numbers, we do need on
 
 ```{math}
 :label: PA5
-    \phi(0) \land (\forall x, \phi(x) \implies \phi(S(x))) \implies \forall n, \phi(n) 
+\phi(0) \land (\forall x, \phi(x) \implies \phi(S(x))) \implies \forall n, \phi(n) 
 ```
 
 $\phi(n)$ is a placeholder for the curse/property we're interested in. Let's see induction in action with another quick theorem, $n + 0 = n$. Don't be fooled into thinking this could be immediately proven with {eq}`PA3` because doing so would assume $n + m = m + n$, which we are yet to prove (but could also be done with induction in case you want to try).
 
 ````{prf:theorem} 
-    $n + 0 = n$
+$n + 0 = n$
 ````
 
 ````{prf:proof}
