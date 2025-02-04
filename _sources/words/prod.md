@@ -107,19 +107,13 @@ def d2tree_plotly(n):
 ```
 
 ```{code-cell} ipython3
-:tags: [hide-input]
 
-import os
 import ipywidgets as widgets
 from IPython.display import display
+ 
+def update_plot(n):
+    d2tree_plotly(n)
 
-if os.getenv("JUPYTER_BOOK_BUILD"):
-    # Skip execution during build (or perform build-specific actions)
-    print("Skipping execution in build process")
-else:   
-    def update_plot(n):
-        d2tree_plotly(n)
-
-    slider = widgets.IntSlider(value=5, min=1, max=50, step=1, description="n:")
-    widgets.interactive(update_plot, n=slider)
+slider = widgets.IntSlider(value=5, min=1, max=50, step=1, description="n:")
+widgets.interactive(update_plot, n=slider)
 ```
