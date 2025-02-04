@@ -11,14 +11,14 @@ Numbers are so fundamental that you can't really define them in terms of anythin
 
 ```{math}
 :label: PA0
-    0 \in \NN 
+    0 \in \mathbb{N} 
 ```
 
 OK great. We have our first number. The next stage of axiomiatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number $n$ to the ``next'' number. This is called the successor function, written $S(n)$. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren't allowed to call it that yet. Instead, we can now say that $S(0)$ is number and that this is the \textit{definition} of one. Then we can get $S(S(0))$ and call it two. And so on and so on and so on. In summary, if $n$ is a number, then so is $S(n)$. Symbolically, this is:
 
 ```{math}
 :label: PA1
-    n \in \NN \implies S(n) \in \NN 
+    n \in \mathbb{N}  \implies S(n) \in \mathbb{N} 
 ```
 
 

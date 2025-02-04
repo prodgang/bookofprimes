@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -393,10 +393,10 @@
 <p>A lot of maths is about taking a very obvious concept and giving it a meticulous definition. This process is called <em>axiomitazation</em>. Naturally, mathematicians have spent quite a lot of time axiomiatizing numbers.</p>
 <p>Numbers are so fundamental that you can’t really define them in terms of anything else. So you basically have to start from nothing. Conveniently, nothing is itself a number: <em>zero</em>. So the first stage of axiomitazing numbers is to simply demand that zero is a number. Symbolically,</p>
 <div class="math notranslate nohighlight" id="equation-pa0">
-<span class="eqno">(1)<a class="headerlink" href="#equation-pa0" title="Link to this equation">#</a></span>\[    0 \in \NN \]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-pa0" title="Link to this equation">#</a></span>\[    0 \in \mathbb{N} \]</div>
 <p>OK great. We have our first number. The next stage of axiomiatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number $n$ to the ``next’’ number. This is called the successor function, written $S(n)$. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren’t allowed to call it that yet. Instead, we can now say that $S(0)$ is number and that this is the \textit{definition} of one. Then we can get $S(S(0))$ and call it two. And so on and so on and so on. In summary, if $n$ is a number, then so is $S(n)$. Symbolically, this is:</p>
 <div class="math notranslate nohighlight" id="equation-pa1">
-<span class="eqno">(2)<a class="headerlink" href="#equation-pa1" title="Link to this equation">#</a></span>\[    n \in \NN \implies S(n) \in \NN \]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-pa1" title="Link to this equation">#</a></span>\[    n \in \mathbb{N}  \implies S(n) \in \mathbb{N} \]</div>
 <p>Intuively, we think of numbers arranging themselves on a line that stretches out foreover. We know this line continues forever because we know we can always just add one more to it. We need to make sure that $S$ behaves in the same way so that it never produces an old number and makes numbers go in circles. A concise way of expressing this is that different numbers have different successors. Symbollically,</p>
 <div class="math notranslate nohighlight" id="equation-pa2">
 <span class="eqno">(3)<a class="headerlink" href="#equation-pa2" title="Link to this equation">#</a></span>\[    n \neq m \implies S(n) \neq S(m) \]</div>
