@@ -19,7 +19,8 @@ Set-up code (ignore)
 
 ```{code-cell} ipython3
 :tags: [thebe-init, hide-input, hide-output]
-!pip install networkx matplotlib ipywidgets
+!pip install networkx matplotlib sympy 
+! pip install ipywidgets==7.5.1 ipython_genutils
 ```
 
 ```{code-cell} ipython3
