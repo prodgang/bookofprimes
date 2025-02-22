@@ -18,7 +18,9 @@ What's your favorite prod?
 Set-up code (ignore)
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [thebe-init, hide-input]
+
+
 
 import plotly.graph_objects as go  
 import networkx as nx
@@ -107,6 +109,7 @@ def d2tree_plotly(n):
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
 
 import ipywidgets as widgets
 from IPython.display import display
