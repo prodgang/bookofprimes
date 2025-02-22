@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Drawings &#8212; Book of Primes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"cf62de27a9b442afbb92a81de8a04155": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "dd9ed824b1f945869371cf39d8d909e3": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "b061383c8069453d9a622b35e7c13137": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "n:", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_cf62de27a9b442afbb92a81de8a04155", "max": 70, "min": 1, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_dd9ed824b1f945869371cf39d8d909e3", "value": 10}}, "05557e5657c6435593be12696c22d4fc": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "663066e0d5e94d08afafa759bdb10c49": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_b061383c8069453d9a622b35e7c13137", "IPY_MODEL_0ea2764f3f2140d2b6b08a2dcc94442e"], "layout": "IPY_MODEL_05557e5657c6435593be12696c22d4fc"}}, "edc267fc42344b5b8241ef25abe875af": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0ea2764f3f2140d2b6b08a2dcc94442e": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_edc267fc42344b5b8241ef25abe875af", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "<Figure size 500x500 with 1 Axes>", "image/png": "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"}}]}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'words/prod/draw';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Productive Numbers" href="../prod.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Book of Primes - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Book of Primes - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Book of Primes
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../prereq/prereq.html">Preliminaries</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prereq/sets.html">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prereq/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prereq/algebra.html">Algebra</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../prod.html">Productive Numbers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Drawings</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/prodgang/bookofprimes" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/prodgang/bookofprimes/issues/new?title=Issue%20on%20page%20%2Fwords/prod/draw.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/words/prod/draw.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/words/prod/draw.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Drawings</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="drawings">
+<h1>Drawings<a class="headerlink" href="#drawings" title="Link to this heading">#</a></h1>
+<p>Draw your favourite productive number! Navigate to <span class="fa fa-rocket"></span> –&gt; <span class="guilabel">Live Code</span>, wait for a minute and then drag the slider around.</p>
+<div class="cell tag_thebe-init tag_hide-input tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>networkx<span class="w"> </span>matplotlib<span class="w"> </span>sympy<span class="w"> </span>
+<span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">ipywidgets</span><span class="o">==</span><span class="m">7</span>.5.1<span class="w"> </span>ipython_genutils
+</pre></div>
+</div>
+</div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: networkx in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (3.4.2)
+Requirement already satisfied: matplotlib in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (3.10.0)
+Requirement already satisfied: sympy in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (1.13.3)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from matplotlib) (1.3.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cycler&gt;=0.10 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from matplotlib) (4.55.8)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy&gt;=1.23 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from matplotlib) (2.2.2)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow&gt;=8 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from matplotlib) (11.1.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from matplotlib) (3.2.1)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from sympy) (1.3.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.17.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipywidgets==7.5.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (7.5.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipython_genutils in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (0.2.0)
+Requirement already satisfied: ipykernel&gt;=4.5.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipywidgets==7.5.1) (6.29.5)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipywidgets==7.5.1) (5.14.3)
+Requirement already satisfied: nbformat&gt;=4.2.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipywidgets==7.5.1) (5.10.4)
+Requirement already satisfied: widgetsnbextension~=3.5.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipywidgets==7.5.1) (3.5.2)
+Requirement already satisfied: ipython&gt;=4.0.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipywidgets==7.5.1) (8.32.0)
+Requirement already satisfied: appnope in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (0.1.4)
+Requirement already satisfied: comm&gt;=0.1.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (0.2.2)
+Requirement already satisfied: debugpy&gt;=1.6.5 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (1.8.12)
+Requirement already satisfied: jupyter-client&gt;=6.1.12 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (8.6.3)
+Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (5.7.2)
+Requirement already satisfied: matplotlib-inline&gt;=0.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (0.1.7)
+Requirement already satisfied: nest-asyncio in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (1.6.0)
+Requirement already satisfied: packaging in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (24.2)
+Requirement already satisfied: psutil in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (6.1.1)
+Requirement already satisfied: pyzmq&gt;=24 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (26.2.1)
+Requirement already satisfied: tornado&gt;=6.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (6.4.2)
+Requirement already satisfied: decorator in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (5.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (0.19.2)
+Requirement already satisfied: pexpect&gt;4.3 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (4.9.0)
+Requirement already satisfied: prompt_toolkit&lt;3.1.0,&gt;=3.0.41 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (3.0.50)
+Requirement already satisfied: pygments&gt;=2.4.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (2.19.1)
+Requirement already satisfied: stack_data in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (0.6.3)
+Requirement already satisfied: fastjsonschema&gt;=2.15 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets==7.5.1) (2.21.1)
+Requirement already satisfied: jsonschema&gt;=2.6 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets==7.5.1) (4.23.0)
+Requirement already satisfied: notebook&gt;=4.4.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (7.3.2)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (0.8.4)
+Requirement already satisfied: attrs&gt;=22.2.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.5.1) (25.1.0)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.5.1) (2024.10.1)
+Requirement already satisfied: referencing&gt;=0.28.4 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.5.1) (0.36.2)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.5.1) (0.22.3)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-client&gt;=6.1.12-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (2.9.0.post0)
+Requirement already satisfied: platformdirs&gt;=2.5 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (4.3.6)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyter-server&lt;3,&gt;=2.4.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.15.0)
+Requirement already satisfied: jupyterlab-server&lt;3,&gt;=2.27.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.27.3)
+Requirement already satisfied: jupyterlab&lt;4.4,&gt;=4.3.4 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (4.3.5)
+Requirement already satisfied: notebook-shim&lt;0.3,&gt;=0.2 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.2.4)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (0.7.0)
+Requirement already satisfied: wcwidth in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (0.2.13)
+Requirement already satisfied: executing&gt;=1.2.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from stack_data-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (2.1.0)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from stack_data-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (3.0.0)
+Requirement already satisfied: pure_eval in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from stack_data-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.5.1) (0.2.3)
+Requirement already satisfied: anyio&gt;=3.1.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (4.8.0)
+Requirement already satisfied: argon2-cffi&gt;=21.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (23.1.0)
+Requirement already satisfied: jinja2&gt;=3.0.3 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (3.1.5)
+Requirement already satisfied: jupyter-events&gt;=0.11.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.12.0)
+Requirement already satisfied: jupyter-server-terminals&gt;=0.4.4 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.5.3)
+Requirement already satisfied: nbconvert&gt;=6.4.4 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (7.16.6)
+Requirement already satisfied: overrides&gt;=5.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (7.7.0)
+Requirement already satisfied: prometheus-client&gt;=0.9 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.21.1)
+Requirement already satisfied: send2trash&gt;=1.8.2 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.8.3)
+Requirement already satisfied: terminado&gt;=0.8.3 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.18.1)
+Requirement already satisfied: websocket-client&gt;=1.7 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.8.0)
+Requirement already satisfied: async-lru&gt;=1.0.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyterlab&lt;4.4,&gt;=4.3.4-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.0.4)
+Requirement already satisfied: httpx&gt;=0.25.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyterlab&lt;4.4,&gt;=4.3.4-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.28.1)
+Requirement already satisfied: jupyter-lsp&gt;=2.0.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyterlab&lt;4.4,&gt;=4.3.4-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.2.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools&gt;=40.8.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyterlab&lt;4.4,&gt;=4.3.4-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (75.8.0)
+Requirement already satisfied: babel&gt;=2.10 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.17.0)
+Requirement already satisfied: json5&gt;=0.9.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.10.0)
+Requirement already satisfied: requests&gt;=2.31 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.32.3)
+Requirement already satisfied: six&gt;=1.5 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from python-dateutil&gt;=2.8.2-&gt;jupyter-client&gt;=6.1.12-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets==7.5.1) (1.17.0)
+Requirement already satisfied: idna&gt;=2.8 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from anyio&gt;=3.1.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (3.10)
+Requirement already satisfied: sniffio&gt;=1.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from anyio&gt;=3.1.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.3.1)
+Requirement already satisfied: argon2-cffi-bindings in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (21.2.0)
+Requirement already satisfied: certifi in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.4,&gt;=4.3.4-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2025.1.31)
+Requirement already satisfied: httpcore==1.* in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.4,&gt;=4.3.4-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.0.7)
+Requirement already satisfied: h11&lt;0.15,&gt;=0.13 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from httpcore==1.*-&gt;httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.4,&gt;=4.3.4-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.14.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jinja2&gt;=3.0.3-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (3.0.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-json-logger&gt;=2.0.4 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (3.2.1)
+Requirement already satisfied: pyyaml&gt;=5.3 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (6.0.2)
+Requirement already satisfied: rfc3339-validator in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.1.4)
+Requirement already satisfied: rfc3986-validator&gt;=0.1.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.1.1)
+Requirement already satisfied: beautifulsoup4 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (4.13.1)
+Requirement already satisfied: bleach!=5.0.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from bleach[css]!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (6.2.0)
+Requirement already satisfied: defusedxml in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.7.1)
+Requirement already satisfied: jupyterlab-pygments in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.3.0)
+Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (3.1.1)
+Requirement already satisfied: nbclient&gt;=0.5.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.10.2)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.5.1)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (3.4.1)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.3.0)
+Requirement already satisfied: webencodings in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from bleach!=5.0.0-&gt;bleach[css]!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (0.5.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tinycss2&lt;1.5,&gt;=1.1.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from bleach[css]!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.4.0)
+Requirement already satisfied: fqdn in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.5.1)
+Requirement already satisfied: isoduration in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (20.11.0)
+Requirement already satisfied: jsonpointer&gt;1.13 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (3.0.0)
+Requirement already satisfied: uri-template in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.3.0)
+Requirement already satisfied: webcolors&gt;=24.6.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (24.11.1)
+Requirement already satisfied: cffi&gt;=1.0.1 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from argon2-cffi-bindings-&gt;argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.17.1)
+Requirement already satisfied: soupsieve&gt;1.2 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from beautifulsoup4-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.6)
+Requirement already satisfied: typing-extensions&gt;=4.0.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from beautifulsoup4-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (4.12.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycparser in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from cffi&gt;=1.0.1-&gt;argon2-cffi-bindings-&gt;argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.22)
+Requirement already satisfied: arrow&gt;=0.15.0 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (1.3.0)
+Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /opt/anaconda3/envs/jbook/lib/python3.13/site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.5.1) (2.9.0.20241206)
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_thebe-init tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy.ntheory</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorint</span>
+<span class="n">primes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">primerange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">draw_white_dot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">node_label</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="n">pos</span><span class="p">},</span> <span class="n">nodelist</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">node_label</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">draw_black_dot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">node_label</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_label</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="p">{</span><span class="n">node_label</span><span class="p">:</span><span class="n">pos</span><span class="p">},</span> <span class="n">nodelist</span><span class="o">=</span><span class="p">[</span><span class="n">node_label</span><span class="p">],</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">node_label</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">draw_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">root_pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">if</span> <span class="n">tree</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">draw_white_dot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">root_pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">root_pos</span>
+        <span class="k">return</span> <span class="n">label</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+    <span class="n">root_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">root_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">root_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">root_label</span> <span class="o">=</span> <span class="n">draw_black_dot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">root_pos</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">pos</span><span class="p">[</span><span class="n">root_label</span><span class="p">]</span> <span class="o">=</span> <span class="n">root_pos</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">child</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+        <span class="n">child_label</span> <span class="o">=</span> <span class="n">draw_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">child</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">root_pos</span><span class="o">=</span><span class="p">(</span><span class="n">root_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="n">root_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="p">[(</span><span class="n">root_label</span><span class="p">,</span> <span class="n">child_label</span><span class="p">)],</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+
+    <span class="k">return</span> <span class="n">root_label</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">d_to_p</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="p">()</span>
+    
+    <span class="n">factors</span> <span class="o">=</span> <span class="n">factorint</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    
+    <span class="c1"># bit clunky. Could be improved if [] is infinitely long behind the scenes but always gets printed as short as possible</span>
+    <span class="n">max_prime</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">factors</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">mp_index</span> <span class="o">=</span> <span class="n">primes</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">max_prime</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">mp_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># key recursive step</span>
+    <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">factors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">primes</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">d_to_p</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">d2tree</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+    <span class="n">draw_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">d_to_p</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">update_plot</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1">#print(&quot;updated to &quot;, n)</span>
+    
+    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">d2tree</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_thebe-init docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;n:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">widgets</span><span class="o">.</span><span class="n">interactive</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">slider</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "663066e0d5e94d08afafa759bdb10c49"}</script></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "prodgang/bookofprimes",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./words/prod"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../prod.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Productive Numbers</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prod Gang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
