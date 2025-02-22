@@ -28,6 +28,9 @@ Set-up code (ignore)
 
 import matplotlib.pyplot as plt
 import networkx as nx
+import ipywidgets as widgets
+import matplotlib.pyplot as plt
+from IPython.display import display, clear_output
 import sympy
 from sympy.ntheory import factorint
 primes = list(sympy.primerange(1, 100))
@@ -88,26 +91,21 @@ def d2tree(x, ax=None):
     G = nx.Graph()
     draw_tree(G, d_to_p(x), ax=ax)
 
+def update_plot(n):
+    #print("updated to ", n)
+    
+    clear_output(wait=True)
 
+    fig, ax = plt.subplots(figsize=(5, 5))
+    d2tree(n, ax=ax)
+    plt.show()
 
 ```
 
 ```{code-cell} ipython3
 :tags: [thebe-init]
-
-import ipywidgets as widgets
-from IPython.display import display
- 
-def update_plot(n):
-    d2tree(n)
 
 slider = widgets.IntSlider(value=5, min=1, max=50, step=1, description="n:")
-widgets.interactive(update_plot, n=slider)
-```
+display(widgets.interactive(update_plot, n=slider))
 
-```{code-cell} ipython3
-:tags: [thebe-init]
-
-import ipywidgets as widgets
-widgets.IntSlider()
 ```
