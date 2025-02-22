@@ -5,16 +5,16 @@ Everyone knows what numbers are. County things. But what does that really mean?
 
 ## Peano Arithmetic 
 
-A lot of maths is about taking a very obvious concept and giving it a meticulous definition. This process is called *axiomitazation*. Naturally, mathematicians have spent quite a lot of time axiomiatizing numbers. 
+A lot of maths is about taking a very obvious concept and giving it a meticulous definition. This process is called *axiomatization*. Naturally, mathematicians have spent quite a lot of time axiomatizing numbers. 
 
-Numbers are so fundamental that you can't really define them in terms of anything else. So you basically have to start from nothing. Conveniently, nothing is itself a number: *zero*. So the first stage of axiomitazing numbers is to simply demand that zero is a number. Symbolically,
+Numbers are so fundamental that you can't really define them in terms of anything else. So you basically have to start from nothing. Conveniently, nothing is itself a number: *zero*. So the first stage of axiomatizing numbers is to simply demand that zero is a number. Symbolically,
 
 ```{math}
 :label: PA0
     0 \in \mathbb{N} 
 ```
 
-OK great. We have our first number. The next stage of axiomiatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number $n$ to the ``next'' number. This is called the successor function, written $S(n)$. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren't allowed to call it that yet. Instead, we can now say that $S(0)$ is number and that this is the \textit{definition} of one. Then we can get $S(S(0))$ and call it two. And so on and so on and so on. In summary, if $n$ is a number, then so is $S(n)$. Symbolically, this is:
+OK great. We have our first number. The next stage of axiomatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number $n$ to the 'next' number. This is called the successor function, written $S(n)$. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren't allowed to call it that yet. Instead, we can now say that $S(0)$ is number and that this is the *definition* of one. Then we can get $S(S(0))$ and call it two. And so on and so on and so on. In summary, if $n$ is a number, then so is $S(n)$. Symbolically, this is:
 
 ```{math}
 :label: PA1
@@ -23,7 +23,7 @@ OK great. We have our first number. The next stage of axiomiatizing numbers is t
 
 
 
-Intuively, we think of numbers arranging themselves on a line that stretches out foreover. We know this line continues forever because we know we can always just add one more to it. We need to make sure that $S$ behaves in the same way so that it never produces an old number and makes numbers go in circles. A concise way of expressing this is that different numbers have different successors. Symbollically,
+Intuitively, we think of numbers arranging themselves on a line that stretches out foreover. We know this line continues forever because we know we can always just add another one on the end. We need to make sure that $S$ behaves in the same way so that it never produces an old number and makes numbers go in circles. A concise way of expressing this is that different numbers have different successors. Symbolically,
 
 ```{math}
 :label: PA2
@@ -44,7 +44,7 @@ That just about completes our definition of numbers. All we need now is somethin
     S(n) + m = S(n+m) 
 ```
 
-The equation {eq}`PA3` shouldn't come as much of a surprise. The second equation {eq}`PA4`, is a little weirder. Doesn't using $+$ on both sides of the equals sign mean we're defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying {eq}`PA4`, you'll eventually hit rock bottom. That's where \eqref{eq:PA3} comes in. Such symbolic witchcraft is called *recursion*. Let's see it in action as we prove our first theorem!
+The equation {eq}`PA3` shouldn't come as much of a surprise. The second equation {eq}`PA4`, is a little weirder. Doesn't using $+$ on both sides of the equals sign mean we're defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying {eq}`PA4`, you'll eventually hit rock bottom. That's where {eq}`PA3` comes in. Such symbolic witchcraft is called *recursion*. Let's see it in action as we prove our first theorem!
 
 ````{prf:theorem} 
 $1 + 1 = 2$
@@ -52,11 +52,15 @@ $1 + 1 = 2$
 
 ````{prf:proof}
 
-Remember that we defined $1$ as $S(0)$. So we start with $$S(0) + S(0)$$
+Remember that $1$ is defined as $S(0)$. So start with 
+
+$S(0) + S(0)$
 
 Now set $n = 0$ and $m = S(0)$, so that we can apply {eq}`PA4` and get: $$S(0) + S(0) = S(0 + S(0))$$
 
-Now we can apply {eq}`PA3` to get: $$S(0 + S(0)) = S(S(0))$$
+Now apply {eq}`PA3` to get: 
+
+$S(0 + S(0)) = S(S(0))$
 
 But $S(S(0))$ is the definition of $2$, so we're done!
 
@@ -80,15 +84,17 @@ $n + 0 = n$
 ````
 
 ````{prf:proof}
-We are setting $\phi(n)$ to be the statement $n + 0 = n$. To use induction, we need to prove it seperately for $0$ and then for everything else. The $0$ case really is just {eq}`PA3`: $0 + 0 = 0$.
+In this case $\phi(n)$ will be the statement $n + 0 = n$. To use induction, we need to prove it seperately for $0$ and then for everything else. The $0$ case really is just {eq}`PA3`: $0 + 0 = 0$.
 
-The remaining case is more interesting. We can assume that $x + 0 = x$. Now we must show $S(x) + 0$.  By {eq}`PA4`, $S(x) + 0 = S(x+0)$. Now using our assumption $S(x + 0) = S(x)$, so we are done.
+The remaining case is more interesting. We can assume that $x + 0 = x$. Now we must show $S(x) + 0 = S(x)$. By {eq}`PA4`, $S(x) + 0 = S(x+0)$. Now using our assumption $S(x + 0) = S(x)$, so we are done.
 
 ````
 
+It may feel strange that we can get away with just assuming $x + 0 = x$ in the second part, when that looks a lot like the thing we were originally proving. But that's the beauty of induction: assume the thing you're trying to prove is indeed true and then just show that it gets inherited by the sucessor. The role of $\phi(0)$ (which is often called the base case) is to kick off the chain of inheritance in the first place, but that's usually even easier to prove than inheritance. 
+
 If you want to learn more about Peano Arithmetic, I recommend playing the natural numbers game (link). It's where I learnt about all this and enjoyed it a lot. 
 
-Before ending on too positive of a note, I want to trash talk the Peano axioms a bit. From a logical point of view, its great news that we have condensed so many numbers into so few rules. But don't you feel a small nagging sense of sadness to watch the weird and wonderful world of numbers being so coldly reduced into an endless sucession of symbolic successors? Well, I certainly do. That's why I present to you my solution: a slightly more complicated set of mechanical manipulations that take numbers back to their roots. But you'll have to be patient. We're not even halfway through this rambling introduction.
+Before ending on too positive of a note, I do want to trash talk the Peano axioms a bit. From a logical point of view, its great news that we have condensed so many numbers into so few rules. But don't you feel a small nagging sense of sadness to watch the weird and wonderful world of numbers being so coldly reduced into an endless sucession of symbolic successors? Well, I certainly do. That's why I present to you my solution: a slightly more complicated set of mechanical manipulations that reduce numbers to some slightly prettier symbols. But you'll have to be patient. We're not even halfway through this rambling introduction.
 
 
     
