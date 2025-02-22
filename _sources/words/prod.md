@@ -18,6 +18,11 @@ What's your favorite prod?
 Set-up code (ignore)
 
 ```{code-cell} ipython3
+:tags: [thebe-init, hide-input, hide-output]
+!pip install networkx matplotlib ipywidgets
+```
+
+```{code-cell} ipython3
 :tags: [thebe-init, hide-input]
 
 import matplotlib.pyplot as plt
@@ -93,8 +98,15 @@ import ipywidgets as widgets
 from IPython.display import display
  
 def update_plot(n):
-    d2tree_plotly(n)
+    d2tree(n)
 
 slider = widgets.IntSlider(value=5, min=1, max=50, step=1, description="n:")
 widgets.interactive(update_plot, n=slider)
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+import ipywidgets as widgets
+widgets.IntSlider()
 ```
