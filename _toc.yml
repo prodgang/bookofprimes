@@ -10,4 +10,6 @@ chapters:
     - file: words/prereq/numbers
     - file: words/prereq/algebra
 - file: words/prod
+  sections:
+    - file: words/prod/draw
 
