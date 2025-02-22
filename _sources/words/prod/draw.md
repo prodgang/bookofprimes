@@ -104,7 +104,7 @@ def update_plot(n):
 ```{code-cell} ipython3
 :tags: [thebe-init]
 
-slider = widgets.IntSlider(value=10, min=1, max=70, step=1, description="n:")
+slider = widgets.IntSlider(value=1, min=1, max=70, step=1, description="n:")
 display(widgets.interactive(update_plot, n=slider))
 
 ```

@@ -1,7 +1,7 @@
 # Sets
 
 
-Never briefly, a *set* is collection of things (called elements) that share some property. We write sets between $\{$ and $\}$. For example, $\{a, b, c, ..., z\}$ is the set of lowercase letters. Some more important examples:
+Never briefly, a *set* is collection of things (called elements) that share some property. We write sets between $'\{'$ and $'\}'$. For example, $\{a, b, c, ..., z\}$ is the set of lowercase letters. Some more important examples:
 
 
 ```{math}  \mathbb{N} = \{0, 1, 2, ...\}
@@ -19,7 +19,7 @@ Intersection has a dual operation called *union* and written $A \cup B$ which gi
 
 
 
-Finally, if all the elements of one set are also in another set, we write $A \subseteq B$ and say $A$ is a *subset* of $B$. If there's some $a \in A$ that's *not* in $B$, then $A \not\subseteq B$. For example, $\mathbb{N} \subseteq \mathbb{Z}$ but $\\mathbb{Z} \not\subseteq \mathbb{Q}^+$. Try and work out whether its true that $A \cap B \subseteq A \subseteq A \cup B$ (or vice-versa).
+Finally, if all the elements of one set are also in another set, we write $A \subseteq B$ and say $A$ is a *subset* of $B$. If there's some $a \in A$ that's *not* in $B$, then $A \not\subseteq B$. For example, $\mathbb{N} \subseteq \mathbb{Z}$ but $\mathbb{Z} \not\subseteq \mathbb{Q}^+$. Try and work out whether its true that $A \cap B \subseteq A \subseteq A \cup B$ (or vice-versa).
 
 
 
