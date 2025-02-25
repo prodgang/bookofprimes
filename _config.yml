@@ -30,11 +30,12 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  use_issues_button: true
-  use_repository_button: true
-  codecell:
-    show_input: false  # Hide the code input by default
-    show_output: true  # Show the output
+  use_issues_button: false
+  use_repository_button: false
+  show_sphinx: false
+  extra_footer: ""
+  extra_css: ["_static/custom.css"]
+  
 
 
 sphinx:
@@ -42,6 +43,8 @@ sphinx:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    html_show_copyright: false
+
   extra_extensions:
     - sphinx_proof
 
