@@ -1,8 +1,10 @@
+(sections:numbers)=
 # Numbers
 
 
 Everyone knows what numbers are. County things. But what does that really mean?
 
+(sections:numbers:peano)=
 ## Peano Arithmetic 
 
 A lot of maths is about taking a very obvious concept and giving it a meticulous definition. This process is called *axiomatization*. Naturally, mathematicians have spent quite a lot of time axiomatizing numbers. 
@@ -47,6 +49,7 @@ That just about completes our definition of numbers. All we need now is somethin
 The equation {eq}`PA3` shouldn't come as much of a surprise. The second equation {eq}`PA4`, is a little weirder. Doesn't using $+$ on both sides of the equals sign mean we're defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying {eq}`PA4`, you'll eventually hit rock bottom. That's where {eq}`PA3` comes in. Such symbolic witchcraft is called *recursion*. Let's see it in action as we prove our first theorem!
 
 ````{prf:theorem} 
+:label: oneplusone
 $1 + 1 = 2$
 ````
 
@@ -56,7 +59,9 @@ Remember that $1$ is defined as $S(0)$. So start with
 
 $S(0) + S(0)$
 
-Now set $n = 0$ and $m = S(0)$, so that we can apply {eq}`PA4` and get: $$S(0) + S(0) = S(0 + S(0))$$
+Now set $n = 0$ and $m = S(0)$, so that we can apply {eq}`PA4` and get: 
+
+$S(0) + S(0) = S(0 + S(0))$
 
 Now apply {eq}`PA3` to get: 
 
@@ -70,6 +75,9 @@ But $S(S(0))$ is the definition of $2$, so we're done!
 
 You'll have to trust me that wasn't as much a waste of time as it may have felt. While proving things directly with these axioms is rather tedious, the important thing is that we are able to do so having started with effectively nothing. The logic game is all about maximizing the bang for your axiomatic buck, and there really is quite a lot of bang with Peano arithmetic. Not only can you do any sum you like, but you can also go on to define multiplication with just two equations (one for zero, one for everything else just like before) and much more. 
 
+(sections:numbers:induction)=
+### Induction
+
 To be able to prove slightly more interesting facts about numbers, we do need one last axiom called *induction*. Actually, its a placeholder for infinitely many different axioms but don't worry too much about that. The idea behind induction is that if every number inherits some property from its predecessor, then every number will posess that property. Imagine there was some family curse that couldn't be cured and was eternally passed down by the sucessor function. Then every number would be cursed. Symbolically, this is written as 
 
 ```{math}
@@ -80,6 +88,7 @@ To be able to prove slightly more interesting facts about numbers, we do need on
 $\phi(n)$ is a placeholder for the curse/property we're interested in. Let's see induction in action with another quick theorem, $n + 0 = n$. Don't be fooled into thinking this could be immediately proven with {eq}`PA3` because doing so would assume $n + m = m + n$, which we are yet to prove (but could also be done with induction in case you want to try).
 
 ````{prf:theorem} 
+:label: nplus0
 $n + 0 = n$
 ````
 

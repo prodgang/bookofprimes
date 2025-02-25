@@ -1,6 +1,29 @@
 # Book of Primes
 
-Numbers - yay!
+This book is about numbers. But not the usual boring numbers you've had drilled into your head since you could barely talk or the numbers that made you decide math was dull and confusing. Instead, we're going to learn about *productive numbers*.
 
-```{tableofcontents}
+
+**What makes them new?** Taking prime factorization seriously.
+
+**What do they look this?** Trees! Here's a few:
+
+
+```{image} ../tikz/favs.svg
+:alt: some nice trees
+:width: 600px
+:align: center
 ```
+
+**What are they good for?** Ummm we'll get back to that...
+
+**So why should I bother reading this?** Because they're awesome and beautiful and sufficiently simple that even an amateur mathematician could discover them.
+
+So let's crack on! 
+
+```{warning}
+This book does rely on some concepts that would have been too fun to teach at high school. I've written a [preliminaries](sections:pre) to catch you up on the basics. 
+
+Alternatively, skip straight to the [main action](sections:prod) if you want. I don't care. I definitely didn't spend way too long coming up with niche analogies for obscure concepts that aren't even necessarily relevant for the rest of the book. 
+```
+
+

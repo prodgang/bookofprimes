@@ -1,3 +1,4 @@
+(sections:algebra)=
 # Algebra
 
 
@@ -9,6 +10,7 @@ $\mathbb{N}$ is nearly a group, but not quite. You can do nothing with it (add z
 
 Equipping a set with an operation makes it possible to view that set in many different lights.  Algebra is really fun because it teaches you to see how things are shaped by their possible interactions (if you choose to accept some abstraction).  Anyway, the upshot of all this is that a set looks extremely different depending on what powers you're studying within it. Since numbers is sets, then numbers look differently depending on whether you're adding them or multiplying them. Let's take a closer look that.
 
+(sections:algebra:additive)=
 ## Additive Numbers
 
 Let's play a game. You get given a calculator that only adds and a starting number $s$. If you type in $a$ and $b$, you get back $a+b$. You can only use the starting number $s$ or a number that you got out in a previous go. But you can re-use every number as much as you want. 

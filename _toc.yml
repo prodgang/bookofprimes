@@ -4,12 +4,13 @@
 format: jb-book
 root: words/intro
 chapters:
-- file: words/prereq/prereq
+- file: words/pre/prelim
   sections:
-    - file: words/prereq/sets
-    - file: words/prereq/numbers
-    - file: words/prereq/algebra
+    - file: words/pre/sets
+    - file: words/pre/numbers
+    - file: words/pre/algebra
 - file: words/prod
   sections:
+    - file: words/prod/defs
     - file: words/prod/draw
 

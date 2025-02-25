@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b00eef85" />
   
@@ -62,12 +62,14 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'words/prod';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Drawings" href="prod/draw.html" />
-    <link rel="prev" title="Algebra" href="prereq/algebra.html" />
+    <link rel="next" title="Definitions" href="prod/defs.html" />
+    <link rel="prev" title="Algebra" href="pre/algebra.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -172,13 +174,14 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="prereq/prereq.html">Preliminaries</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="prereq/sets.html">Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prereq/numbers.html">Numbers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prereq/algebra.html">Algebra</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pre/prelim.html">Preliminaries</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pre/sets.html">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pre/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pre/algebra.html">Algebra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Productive Numbers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="prod/defs.html">Definitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="prod/draw.html">Drawings</a></li>
 </ul>
 </details></li>
@@ -304,7 +307,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -320,6 +325,14 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorization">Factorization</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -330,13 +343,34 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="productive-numbers">
-<h1>Productive Numbers<a class="headerlink" href="#productive-numbers" title="Link to this heading">#</a></h1>
-<p>Numbers are amazing. So simple on the surface, so tangibly real. But just beneath the surface of digits and sums lies an infinite world forever beyond our reach.</p>
-<p>I’m not a number theorist, but I have done my fair share of number thinking. Over the last few years, some lofty speculation has coalesced into something that feels to me like a new way of looking at numbers. I can’t say what you can practically do with them, nor what the point is. But I can tell you that they’re beautiful and wonderful and, in hindsight, exceedingly simple. I call them productive numbers.</p>
-<p>Before we start, you might already be worrying that you’re reading some pseudo-mathematical nonsense from a delusional crackpot. Well, fear not my skeptical reader. One of the nice things about mathematics is that there is a very clear-cut criterion for whether or not to accept a mathematical claim: completely rigourous proof. The good news is that everything in here is proven. Even better news is that I have also written up the proofs with a proof-asistant called Lean, meaning you don’t even have to bother reading them and can let your computer do all the hard verification work!</p>
-<p>With the lean proofs taking care of the boring technical details, I’m here to tell a story. Its the story of why I care, what it all means and how I got there. It’s a personal story, but I don’t want to exaggerate my own importance. In fact, I emphasize my naivety throughout just to show how far I am from the objective, omniscient mathematician that is usually implied by the impersonal, Dumellian, hypersyllabic writing of textbooks and journals.</p>
-<p>Anyway, here’s some of my new favourite numbers:</p>
-<a class="reference internal image-reference" href="../_images/favs.svg"><img alt="some nice trees" class="align-center" src="../_images/favs.svg" style="width: 600px;" /></a>
+<span id="sections-prod"></span><h1>Productive Numbers<a class="headerlink" href="#productive-numbers" title="Link to this heading">#</a></h1>
+<p>Recap so far:</p>
+<ol class="arabic simple">
+<li><p>Numbers are additively axiomatized in <a class="reference internal" href="pre/numbers.html#sections-numbers"><span class="std std-ref">Peano Arithmetic</span></a> (PA)</p></li>
+<li><p><a class="reference internal" href="pre/algebra.html#sections-algebra-additive"><span class="std std-ref">Additive numbers</span></a> are boring</p></li>
+</ol>
+<p><strong>So what happens if we axiomatize numbers, but without counting?</strong> Productive Numbers! That’s literally the whole idea. The rest of the book is about what happens when you do. It’s up to you to decide if it’s still boring.</p>
+<section id="factorization">
+<h2>Factorization<a class="headerlink" href="#factorization" title="Link to this heading">#</a></h2>
+<p>Behind the scenes, the reason PA works is because of the following basic fact:</p>
+<div class="proof theorem admonition" id="ftaa">
+<p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
+<section class="theorem-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(n = 1 + 1 + ...\)</span> (<span class="math notranslate nohighlight">\(n\)</span> times)</p>
+</section>
+</div><p>Though extremely dull, this is nice because it shows how to additively represent any number using only more basic numbers.</p>
+<p>For productive numbers to work, we’re gonna need a similar guarantee that we can productively represent any number. Thankfully, we don’t have to look too far. There’s a niche little result called <em>The Fundamental Theorem of Arithmetic</em> that fits the bill perfectly.</p>
+<div class="proof theorem admonition" id="fta">
+<p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>For any number <span class="math notranslate nohighlight">\(n &gt; 1\)</span>, <span class="math notranslate nohighlight">\(n\)</span> can be factored uniquely as <span class="math notranslate nohighlight">\(2^{e_1} \times 3^{e_2} \times ... p_k^{e_k}\)</span>, where <span class="math notranslate nohighlight">\(p_k\)</span> is the <span class="math notranslate nohighlight">\(k\)</span>th prime number and <span class="math notranslate nohighlight">\(e_i \geq 0\)</span>.</p>
+</section>
+</div><p>Those <span class="math notranslate nohighlight">\(e_i\)</span> guys are going to play an important role, and I will call them the <em>exponents</em> of <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>In short, any number can be uniquely written as the product of some primes. That it can be done at all is obvious - if a number can’t be decomposed then it’s a prime so we’re done. The interesting part is that this can be done uniquely which means you can’t have two different ways of writing the same number (excluding the boring edge cases like <span class="math notranslate nohighlight">\(2 \times 3 = 3 \times 2 = 3 \times 2 \times 1\)</span>).</p>
+<p>So the most obvious thing to do would be to write <span class="math notranslate nohighlight">\(n = [e_1, e_2, ..., e_k]\)</span>. The <span class="math notranslate nohighlight">\(i\)</span>th value in the list is just the exponent of the <span class="math notranslate nohighlight">\(i\)</span>th prime.</p>
+<p>Then <span class="math notranslate nohighlight">\(6\)</span> would be <span class="math notranslate nohighlight">\([1, 1]\)</span>, <span class="math notranslate nohighlight">\(8\)</span> would be <span class="math notranslate nohighlight">\([3]\)</span> (because <span class="math notranslate nohighlight">\(8 = 2^3\)</span>) and <span class="math notranslate nohighlight">\(20\)</span> would be <span class="math notranslate nohighlight">\([2, 0, 1]\)</span>. Sounds pretty good right?</p>
+<p>Well, no. It took me about to year to realise there is a big problem with this definition that basically defeats the entire point. I’ll let you think about what the problem is and how to fix it (not necessarily for a year) before moving to the next part.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -372,7 +406,7 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="prereq/algebra.html"
+       href="pre/algebra.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -381,11 +415,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="prod/draw.html"
+       href="prod/defs.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Drawings</p>
+        <p class="prev-next-title">Definitions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -395,6 +429,22 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorization">Factorization</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
