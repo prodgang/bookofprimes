@@ -1,3 +1,5 @@
+
+(sections:sets)=
 # Sets
 
 
@@ -12,7 +14,11 @@ Never briefly, a *set* is collection of things (called elements) that share some
 
  ```
 
-And so on. If $a$ is an element of a set $A$, we write $a \in A$. Sometimes, sets share elements. For example, $\mathbb{N}$ and $\mathbb{Z}$ both contain $0$. If $A$ and $B$ are sets, then $A \cap B$ is the set of all the shared elements of $A$ and $B$, called the *intersection*. For example, $\mathbb{Z} \cap \mathbb{Q}^+ = \mathbb{N}$. 
+And so on. If $a$ is an element of a set $A$, we write $a \in A$. 
+
+## Set Operations
+
+Sometimes, sets share elements. For example, $\mathbb{N}$ and $\mathbb{Z}$ both contain $0$. If $A$ and $B$ are sets, then $A \cap B$ is the set of all the shared elements of $A$ and $B$, called the *intersection*. For example, $\mathbb{Z} \cap \mathbb{Q}^+ = \mathbb{N}$. 
 
 
 Intersection has a dual operation called *union* and written $A \cup B$ which gives you the set of elements that are either in $A$ or $B$ (as opposed to both). So if $EVEN$ is the set of even integers and $ODD$ is the set of odd integers, then $EVEN \cup ODD = \mathbb{Z}$. 

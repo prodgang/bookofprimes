@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Preliminaries &#8212; Book of Primes</title>
+    <title>Definitions &#8212; Book of Primes</title>
   
   
   
@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
   
@@ -64,12 +64,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'words/prereq/prereq';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'words/prod/defs';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Sets" href="sets.html" />
-    <link rel="prev" title="Book of Primes" href="../intro.html" />
+    <link rel="next" title="Drawings" href="draw.html" />
+    <link rel="prev" title="Productive Numbers" href="../prod.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -174,14 +174,15 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Preliminaries</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pre/prelim.html">Preliminaries</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pre/sets.html">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pre/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pre/algebra.html">Algebra</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../prod.html">Productive Numbers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../prod/draw.html">Drawings</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../prod.html">Productive Numbers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="draw.html">Drawings</a></li>
 </ul>
 </details></li>
 </ul>
@@ -243,7 +244,7 @@
       
       
       
-      <li><a href="../../_sources/words/prereq/prereq.md" target="_blank"
+      <li><a href="../../_sources/words/prod/defs.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +307,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -317,11 +320,20 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preliminaries</h1>
+    <h1>Definitions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-the-problem">Fixing the Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism">Isomorphism</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -331,11 +343,42 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="preliminaries">
-<h1>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h1>
-<p>This is all intended to be sufficiently accessible that a curious, slightly nerdy teenager could stumble across it on an internet rabbit hole and be able to understand enough to tell their friends the main ideas. So I’m going to try and introduce most of the relevant symbols and jargon as we go. But here’s a few just to start off. You can always skip and come back later.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="definitions">
+<span id="sections-prod-defs"></span><h1>Definitions<a class="headerlink" href="#definitions" title="Link to this heading">#</a></h1>
+<p>We left off suggesting <span class="math notranslate nohighlight">\(8 = [3]\)</span>. Here’s the problem: what the hell is <span class="math notranslate nohighlight">\(3\)</span>?!</p>
+<section id="fixing-the-problem">
+<h2>Fixing the Problem<a class="headerlink" href="#fixing-the-problem" title="Link to this heading">#</a></h2>
+<p>Having made a commitment to represent every number as a list of its exponents, we then immediately reverted to describing those exponents using nothing other than an additive representation.</p>
+<p>Since <span class="math notranslate nohighlight">\(3 = [0, 1]\)</span>, we really should have written <span class="math notranslate nohighlight">\([[0, 1]]\)</span>. But wait - what is <span class="math notranslate nohighlight">\(1\)</span>? Technically, it would be <span class="math notranslate nohighlight">\([0] = [0, 0] = ...\)</span>, but let’s just call it <span class="math notranslate nohighlight">\([]\)</span>. So at last, <span class="math notranslate nohighlight">\(8\)</span> becomes <span class="math notranslate nohighlight">\([[0, []]]\)</span>.</p>
+<p>More generally, in order to productively write a number as a list of its exponents, we must first write the exponents as a list of their exponents, but that means we need to write those exponents etc etc. In short, we must make productive numbers <em>recursive</em>!</p>
+<p>Rather than working from additive to productive, its a little easier to define productive numbers from scratch and then see later how they can be related to additive numbers. Also, productive numbers is a mouthful so I’ll call them <em>prods</em>.</p>
+<p>So here it is. The formal definition of the set of prods <span class="math notranslate nohighlight">\(\mathbb{\Pi}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-prod0">
+<span class="eqno">(7)<a class="headerlink" href="#equation-prod0" title="Link to this equation">#</a></span>\[    0 \in \mathbb{\Pi}\]</div>
+<div class="math notranslate nohighlight" id="equation-prod1">
+<span class="eqno">(8)<a class="headerlink" href="#equation-prod1" title="Link to this equation">#</a></span>\[    x_1 \in \mathbb{\Pi}, x_2 \in \mathbb{\Pi}, ..., x_n \in \mathbb{\Pi} \implies [x_1, x_2, ..., x_n] \in \mathbb{\Pi}\]</div>
+<div class="math notranslate nohighlight" id="equation-prodpad">
+<span class="eqno">(9)<a class="headerlink" href="#equation-prodpad" title="Link to this equation">#</a></span>\[    [x_1, ..., x_n] = [x_1, ..., x_n, 0]\]</div>
+<p>The first equation <a class="reference internal" href="#equation-prod0">(7)</a> is not a surprise. The second <a class="reference internal" href="#equation-prod1">(8)</a> is where all the action happens. The third <a class="reference internal" href="#equation-prodpad">(9)</a> just says you can pad a prod with zeros without changing it<a class="footnote-reference brackets" href="#padref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>That’s it. The rest is commentary.</p>
+</section>
+<section id="isomorphism">
+<h2>Isomorphism<a class="headerlink" href="#isomorphism" title="Link to this heading">#</a></h2>
+<p>The interpretation of a productive number (i.e. what number it corresponds to) is given by the following recursive function <span class="math notranslate nohighlight">\(I: \mathbb{\Pi} \to \mathbb{N}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-int0">
+<span class="eqno">(10)<a class="headerlink" href="#equation-int0" title="Link to this equation">#</a></span>\[    I(0) = 0\]</div>
+<div class="math notranslate nohighlight" id="equation-int1">
+<span class="eqno">(11)<a class="headerlink" href="#equation-int1" title="Link to this equation">#</a></span>\[    I([x_1, x_2, ..., x_n]) = 2^{I(x_1)} \times 3^{I(x_2)} \times ... \times p_n^{I(x_n)}\]</div>
+<p>(where <span class="math notranslate nohighlight">\(p_n\)</span> is the nth prime)</p>
+<p>As an example, let’s work out <span class="math notranslate nohighlight">\(I([[[]], 0, []])\)</span>. Remember that <span class="math notranslate nohighlight">\([]\)</span> is just shorthand for <span class="math notranslate nohighlight">\([0]\)</span> so <span class="math notranslate nohighlight">\(I([]) = 2^0 = 1\)</span>. So we can rewrite to <span class="math notranslate nohighlight">\([[1], 0, 1]\)</span>.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="padref" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The padding axiom is kind of inelegant and I wish it wasn’t there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that <span class="math notranslate nohighlight">\(2 = 02 = 002 = 002.000\)</span>?</p>
+</aside>
+</aside>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -351,7 +394,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./words/prereq"
+            path: "./words/prod"
         },
         predefinedOutput: true
     }
@@ -369,20 +412,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="../prod.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Book of Primes</p>
+        <p class="prev-next-title">Productive Numbers</p>
       </div>
     </a>
     <a class="right-next"
-       href="sets.html"
+       href="draw.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sets</p>
+        <p class="prev-next-title">Drawings</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -392,6 +435,23 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-the-problem">Fixing the Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism">Isomorphism</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

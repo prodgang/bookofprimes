@@ -64,7 +64,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'words/prereq/algebra';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'words/pre/algebra';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -174,13 +174,14 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="prereq.html">Preliminaries</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="prelim.html">Preliminaries</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sets.html">Sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Algebra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prod.html">Productive Numbers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prod/defs.html">The Real Definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prod/draw.html">Drawings</a></li>
 </ul>
 </details></li>
@@ -243,7 +244,7 @@
       
       
       
-      <li><a href="../../_sources/words/prereq/algebra.md" target="_blank"
+      <li><a href="../../_sources/words/pre/algebra.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,13 +345,13 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="algebra">
-<h1>Algebra<a class="headerlink" href="#algebra" title="Link to this heading">#</a></h1>
+<span id="sections-algebra"></span><h1>Algebra<a class="headerlink" href="#algebra" title="Link to this heading">#</a></h1>
 <p>For unrelated reasons, I once came across this thing called group theory. A group is kind of like a set with some cool powers. Groups are part of abstract algebra, which basically studies the idea of combining the doing of one thing with the doing of another thing. Hence the abstract. The algebra part means shunting meaningless symbols around, just like the one that scarred you in highschool.</p>
 <p>A group is a set where the cool power gives you the ability to (a) do nothing, (b) undo everything that you can do and (c) something boring called associativity (which I call <em>chalkboard grease</em> because it just makes the symbol shunting easier). Wow so cool! But seriously, whenever you find yourself a set that can do those three things, you’d better get excited because it means that your set posseses some incredibly intricate and elegant structure.</p>
 <p><span class="math notranslate nohighlight">\(\mathbb{N}\)</span> is nearly a group, but not quite. You can do nothing with it (add zero or times by one), but you can’t undo (subtract or divide) because that would take you out of <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> (into <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> or <span class="math notranslate nohighlight">\(\\mathbb{Q}^+\)</span>).  But that’s OK because <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{Q}^+\)</span> both are groups, with the powers of addition and multiplication respectively.</p>
 <p>Equipping a set with an operation makes it possible to view that set in many different lights.  Algebra is really fun because it teaches you to see how things are shaped by their possible interactions (if you choose to accept some abstraction).  Anyway, the upshot of all this is that a set looks extremely different depending on what powers you’re studying within it. Since numbers is sets, then numbers look differently depending on whether you’re adding them or multiplying them. Let’s take a closer look that.</p>
 <section id="additive-numbers">
-<h2>Additive Numbers<a class="headerlink" href="#additive-numbers" title="Link to this heading">#</a></h2>
+<span id="sections-algebra-additive"></span><h2>Additive Numbers<a class="headerlink" href="#additive-numbers" title="Link to this heading">#</a></h2>
 <p>Let’s play a game. You get given a calculator that only adds and a starting number <span class="math notranslate nohighlight">\(s\)</span>. If you type in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, you get back <span class="math notranslate nohighlight">\(a+b\)</span>. You can only use the starting number <span class="math notranslate nohighlight">\(s\)</span> or a number that you got out in a previous go. But you can re-use every number as much as you want.</p>
 <p>My goal is to ask you a number that you cannot write on your calculator. So if your starting number is <span class="math notranslate nohighlight">\(0\)</span>, you’re screwed because I can just ask for <span class="math notranslate nohighlight">\(3\)</span> and you’ll be stuck doing <span class="math notranslate nohighlight">\(0+0=0\)</span> forever. But if you start on <span class="math notranslate nohighlight">\(1\)</span>, then can do <span class="math notranslate nohighlight">\(1+1=2\)</span> and then <span class="math notranslate nohighlight">\(1+2=3\)</span>. Trying again, starting on <span class="math notranslate nohighlight">\(2\)</span> would only get you even numbers.</p>
 <p>Play it here!</p>
@@ -392,7 +393,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./words/prereq"
+            path: "./words/pre"
         },
         predefinedOutput: true
     }

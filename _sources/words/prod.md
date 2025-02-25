@@ -1,20 +1,34 @@
+(sections:prod)=
 # Productive Numbers
 
-Numbers are amazing. So simple on the surface, so tangibly real. But just beneath the surface of digits and sums lies an infinite world forever beyond our reach. 
-	
+Recap so far:
+1. Numbers are additively axiomatized in [Peano Arithmetic](sections:numbers) (PA)
+2. [Additive numbers](sections:algebra:additive) are boring
 
-	
-I'm not a number theorist, but I have done my fair share of number thinking. Over the last few years, some lofty speculation has coalesced into something that feels to me like a new way of looking at numbers. I can't say what you can practically do with them, nor what the point is. But I can tell you that they're beautiful and wonderful and, in hindsight, exceedingly simple. I call them productive numbers.
+**So what happens if we axiomatize numbers, but without counting?** Productive Numbers! That's literally the whole idea. The rest of the book is about what happens when you do. It's up to you to decide if it's still boring.
 
-Before we start, you might already be worrying that you're reading some pseudo-mathematical nonsense from a delusional crackpot. Well, fear not my skeptical reader. One of the nice things about mathematics is that there is a very clear-cut criterion for whether or not to accept a mathematical claim: completely rigourous proof. The good news is that everything in here is proven. Even better news is that I have also written up the proofs with a proof-asistant called Lean, meaning you don't even have to bother reading them and can let your computer do all the hard verification work!
+## Factorization
 
-With the lean proofs taking care of the boring technical details, I'm here to tell a story. Its the story of why I care, what it all means and how I got there. It's a personal story, but I don't want to exaggerate my own importance. In fact, I emphasize my naivety throughout just to show how far I am from the objective, omniscient mathematician that is usually implied by the impersonal, Dumellian, hypersyllabic writing of textbooks and journals. 
-	
-Anyway, here's some of my new favourite numbers:
+Behind the scenes, the reason PA works is because of the following basic fact:
+````{prf:theorem} 
+:label: ftaa
+$n = 1 + 1 + ...$ ($n$ times)
+````
+Though extremely dull, this is nice because it shows how to additively represent any number using only more basic numbers.
 
+For productive numbers to work, we're gonna need a similar guarantee that we can productively represent any number. Thankfully, we don't have to look too far. There's a niche little result called *The Fundamental Theorem of Arithmetic* that fits the bill perfectly. 
 
-```{image} ../tikz/favs.svg
-:alt: some nice trees
-:width: 600px
-:align: center
-```
+````{prf:theorem} 
+:label: fta
+
+For any number $n > 1$, $n$ can be factored uniquely as $2^{e_1} \times 3^{e_2} \times ... p_k^{e_k}$, where $p_k$ is the $k$th prime number and $e_i \geq 0$. 
+````
+Those $e_i$ guys are going to play an important role, and I will call them the *exponents* of $n$. 
+
+In short, any number can be uniquely written as the product of some primes. That it can be done at all is obvious - if a number can't be decomposed then it's a prime so we're done. The interesting part is that this can be done uniquely which means you can't have two different ways of writing the same number (excluding the boring edge cases like $2 \times 3 = 3 \times 2 = 3 \times 2 \times 1$).
+
+So the most obvious thing to do would be to write $n = [e_1, e_2, ..., e_k]$. The $i$th value in the list is just the exponent of the $i$th prime.
+
+Then $6$ would be $[1, 1]$, $8$ would be $[3]$ (because $8 = 2^3$) and $20$ would be $[2, 0, 1]$. Sounds pretty good right?
+
+Well, no. It took me about to year to realise there is a big problem with this definition that basically defeats the entire point. I'll let you think about what the problem is and how to fix it (not necessarily for a year) before moving to the next part.
