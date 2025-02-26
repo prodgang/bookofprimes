@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Book of Primes
-author: Prod Gang
+title: BOOK OF PRIMES
+author: ProdGang
 logo: logo.png
 
 execute:
@@ -32,7 +32,7 @@ repository:
 html:
   use_issues_button: false
   use_repository_button: false
-  extra_footer: ""
+  extra_footer: "<p> © Copyright I sure hope you do"
   extra_css: ["_static/custom.css"]
   
 
@@ -52,8 +52,9 @@ myst:
     formats: ipynb,md
 
 
-#parse:
-#  myst_enable_extensions:
+parse:
+  myst_enable_extensions:
     # don't forget to list any other extensions you want enabled,
     # including those that are enabled by default!
-    #- amsmath
+    - amsmath
+    - dollarmath

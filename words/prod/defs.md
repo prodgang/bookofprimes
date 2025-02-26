@@ -1,7 +1,7 @@
 (sections:prod:defs)=
 # Definitions
 
-We left off suggesting $8 = [3]$. Here's the problem: what the hell is $3$?! 
+We [left off](sections:prod) suggesting $8 = [3]$. Here's the problem: what the hell is $3$?! 
 
 
 ## Fixing the Problem
@@ -33,12 +33,15 @@ So here it is. The formal definition of the set of prods $\mathbb{\Pi}$:
 
 ```{math}
 :label: PRODPAD
-    [x_1, ..., x_n] = [x_1, ..., x_n, 0]
+    x \neq 0 \implies [x_1, ..., x_n] = [x_1, ..., x_n, 0]
 ```
+
+That's it. The rest is commentary.
+
 
 The first equation {eq}`PROD0` is not a surprise. The second {eq}`PROD1` is where all the action happens. The third {eq}`PRODPAD` just says you can pad a prod with zeros without changing it[^padref].
 
-That's it. The rest is commentary.
+Let's see how these axioms interact. So we must start with $0$. Then by {eq}`PROD1`, $[0, 0]$ is a prod. By {eq}`PRODPAD` and our earlier convention $[0, 0] = [0] = []$. So $[[]]$ is a prod, and so is $[0, []]$ and $[[0, []]]$ and so on.
 
 ## Isomorphism
 
@@ -56,8 +59,106 @@ The interpretation of a productive number (i.e. what number it corresponds to) i
 ```
 (where $p_n$ is the nth prime)
 
-As an example, let's work out $I([[[]], 0, []])$. Remember that $[]$ is just shorthand for $[0]$ so $I([]) = 2^0 = 1$. So we can rewrite to $[[1], 0, 1]$. 
+As an example, let's work out $I([[[]], 0, []])$. Remember that $[]$ is just shorthand for $[0]$ so $I([]) = 2^0 = 1$. So: 
+\begin{align*}
+I([[[]], 0, []]) &= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
+&= 2^{2^{I([])}} \times 3^{I(0)} \times 5^{I([])} \\
+ &= 2^{2^1} \times 3^0 \times 5^1 \\
+ &= 2^2 \times 1 \times 5 = 20.
+\end{align*}
 
-[^padref]: The padding axiom is kind of inelegant and I wish it wasn't there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that $2 = 02 = 002 = 002.000$?
+That was a little bit tedious but hopefully you can see how it works. 
+
+
+## Examples
+
+Here's a table of some numbers, their factorization and their productive representation. Enjoy!
+
+| $n$ | factorization of $n$ | prod of $n$ |
+| :--- | :----: | :----: |
+| $0$    | $0$      | $0$     |
+| $1$    | $1$      | $[]$     |
+| $2$    | $2^1$      | $[[]]$     |
+| $3$    | $3^1$      | $[0, []]$     |
+| $4$    | $2^2$      | $[[[]]]$     |
+| $5$    | $5^1$      | $[0, 0, []]$     |
+| $6$    | $2^1 \times 3^1$      | $[[], []]$     |
+| $7$    | $7^1$      | $[0, 0, 0, []]$     |
+| $8$    | $2^3$      | $[[0, []]]$     |
+| $9$    | $3^2$      | $[0, [[]]]$     |
+| $10$    | $2^1 \times 5^1$      | $[[], 0, []]$     |
+
+As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human readable way of writing prods: trees! All you have to do is substitute $0$ to $\circ$, $[]$ to $\bullet$ and $[x_1, ..., x_n]$ to a root node pointing to $x_1, ... x_n$. Here's the same table but with trees!
+
+```{list-table}
+:align: right
+:header-rows: 1
+:widths: auto
+* - $n$
+  - factorization of $n$
+  - tree of $n$
+* - $0$
+  - $0$
+  - $\circ$
+* - $1$
+  - $1$
+  - $\bullet$
+* - $2$
+  - $2^1$
+  - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+    ```
+* - $3$
+  - $3^1$
+  - ```{image} ../../tikz/p3.svg
+        :alt: 3 as tree
+        :height: 50px
+    ```
+* - $4$
+  - $2^2$
+  - ```{image} ../../tikz/p4.svg
+        :alt: 4 as tree
+        :height: 100px
+    ```
+* - $5$
+  - $5^1$
+  - ```{image} ../../tikz/p5.svg
+        :alt: 5 as tree
+        :height: 50px
+    ```
+* - $6$
+  - $2^1 \times 3^1$
+  - ```{image} ../../tikz/p6.svg
+        :alt: 6 as tree
+        :height: 50px
+    ```
+* - $7$
+  - $7^1$
+  - ```{image} ../../tikz/p7.svg
+        :alt: 7 as tree
+        :height: 50px
+    ```
+* - $8$
+  - $2^3$
+  - ```{image} ../../tikz/p8.svg
+        :alt: 8 as tree
+        :height: 100px
+    ```
+* - $9$
+  - $3^2$
+  - ```{image} ../../tikz/p9.svg
+        :alt: 9 as tree
+        :height: 100px
+    ```
+* - $10$
+  - $2^1 \times 5^1$
+  - ```{image} ../../tikz/p10.svg
+        :alt: 10 as tree
+        :height: 50px
+    ```
+```
+
+[^padref]: The padding axiom is kind of inelegant and I wish it didn't need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that $2 = 02 = 002 = 002.000$?
 
 

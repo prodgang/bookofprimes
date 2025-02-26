@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Definitions &#8212; Book of Primes</title>
+    <title>Definitions &#8212; BOOK OF PRIMES</title>
   
   
   
@@ -69,7 +69,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Drawings" href="draw.html" />
-    <link rel="prev" title="Productive Numbers" href="../prod.html" />
+    <link rel="prev" title="Productive Numbers" href="prod.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -151,8 +151,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Book of Primes - Home"/>
-    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Book of Primes - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="BOOK OF PRIMES - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="BOOK OF PRIMES - Home"/>
   
   
 </a></div>
@@ -169,22 +169,23 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Book of Primes
+                    BOOK OF PRIMES
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../pre/prelim.html">Preliminaries</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pre/prelim.html">PRE</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../pre/sets.html">Sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pre/numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pre/algebra.html">Algebra</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../prod.html">Productive Numbers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="prod.html">PROD</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Definitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="draw.html">Drawings</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../post/post.html">POST</a></li>
 </ul>
 
     </div>
@@ -332,6 +333,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-the-problem">Fixing the Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism">Isomorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -358,9 +360,10 @@
 <div class="math notranslate nohighlight" id="equation-prod1">
 <span class="eqno">(8)<a class="headerlink" href="#equation-prod1" title="Link to this equation">#</a></span>\[    x_1 \in \mathbb{\Pi}, x_2 \in \mathbb{\Pi}, ..., x_n \in \mathbb{\Pi} \implies [x_1, x_2, ..., x_n] \in \mathbb{\Pi}\]</div>
 <div class="math notranslate nohighlight" id="equation-prodpad">
-<span class="eqno">(9)<a class="headerlink" href="#equation-prodpad" title="Link to this equation">#</a></span>\[    [x_1, ..., x_n] = [x_1, ..., x_n, 0]\]</div>
-<p>The first equation <a class="reference internal" href="#equation-prod0">(7)</a> is not a surprise. The second <a class="reference internal" href="#equation-prod1">(8)</a> is where all the action happens. The third <a class="reference internal" href="#equation-prodpad">(9)</a> just says you can pad a prod with zeros without changing it<a class="footnote-reference brackets" href="#padref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<span class="eqno">(9)<a class="headerlink" href="#equation-prodpad" title="Link to this equation">#</a></span>\[    x \neq 0 \implies [x_1, ..., x_n] = [x_1, ..., x_n, 0]\]</div>
 <p>That’s it. The rest is commentary.</p>
+<p>The first equation <a class="reference internal" href="#equation-prod0">(7)</a> is not a surprise. The second <a class="reference internal" href="#equation-prod1">(8)</a> is where all the action happens. The third <a class="reference internal" href="#equation-prodpad">(9)</a> just says you can pad a prod with zeros without changing it<a class="footnote-reference brackets" href="#padref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>Let’s see how these axioms interact. So we must start with <span class="math notranslate nohighlight">\(0\)</span>. Then by <a class="reference internal" href="#equation-prod1">(8)</a>, <span class="math notranslate nohighlight">\([0, 0]\)</span> is a prod. By <a class="reference internal" href="#equation-prodpad">(9)</a> and our earlier convention <span class="math notranslate nohighlight">\([0, 0] = [0] = []\)</span>. So <span class="math notranslate nohighlight">\([[]]\)</span> is a prod, and so is <span class="math notranslate nohighlight">\([0, []]\)</span> and <span class="math notranslate nohighlight">\([[0, []]]\)</span> and so on.</p>
 </section>
 <section id="isomorphism">
 <h2>Isomorphism<a class="headerlink" href="#isomorphism" title="Link to this heading">#</a></h2>
@@ -370,12 +373,144 @@
 <div class="math notranslate nohighlight" id="equation-int1">
 <span class="eqno">(11)<a class="headerlink" href="#equation-int1" title="Link to this equation">#</a></span>\[    I([x_1, x_2, ..., x_n]) = 2^{I(x_1)} \times 3^{I(x_2)} \times ... \times p_n^{I(x_n)}\]</div>
 <p>(where <span class="math notranslate nohighlight">\(p_n\)</span> is the nth prime)</p>
-<p>As an example, let’s work out <span class="math notranslate nohighlight">\(I([[[]], 0, []])\)</span>. Remember that <span class="math notranslate nohighlight">\([]\)</span> is just shorthand for <span class="math notranslate nohighlight">\([0]\)</span> so <span class="math notranslate nohighlight">\(I([]) = 2^0 = 1\)</span>. So we can rewrite to <span class="math notranslate nohighlight">\([[1], 0, 1]\)</span>.</p>
+<p>As an example, let’s work out <span class="math notranslate nohighlight">\(I([[[]], 0, []])\)</span>. Remember that <span class="math notranslate nohighlight">\([]\)</span> is just shorthand for <span class="math notranslate nohighlight">\([0]\)</span> so <span class="math notranslate nohighlight">\(I([]) = 2^0 = 1\)</span>. So:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I([[[]], 0, []]) &amp;= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
+&amp;= 2^{2^{I([])}} \times 3^{I(0)} \times 5^{I([])} \\
+ &amp;= 2^{2^1} \times 3^0 \times 5^1 \\
+ &amp;= 2^2 \times 1 \times 5 = 20.
+\end{align*}\]</div>
+<p>That was a little bit tedious but hopefully you can see how it works.</p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p>Here’s a table of some numbers, their factorization and their productive representation. Enjoy!</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head text-center"><p>factorization of <span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head text-center"><p>prod of <span class="math notranslate nohighlight">\(n\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(2^1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([[]]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(3^1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([0, []]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(2^2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([[[]]]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(5^1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([0, 0, []]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(6\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(2^1 \times 3^1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([[], []]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(7\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(7^1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([0, 0, 0, []]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(8\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(2^3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([[0, []]]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(9\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(3^2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([0, [[]]]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(2^1 \times 5^1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\([[], 0, []]\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human readable way of writing prods: trees! All you have to do is substitute <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(\circ\)</span>, <span class="math notranslate nohighlight">\([]\)</span> to <span class="math notranslate nohighlight">\(\bullet\)</span> and <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span> to a root node pointing to <span class="math notranslate nohighlight">\(x_1, ... x_n\)</span>. Here’s the same table but with trees!</p>
+<div class="pst-scrollable-table-container"><table class="table table-right">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p>factorization of <span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p>tree of <span class="math notranslate nohighlight">\(n\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\circ\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\bullet\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2^1\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3^1\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p3.svg"><img alt="3 as tree" src="../../_images/p3.svg" style="height: 50px;" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2^2\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p4.svg"><img alt="4 as tree" src="../../_images/p4.svg" style="height: 100px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5^1\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p5.svg"><img alt="5 as tree" src="../../_images/p5.svg" style="height: 50px;" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2^1 \times 3^1\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p6.svg"><img alt="6 as tree" src="../../_images/p6.svg" style="height: 50px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(7\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(7^1\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p7.svg"><img alt="7 as tree" src="../../_images/p7.svg" style="height: 50px;" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(8\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2^3\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p8.svg"><img alt="8 as tree" src="../../_images/p8.svg" style="height: 100px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(9\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3^2\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p9.svg"><img alt="9 as tree" src="../../_images/p9.svg" style="height: 100px;" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2^1 \times 5^1\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p10.svg"><img alt="10 as tree" src="../../_images/p10.svg" style="height: 50px;" /></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="padref" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>The padding axiom is kind of inelegant and I wish it wasn’t there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that <span class="math notranslate nohighlight">\(2 = 02 = 002 = 002.000\)</span>?</p>
+<p>The padding axiom is kind of inelegant and I wish it didn’t need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that <span class="math notranslate nohighlight">\(2 = 02 = 002 = 002.000\)</span>?</p>
 </aside>
 </aside>
 </section>
@@ -412,7 +547,7 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../prod.html"
+       href="prod.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -448,6 +583,7 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-the-problem">Fixing the Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism">Isomorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
   </nav></div>
 
@@ -462,7 +598,7 @@
   <div class="footer-item">
     
 <p class="component-author">
-By Prod Gang
+By ProdGang
 </p>
 
   </div>
@@ -478,6 +614,9 @@ By Prod Gang
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p> © Copyright I sure hope you do
+</div>
   </div>
   
 </div>
