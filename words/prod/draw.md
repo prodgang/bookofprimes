@@ -9,8 +9,8 @@ kernelspec:
   name: python3
 ---
 
-
-# Drawings
+(sections:draw)=
+# Draw
 
 Draw your favourite productive number! Navigate to {fa}`rocket` --> {guilabel}`Live Code`, wait for a minute and then drag the slider around.
 
@@ -70,12 +70,14 @@ def draw_tree(G, tree, pos=None, root_pos=(0, 0), ax=None):
 
 def d_to_p(x):
     if x == 0: return 0
-    if x == 1: return ()
+    if x == 1: return () # use tuples because can be hashed
+
+    assert x < 2**420, "something tells me this number isnt gonna be worth trying to factor..."
     
     factors = factorint(x)
     
-    # bit clunky. Could be improved if [] is infinitely long behind the scenes but always gets printed as short as possible
     max_prime = max(factors.keys())
+    assert max_prime in primes, "need more primes! Fix me please"
     mp_index = primes.index(max_prime)
     y = [0] * (mp_index + 1)
     
@@ -107,4 +109,15 @@ def update_plot(n):
 slider = widgets.IntSlider(value=1, min=1, max=70, step=1, description="n:")
 display(widgets.interactive(update_plot, n=slider))
 
+```
+
+
+This block lets you enter any number:
+```{code-cell} ipython3
+:tags: [thebe-init, hide-input]
+
+# Edit this line to choose any number you want
+n = 24
+
+d2tree(n)
 ```

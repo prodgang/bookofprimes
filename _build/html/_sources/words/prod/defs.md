@@ -1,7 +1,7 @@
 (sections:prod:defs)=
-# Definitions
+# Define
 
-We left off suggesting $8 = [3]$. Here's the problem: what the hell is $3$?! 
+We [left off](sections:prod) suggesting $8 = [3]$. Here's the problem: what the hell is $3$?! 
 
 
 ## Fixing the Problem
@@ -67,7 +67,64 @@ I([[[]], 0, []]) &= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
  &= 2^2 \times 1 \times 5 = 20.
 \end{align*}
 
-That was a little bit tedious but hopefully you can see how it works. 
+That was a little bit tedious but hopefully you can see how it works. In fact, $I$ works very well indeed. Behold the Fundamental Theorem of Productive Arithmetic:
+````{prf:theorem} 
+:label: ftpa
+$I$ is bijective, i.e. $\mathbb{\Pi} \simeq \mathbb{N}$
+````
+
+Pretentious names aside, this is not a huge surprise. Notice how the definition of $I$ in equation {eq}`INT1` is pretty much the same as {prf:ref}`fta`. In any case, you can look at the proof below if you want.
+
+
+````{dropdown} Click me for proof
+
+Hope you're ready for some [inductions](sections:numbers:induction)!
+
+First, we actually need a very boring lemma.
+
+```{prf:lemma}
+:label: boring-lemma
+$I(x) = 0 \implies x = 0$
+```
+```{prf:proof}
+Instead we'll show the contrapositive: $x \neq 0 \implies I(x) \neq 0$. 
+
+If $x \neq 0$, then $x = [x_1, ..., x_n]$. Then $I(x) = 2^{I(x_1)} \times ... \times p_n^{(x_n)} \geq 2^0 \times ... \times p_n^0 = 1$, so $I(x) > 0$. 
+```
+
+Now the real deal. Proof of {prf:ref}`ftpa`:
+
+```{prf:proof}
+
+
+  **Part 1: Injectivity**
+
+  Proof by induction the following statement: $\forall x,y \in \mathbb{\Pi}, I(x) = I(y) \implies x = y$. 
+
+  *Base case* ($x = 0$): Since $I(0) = 0 = I(y)$, then $y$ must be $0$ by {prf:ref}`boring-lemma`. Done.
+
+  *Inductive Step* ($x = [x_1, ..., x_n]$).
+
+  Suppose $I(x) = I(y)$, where $y = [y_1, ..., y_n]$ (padded with zeros if necessary). Assume that the following inductive hypothesis (IH) holds: $\forall x_i, I(x_i) = I(y_i) \implies x_i = y_i$. 
+
+  Since $0 \neq I(x)$, we can apply {prf:ref}`fta` to uniquely factor $I(x) = I(y)$ into exponents $e_1, ..., e_n$. By {eq}`INT1`, $e_i = I(x_i) = I(y_i)$. 
+  
+  Now apply IH to get $x_i = y_i$ which means $x = [x_1, ..., x_n] = [y_1, ..., y_n] = y$. Done.
+
+
+  **Part 2: Surjectivity**
+
+  Proof by strong induction on the following statement: $\forall n \in \mathbb{N}, \exists x \in \mathbb{\Pi}, I(x) = n$.
+
+  *Base case* ($n = 0$): $I(0) = 0$. Done.
+
+  *Inductive Step* ($n \geq 1$): Assume as inductive hypothesis that $\forall m < n, \exists x, I(x) = n$.
+
+  For factor $n$ into exponents $e_1, ..., e_k$. Since each $e_i < n$, IH holds and there exists $x_1, ..., x_k$ such that $I(x_i) = e_i$. Then $I([x_1, ..., x_k]) = 2^{I(x_1)} \times ... \times p_k^{I(x_k)} = 2^{e_1} \times ... \times p_k^{e_k} = n$. Done.
+
+```
+That's all. You'd
+````
 
 
 ## Examples
@@ -88,7 +145,7 @@ Here's a table of some numbers, their factorization and their productive represe
 | $9$    | $3^2$      | $[0, [[]]]$     |
 | $10$    | $2^1 \times 5^1$      | $[[], 0, []]$     |
 
-As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human readable way of writing prods: trees! All you have to do is substitute $0$ to $\circ$, $[]$ to $\bullet$ and $[x_1, ..., x_n]$ to a root node pointing to $x_1, ... x_n$. Here's the same table but with trees!
+As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human-readable way of writing prods: trees! All you have to do is substitute $0$ to $\circ$, $[]$ to $\bullet$ and $[x_1, ..., x_n]$ to a root node connected to $x_1, ..., x_n$. Here's the same table but with trees:
 
 ```{list-table}
 :align: right
@@ -158,6 +215,10 @@ As you can see already, it gets quite fiddly to parse these nested brackets. Luc
         :height: 50px
     ```
 ```
+
+If you want to see more examples, check out [this page](sections:draw) which allows you to draw any prod you want!
+
+That's all for now. In the next section, we'll take a look at the what you can do with them.
 
 [^padref]: The padding axiom is kind of inelegant and I wish it didn't need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that $2 = 02 = 002 = 002.000$?
 

@@ -21,7 +21,7 @@ For productive numbers to work, we're gonna need a similar guarantee that we can
 ````{prf:theorem} 
 :label: fta
 
-For any number $n > 1$, $n$ can be factored uniquely as $2^{e_1} \times 3^{e_2} \times ... p_k^{e_k}$, where $p_k$ is the $k$th prime number and $e_i \geq 0$. 
+For any number $n > 1$, $n$ can be factored uniquely as $2^{e_1} \times 3^{e_2} \times ... \times p_k^{e_k}$, where $p_k$ is the $k$th prime number and $e_i \geq 0$. 
 ````
 Those $e_i$ guys are going to play an important role, and I will call them the *exponents* of $n$. 
 
