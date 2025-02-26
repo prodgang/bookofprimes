@@ -1,4 +1,4 @@
-# Book of Primes
+# BOOK OF PRIMES
 
 This book is about numbers. But not the usual boring numbers you've had drilled into your head since you could barely talk or the numbers that made you decide math was dull and confusing. Instead, we're going to learn about *productive numbers*.
 
