@@ -122,7 +122,7 @@ Here's a table of some numbers, their factorization and their productive represe
 As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human-readable way of writing prods: trees! All you have to do is substitute $0$ to $\circ$, $[]$ to $\bullet$ and $[x_1, ..., x_n]$ to a root node connected to $x_1, ..., x_n$. Here's the same table but with trees:
 
 ```{list-table}
-:align: center -- doesnt seem to work
+:align: center 
 :header-rows: 1
 :widths: auto
 * - $n$
