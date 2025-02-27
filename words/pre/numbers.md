@@ -53,7 +53,7 @@ The equation {eq}`PA3` shouldn't come as much of a surprise. The second equation
 $1 + 1 = 2$
 ````
 
-````{prf:proof}
+````{prf:proof} (Baby's First Theorem)
 
 Remember that $1$ is defined as $S(0)$. So start with 
 
@@ -63,7 +63,7 @@ Now set $n = 0$ and $m = S(0)$, so that we can apply {eq}`PA4` and get:
 
 $S(0) + S(0) = S(0 + S(0))$
 
-Now apply {eq}`PA3` to get: 
+Now apply {eq}`PA3` inside the parentheses to get: 
 
 $S(0 + S(0)) = S(S(0))$
 

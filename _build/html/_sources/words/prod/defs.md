@@ -43,6 +43,7 @@ The first equation {eq}`PROD0` is not a surprise. The second {eq}`PROD1` is wher
 
 Let's see how these axioms interact. So we must start with $0$. Then by {eq}`PROD1`, $[0, 0]$ is a prod. By {eq}`PRODPAD` and our earlier convention $[0, 0] = [0] = []$. So $[[]]$ is a prod, and so is $[0, []]$ and $[[0, []]]$ and so on.
 
+(sections:prod:iso)=
 ## Isomorphism
 
 The interpretation of a productive number (i.e. what number it corresponds to) is given by the following recursive function $I: \mathbb{\Pi} \to \mathbb{N}$:
@@ -80,47 +81,20 @@ Pretentious names aside, this is not a huge surprise. Notice how the definition 
 
 Hope you're ready for some [inductions](sections:numbers:induction)!
 
-First, we actually need a very boring lemma.
-
-```{prf:lemma}
-:label: boring-lemma
-$I(x) = 0 \implies x = 0$
-```
-```{prf:proof}
-Instead we'll show the contrapositive: $x \neq 0 \implies I(x) \neq 0$. 
-
-If $x \neq 0$, then $x = [x_1, ..., x_n]$. Then $I(x) = 2^{I(x_1)} \times ... \times p_n^{(x_n)} \geq 2^0 \times ... \times p_n^0 = 1$, so $I(x) > 0$. 
-```
-
-Now the real deal. Proof of {prf:ref}`ftpa`:
-
 ```{prf:proof}
 
+Prove by strong induction the following statement: $\forall n \in \mathbb{N}, \exists ! p \in \mathbb{\Pi}, I(p) = n$
 
-  **Part 1: Injectivity**
+*Base cases*: 
 
-  Proof by induction the following statement: $\forall x,y \in \mathbb{\Pi}, I(x) = I(y) \implies x = y$. 
-
-  *Base case* ($x = 0$): Since $I(0) = 0 = I(y)$, then $y$ must be $0$ by {prf:ref}`boring-lemma`. Done.
-
-  *Inductive Step* ($x = [x_1, ..., x_n]$).
-
-  Suppose $I(x) = I(y)$, where $y = [y_1, ..., y_n]$ (padded with zeros if necessary). Assume that the following inductive hypothesis (IH) holds: $\forall x_i, I(x_i) = I(y_i) \implies x_i = y_i$. 
-
-  Since $0 \neq I(x)$, we can apply {prf:ref}`fta` to uniquely factor $I(x) = I(y)$ into exponents $e_1, ..., e_n$. By {eq}`INT1`, $e_i = I(x_i) = I(y_i)$. 
-  
-  Now apply IH to get $x_i = y_i$ which means $x = [x_1, ..., x_n] = [y_1, ..., y_n] = y$. Done.
+By {eq}`INT0`, $I(0) = 0$. This is unique, since $I(x) \geq 1$ for any $x \neq 0$ by {eq}`INT1`.
 
 
-  **Part 2: Surjectivity**
+For $n=1$, $I([0]) = 2^0 = 1$. This is unique since $[] = [0, ..., 0] = [0]$ by {eq}`PRODPAD`.
 
-  Proof by strong induction on the following statement: $\forall n \in \mathbb{N}, \exists x \in \mathbb{\Pi}, I(x) = n$.
+*Inductive step* ($n > 1$): Assume for inductive hypothesis (IH) $\forall m < n, \exists ! p, I(p) = m$.
 
-  *Base case* ($n = 0$): $I(0) = 0$. Done.
-
-  *Inductive Step* ($n \geq 1$): Assume as inductive hypothesis that $\forall m < n, \exists x, I(x) = n$.
-
-  For factor $n$ into exponents $e_1, ..., e_k$. Since each $e_i < n$, IH holds and there exists $x_1, ..., x_k$ such that $I(x_i) = e_i$. Then $I([x_1, ..., x_k]) = 2^{I(x_1)} \times ... \times p_k^{I(x_k)} = 2^{e_1} \times ... \times p_k^{e_k} = n$. Done.
+By {prf:ref}`fta`, $n$ factors uniquely into exponents $e_1, ..., e_k$. Since every $e_i < n$ (because x $n \geq p_i^{e_i}$ for each $i$), apply IH to find unique $x_i$ such that $I(x_i) = e_i$ for every $i$. Then by {eq}`INT1`, $I([x_1, ..., x_k]) = 2^{I(x_1)} \times ... \times p_k^{I(x_k)} = 2^{e_1} \times ... \times p_k^{e_k} = n$. Done.
 
 ```
 That's all. You'd
@@ -148,7 +122,7 @@ Here's a table of some numbers, their factorization and their productive represe
 As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human-readable way of writing prods: trees! All you have to do is substitute $0$ to $\circ$, $[]$ to $\bullet$ and $[x_1, ..., x_n]$ to a root node connected to $x_1, ..., x_n$. Here's the same table but with trees:
 
 ```{list-table}
-:align: right
+:align: center -- doesnt seem to work
 :header-rows: 1
 :widths: auto
 * - $n$
@@ -218,7 +192,7 @@ As you can see already, it gets quite fiddly to parse these nested brackets. Luc
 
 If you want to see more examples, check out [this page](sections:draw) which allows you to draw any prod you want!
 
-That's all for now. In the next section, we'll take a look at the what you can do with them.
+That's all for now. In the next section, we'll take a look at the what you can do with prods.
 
 [^padref]: The padding axiom is kind of inelegant and I wish it didn't need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that $2 = 02 = 002 = 002.000$?
 
