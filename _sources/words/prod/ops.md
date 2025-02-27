@@ -33,5 +33,9 @@ Next operation: multiplication. There's a very good case that you should be able
 :align: right
 ```
 
+You can literally see how four and three are just attached to each other side by side to give $12$! Indeed, any time $x,y$ don't share factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they *do* share factors, then we're back to the classic equation: $a^b \times a^c = a^{b+c}$. So multiplication reduces to addition. So multiplication is counter-productive.
+
+### Expontentiation
+
 ## Productive operations
 
