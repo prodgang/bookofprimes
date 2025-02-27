@@ -105,8 +105,8 @@ If you want to learn more about Peano Arithmetic, I recommend playing the natura
 
 Before ending on too positive of a note, I do want to trash talk the Peano axioms a bit. From a logical point of view, its great news that we have condensed so many numbers into so few rules. But don't you feel a small nagging sense of sadness to watch the weird and wonderful world of numbers being so coldly reduced into an endless sucession of symbolic successors? Well, I certainly do. That's why I present to you my solution: a slightly more complicated set of mechanical manipulations that reduce numbers to some slightly prettier symbols. But you'll have to be patient. We're not even halfway through this rambling introduction.
 
-
-    
+(sections:numbers:strong)=
+#### Strong Induction
 
 
 		

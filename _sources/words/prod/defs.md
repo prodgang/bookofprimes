@@ -1,7 +1,7 @@
 (sections:prod:defs)=
-# Definitions
+# Define
 
-We left off suggesting $8 = [3]$. Here's the problem: what the hell is $3$?! 
+We [left off](sections:prod) suggesting $8 = [3]$. Here's the problem: what the hell is $3$?! 
 
 
 ## Fixing the Problem
@@ -43,6 +43,7 @@ The first equation {eq}`PROD0` is not a surprise. The second {eq}`PROD1` is wher
 
 Let's see how these axioms interact. So we must start with $0$. Then by {eq}`PROD1`, $[0, 0]$ is a prod. By {eq}`PRODPAD` and our earlier convention $[0, 0] = [0] = []$. So $[[]]$ is a prod, and so is $[0, []]$ and $[[0, []]]$ and so on.
 
+(sections:prod:iso)=
 ## Isomorphism
 
 The interpretation of a productive number (i.e. what number it corresponds to) is given by the following recursive function $I: \mathbb{\Pi} \to \mathbb{N}$:
@@ -67,7 +68,37 @@ I([[[]], 0, []]) &= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
  &= 2^2 \times 1 \times 5 = 20.
 \end{align*}
 
-That was a little bit tedious but hopefully you can see how it works. 
+That was a little bit tedious but hopefully you can see how it works. In fact, $I$ works very well indeed. Behold the Fundamental Theorem of Productive Arithmetic:
+````{prf:theorem} 
+:label: ftpa
+$I$ is bijective, i.e. $\mathbb{\Pi} \simeq \mathbb{N}$
+````
+
+Pretentious names aside, this is not a huge surprise. Notice how the definition of $I$ in equation {eq}`INT1` is pretty much the same as {prf:ref}`fta`. In any case, you can look at the proof below if you want.
+
+
+````{dropdown} Click me for proof
+
+Hope you're ready for some [inductions](sections:numbers:induction)!
+
+```{prf:proof}
+
+Prove by strong induction the following statement: $\forall n \in \mathbb{N}, \exists ! p \in \mathbb{\Pi}, I(p) = n$
+
+*Base cases*: 
+
+By {eq}`INT0`, $I(0) = 0$. This is unique, since $I(x) \geq 1$ for any $x \neq 0$ by {eq}`INT1`.
+
+
+For $n=1$, $I([0]) = 2^0 = 1$. This is unique since $[] = [0, ..., 0] = [0]$ by {eq}`PRODPAD`.
+
+*Inductive step* ($n > 1$): Assume for inductive hypothesis (IH) $\forall m < n, \exists ! p, I(p) = m$.
+
+By {prf:ref}`fta`, $n$ factors uniquely into exponents $e_1, ..., e_k$. Since every $e_i < n$ (because x $n \geq p_i^{e_i}$ for each $i$), apply IH to find unique $x_i$ such that $I(x_i) = e_i$ for every $i$. Then by {eq}`INT1`, $I([x_1, ..., x_k]) = 2^{I(x_1)} \times ... \times p_k^{I(x_k)} = 2^{e_1} \times ... \times p_k^{e_k} = n$. Done.
+
+```
+That's all. You'd
+````
 
 
 ## Examples
@@ -88,10 +119,10 @@ Here's a table of some numbers, their factorization and their productive represe
 | $9$    | $3^2$      | $[0, [[]]]$     |
 | $10$    | $2^1 \times 5^1$      | $[[], 0, []]$     |
 
-As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human readable way of writing prods: trees! All you have to do is substitute $0$ to $\circ$, $[]$ to $\bullet$ and $[x_1, ..., x_n]$ to a root node pointing to $x_1, ... x_n$. Here's the same table but with trees!
+As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human-readable way of writing prods: trees! All you have to do is substitute $0$ to $\circ$, $[]$ to $\bullet$ and $[x_1, ..., x_n]$ to a root node connected to $x_1, ..., x_n$. Here's the same table but with trees:
 
 ```{list-table}
-:align: right
+:align: center -- doesnt seem to work
 :header-rows: 1
 :widths: auto
 * - $n$
@@ -158,6 +189,10 @@ As you can see already, it gets quite fiddly to parse these nested brackets. Luc
         :height: 50px
     ```
 ```
+
+If you want to see more examples, check out [this page](sections:draw) which allows you to draw any prod you want!
+
+That's all for now. In the next section, we'll take a look at the what you can do with prods.
 
 [^padref]: The padding axiom is kind of inelegant and I wish it didn't need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that $2 = 02 = 002 = 002.000$?
 

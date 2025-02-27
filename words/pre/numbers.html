@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
   
@@ -181,8 +181,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prod/prod.html">PROD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../prod/defs.html">Definitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prod/draw.html">Drawings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prod/defs.html">Define</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prod/ops.html">Operate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prod/draw.html">Draw</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../post/post.html">POST</a></li>
@@ -332,7 +333,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peano-arithmetic">Peano Arithmetic</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction">Induction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction">Induction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-induction">Strong Induction</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-bases">Number Bases</a></li>
 </ul>
 </li>
@@ -401,6 +405,9 @@
 <p>It may feel strange that we can get away with just assuming <span class="math notranslate nohighlight">\(x + 0 = x\)</span> in the second part, when that looks a lot like the thing we were originally proving. But that’s the beauty of induction: assume the thing you’re trying to prove is indeed true and then just show that it gets inherited by the sucessor. The role of <span class="math notranslate nohighlight">\(\phi(0)\)</span> (which is often called the base case) is to kick off the chain of inheritance in the first place, but that’s usually even easier to prove than inheritance.</p>
 <p>If you want to learn more about Peano Arithmetic, I recommend playing the natural numbers game (link). It’s where I learnt about all this and enjoyed it a lot.</p>
 <p>Before ending on too positive of a note, I do want to trash talk the Peano axioms a bit. From a logical point of view, its great news that we have condensed so many numbers into so few rules. But don’t you feel a small nagging sense of sadness to watch the weird and wonderful world of numbers being so coldly reduced into an endless sucession of symbolic successors? Well, I certainly do. That’s why I present to you my solution: a slightly more complicated set of mechanical manipulations that reduce numbers to some slightly prettier symbols. But you’ll have to be patient. We’re not even halfway through this rambling introduction.</p>
+<section id="strong-induction">
+<span id="sections-numbers-strong"></span><h4>Strong Induction<a class="headerlink" href="#strong-induction" title="Link to this heading">#</a></h4>
+</section>
 </section>
 <section id="number-bases">
 <h3>Number Bases<a class="headerlink" href="#number-bases" title="Link to this heading">#</a></h3>
@@ -474,7 +481,10 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peano-arithmetic">Peano Arithmetic</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction">Induction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction">Induction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-induction">Strong Induction</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-bases">Number Bases</a></li>
 </ul>
 </li>
