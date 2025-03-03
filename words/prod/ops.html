@@ -336,6 +336,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition">Addition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expontentiation">Expontentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">List operations</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productive-operations">Productive operations</a></li>
@@ -364,18 +365,59 @@
 </section>
 <section id="multiplication">
 <h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
-<p>Next operation: multiplication. There’s a very good case that you should be able to define multiplication productively: the fundamental idea behind prods is multiplying primes so that’s kind of what they’re all about. There’s even some quite good evidence for this. Take a look at the trees of <span class="math notranslate nohighlight">\(4,3,12\)</span> and remember that <span class="math notranslate nohighlight">\(12 = 4 \times 3\)</span>:</p>
+<p>Next operation: multiplication. There’s a very good case that you should be able to define multiplication productively: the fundamental idea behind prods is multiplying primes so that’s kind of what they’re all about. We can even see this happen with an example. Take a look at the trees of <span class="math notranslate nohighlight">\(4,3,12\)</span> and remember that <span class="math notranslate nohighlight">\(12 = 4 \times 3\)</span>:</p>
 <img alt="4 as tree" class="align-left" src="../../_images/p4.svg" />
 <img alt="3 as tree" class="align-center" src="../../_images/p3.svg" />
 <img alt="12 as tree" class="align-right" src="../../_images/p12.svg" />
-<p>You can literally see how four and three are just attached to each other side by side to give <span class="math notranslate nohighlight">\(12\)</span>! Indeed, any time <span class="math notranslate nohighlight">\(x,y\)</span> don’t share factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they <em>do</em> share factors, then we’re back to the classic equation: <span class="math notranslate nohighlight">\(a^b \times a^c = a^{b+c}\)</span>. So multiplication reduces to addition. So multiplication is counter-productive.</p>
+<p>You can literally see how four and three are just attached to each other side by side to give <span class="math notranslate nohighlight">\(12\)</span>! Indeed, any time <span class="math notranslate nohighlight">\(x,y\)</span> don’t share any factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they <em>do</em> share factors, then we’re back to the classic equation: <span class="math notranslate nohighlight">\(a^b \times a^c = a^{b+c}\)</span>. So multiplication reduces to addition. So multiplication is counter-productive.</p>
 </section>
 <section id="expontentiation">
 <h3>Expontentiation<a class="headerlink" href="#expontentiation" title="Link to this heading">#</a></h3>
+<p>There’s a similar story for exponentiation. While you can get away with writing <span class="math notranslate nohighlight">\(2^x\)</span> as <span class="math notranslate nohighlight">\([x]\)</span> and even <span class="math notranslate nohighlight">\(6^x = [x, x]\)</span>, as soon as you have nested powers you have to eventually use the fact that <span class="math notranslate nohighlight">\((x^y)^z = x^{y \times z}\)</span>. So expontentiation reduces to multiplication. So expontention is counter-productive. And so on.</p>
+<p>It’s kind of interesting that none of the usual arithmetic operations work. Even though these counter-examples were not hard to find, it would have been reasonable to expect that defining prods based on taking the product of prime powers would at least allow you to do products and powers. But you can’t. So we need to think more carefully.</p>
+</section>
+<section id="list-operations">
+<h3>List operations<a class="headerlink" href="#list-operations" title="Link to this heading">#</a></h3>
+<p>A fun way to test the rapidly developing abilities of language models is to try to get them to recreate prod arithmetic from scratch. Its a useful test case because there’s been no trace of prods on the internet (until now) and so they really are required to work things out from scratch, as opposed to memorizing the thousands of training examples they’ve seen. In the past few years, they’ve gone from being incapable of consistently writing numbers productively to proving <a class="reference internal" href="defs.html#ftpa">Theorem 5</a> given only the axioms.</p>
+<p>However, even the newest models continue to suck at coming up with productive operations. What usually happens is they propose some additive operation, I repeat the argument from above to show its not productive and then they switch to list based operations.</p>
+<p>For example, given two lists you can <em>concantenate</em> them which just means stick one on the end of the other one. So <span class="math notranslate nohighlight">\([a, b, c] ++ [d, e] = [a, b, c, d, e]\)</span>. But this is not a productive operation because it does not respect the padding axiom <a class="reference internal" href="defs.html#equation-prodpad">(9)</a>: you can pad then concatenate to get <span class="math notranslate nohighlight">\([0] ++ [[]] = [0, []]\)</span> or you can concatenate then pad to get <span class="math notranslate nohighlight">\([] ++ [[]] = [[]] = [[], 0]\)</span>, which is very different.</p>
+<p>So operations that are natural for lists are not necessarily productive.</p>
 </section>
 </section>
 <section id="productive-operations">
 <h2>Productive operations<a class="headerlink" href="#productive-operations" title="Link to this heading">#</a></h2>
+<p>Let’s take a step back. Rather than trying to reinvent the wheel, let’s just find the simplest possible productive operation and see what it ends up doing.</p>
+<p>The simplest prod is <span class="math notranslate nohighlight">\(0\)</span> and the simplest thing to do with <span class="math notranslate nohighlight">\(0\)</span> is nothing. So let’s define an operation that does nothing with zero:</p>
+<div class="math notranslate nohighlight" id="equation-cup0">
+<span class="eqno">(12)<a class="headerlink" href="#equation-cup0" title="Link to this equation">#</a></span>\[   0 \sqcup x = x = x \sqcup 0\]</div>
+<p>I’ve chosen the <span class="math notranslate nohighlight">\(\sqcup\)</span> symbol to suggestively look like the set union symbol, but square because prod has square vibes. But <a class="reference internal" href="#equation-cup0">(12)</a> isn’t enough for a fully fledged operation, because what happens to nonzero prods? What about the simplest possible thing:</p>
+<div class="math notranslate nohighlight" id="equation-cup1">
+<span class="eqno">(13)<a class="headerlink" href="#equation-cup1" title="Link to this equation">#</a></span>\[   [x_1, ..., x_n] \sqcup [y_1, ..., y_n] = [x_1 \sqcup y_1, ..., x_n \sqcup y_n]\]</div>
+<p>On trees this looks like:</p>
+<a class="reference internal image-reference" href="../../_images/cup1.svg"><img alt="cup tree" class="align-center" src="../../_images/cup1.svg" style="width: 500px;" /></a>
+<p>So it’s recursive! All <a class="reference internal" href="#equation-cup1">(13)</a> does is the pass the work down one level. But that’s enough because all prods eventually with zeros and then <a class="reference internal" href="#equation-cup0">(12)</a> kicks in. By the way, you can safely assume that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are both the same length in <a class="reference internal" href="#equation-cup1">(13)</a> by padding with zeros.</p>
+<p>Let’s see it in action! Here’s a detailed walkthrough for how to compute <span class="math notranslate nohighlight">\(4 \sqcup 3\)</span>:</p>
+<a class="reference internal image-reference" href="../../_images/egcup1.svg"><img alt="cup tree" class="align-center" src="../../_images/egcup1.svg" style="width: 500px;" /></a>
+<p>Here’s a more complicated example: <span class="math notranslate nohighlight">\(40 \sqcup 18\)</span> (remember that <span class="math notranslate nohighlight">\(40 = 2^3 \times 5\)</span> and <span class="math notranslate nohighlight">\(18 = 2 \times 3^2\)</span>):</p>
+<a class="reference internal image-reference" href="../../_images/egcup2.svg"><img alt="cup tree" class="align-center" src="../../_images/egcup2.svg" style="width: 750px;" /></a>
+<p>The trick is to start off with everything padded so that they have roughly the same shape, then work bottom-up.</p>
+<div class="pst-scrollable-table-container"><table class="table table-center">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x \sqcup y\)</span></p></th>
+<th class="head"><p>as a number</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+<td><p>TODO</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -448,6 +490,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition">Addition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expontentiation">Expontentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">List operations</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productive-operations">Productive operations</a></li>

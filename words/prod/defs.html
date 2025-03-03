@@ -401,9 +401,12 @@ I([[[]], 0, []]) &amp;= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
 <p class="sd-card-text"><em>Inductive step</em> (<span class="math notranslate nohighlight">\(n &gt; 1\)</span>): Assume for inductive hypothesis (IH) <span class="math notranslate nohighlight">\(\forall m &lt; n, \exists ! p, I(p) = m\)</span>.</p>
 <p class="sd-card-text">By <a class="reference internal" href="prod.html#fta">Theorem 4</a>, <span class="math notranslate nohighlight">\(n\)</span> factors uniquely into exponents <span class="math notranslate nohighlight">\(e_1, ..., e_k\)</span>. Since every <span class="math notranslate nohighlight">\(e_i &lt; n\)</span> (because x <span class="math notranslate nohighlight">\(n \geq p_i^{e_i}\)</span> for each <span class="math notranslate nohighlight">\(i\)</span>), apply IH to find unique <span class="math notranslate nohighlight">\(x_i\)</span> such that <span class="math notranslate nohighlight">\(I(x_i) = e_i\)</span> for every <span class="math notranslate nohighlight">\(i\)</span>. Then by <a class="reference internal" href="#equation-int1">(11)</a>, <span class="math notranslate nohighlight">\(I([x_1, ..., x_k]) = 2^{I(x_1)} \times ... \times p_k^{I(x_k)} = 2^{e_1} \times ... \times p_k^{e_k} = n\)</span>. Done.</p>
 </div>
-<p class="sd-card-text">That’s all. You’d</p>
 </div>
-</details></section>
+</details><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#ftpa">Theorem 5</a> is a big deal. It’s so fundamental that I won’t really explicitly mention when I’m using it, for example refering to <span class="math notranslate nohighlight">\(x\)</span> when I technically am talking about <span class="math notranslate nohighlight">\(I(x)\)</span>, and vice-versa.</p>
+</div>
+</section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <p>Here’s a table of some numbers, their factorization and their productive representation. Enjoy!</p>

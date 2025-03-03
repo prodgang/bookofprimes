@@ -97,9 +97,12 @@ For $n=1$, $I([0]) = 2^0 = 1$. This is unique since $[] = [0, ..., 0] = [0]$ by 
 By {prf:ref}`fta`, $n$ factors uniquely into exponents $e_1, ..., e_k$. Since every $e_i < n$ (because x $n \geq p_i^{e_i}$ for each $i$), apply IH to find unique $x_i$ such that $I(x_i) = e_i$ for every $i$. Then by {eq}`INT1`, $I([x_1, ..., x_k]) = 2^{I(x_1)} \times ... \times p_k^{I(x_k)} = 2^{e_1} \times ... \times p_k^{e_k} = n$. Done.
 
 ```
-That's all. You'd
+
 ````
 
+```{note}
+{prf:ref}`ftpa` is a big deal. It's so fundamental that I won't really explicitly mention when I'm using it, for example refering to $x$ when I technically am talking about $I(x)$, and vice-versa.  
+```
 
 ## Examples
 
