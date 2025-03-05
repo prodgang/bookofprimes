@@ -15,6 +15,7 @@ chapters:
   sections:
     - file: words/prod/defs
     - file: words/prod/ops
+    - file: words/prod/latt
     - file: words/prod/draw
 - file: words/post/post
   title: POST

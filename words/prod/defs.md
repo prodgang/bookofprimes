@@ -26,7 +26,7 @@ So here it is. The formal definition of the set of prods $\mathbb{\Pi}$:
 
 ```{math}
 :label: PROD1
-    x_1 \in \mathbb{\Pi}, x_2 \in \mathbb{\Pi}, ..., x_n \in \mathbb{\Pi} \implies [x_1, x_2, ..., x_n] \in \mathbb{\Pi}
+    \{x_1, x_2, ... x_n \} \subseteq \mathbb{\Pi} \implies [x_1, x_2, ..., x_n] \in \mathbb{\Pi}
 ```
 
 
@@ -41,12 +41,12 @@ That's it. The rest is commentary.
 
 The first equation {eq}`PROD0` is not a surprise. The second {eq}`PROD1` is where all the action happens. The third {eq}`PRODPAD` just says you can pad a prod with zeros without changing it[^padref].
 
-Let's see how these axioms interact. So we must start with $0$. Then by {eq}`PROD1`, $[0, 0]$ is a prod. By {eq}`PRODPAD` and our earlier convention $[0, 0] = [0] = []$. So $[[]]$ is a prod, and so is $[0, []]$ and $[[0, []]]$ and so on.
+Let's see how these axioms interact. So we must start with $0$. Then by {eq}`PROD1`, $[0, 0]$ is a prod. By {eq}`PRODPAD` and our earlier convention $[0, 0] = [0] = []$. So $[[]]$ is a prod, and so is $[0, []]$ and $[[0, []], 0, []]$ and so on.
 
 (sections:prod:iso)=
 ## Isomorphism
 
-The interpretation of a productive number (i.e. what number it corresponds to) is given by the following recursive function $I: \mathbb{\Pi} \to \mathbb{N}$:
+The interpretation of a productive number (i.e. what additive number it corresponds to) is given by the following recursive function $I: \mathbb{\Pi} \to \mathbb{N}$:
 
 ```{math}
 :label: INT0
@@ -58,7 +58,7 @@ The interpretation of a productive number (i.e. what number it corresponds to) i
 :label: INT1
     I([x_1, x_2, ..., x_n]) = 2^{I(x_1)} \times 3^{I(x_2)} \times ... \times p_n^{I(x_n)}
 ```
-(where $p_n$ is the nth prime)
+($p_n$ is the nth prime)
 
 As an example, let's work out $I([[[]], 0, []])$. Remember that $[]$ is just shorthand for $[0]$ so $I([]) = 2^0 = 1$. So: 
 \begin{align*}
@@ -191,11 +191,17 @@ As you can see already, it gets quite fiddly to parse these nested brackets. Luc
         :alt: 10 as tree
         :height: 50px
     ```
+* - $12$
+  - $2^2 \times 3^1$
+  - ```{image} ../../tikz/p12.svg
+        :alt: 12 as tree
+        :height: 100px
+    ```
 ```
 
 If you want to see more examples, check out [this page](sections:draw) which allows you to draw any prod you want!
 
-That's all for now. In the next section, we'll take a look at the what you can do with prods.
+That's all for now. In the [next section](sections:prod:ops), we'll take a look at the what you can do with prods.
 
 [^padref]: The padding axiom is kind of inelegant and I wish it didn't need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that $2 = 02 = 002 = 002.000$?
 
