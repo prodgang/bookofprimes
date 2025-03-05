@@ -7,11 +7,11 @@ In this section, we'll take a look at some extremely simple operations that do s
 
 ## Counter-productive operations
 
-My criteria for a bad operation is that it cannot be defined in a similar manner to productive numbers themselves. We'll see that counting is a bad operation - hence counter-productive. Haha.
+My criteria for a bad operation is that it cannot be defined in a form that's coherent with productive numbers themselves. We'll see that counting is a bad operation - hence counter-productive. Haha.
 
 ### Addition
 
-Recall that [Peano arithmetic](sections:numbers:peano) kicks off by defining addition. How do you think we can define addition in productive arithmetic? 
+Recall that [Peano arithmetic](sections:numbers:peano) kicks off by defining addition. How do you think we could define addition in productive arithmetic? 
 
 The quick answer is that you can't. Just adding one to a number will change its factorization properties in very unpredictable ways. Basically all you can guarantee is that its factors will be completely different. So its not gonna happen. I don't know how to formally prove this, so if you don't believe me just try it yourself.
 
@@ -55,17 +55,19 @@ So operations that are natural for lists are not necessarily productive.
 
 Let's take a step back. Rather than trying to reinvent the wheel, let's just find the simplest possible productive operation and see what it ends up doing. 
 
+### Grokking Graft
+
 The simplest prod is $0$ and the simplest thing to do with $0$ is nothing. So let's define an operation that does nothing with zero:
 
 ```{math}
-:label: CUP0
+:label: GRAFT0
    0 \sqcup x = x = x \sqcup 0
 ```
 
-I've chosen the $\sqcup$ symbol to suggestively look like the set union symbol, but square because prod has square vibes. But {eq}`CUP0` isn't enough for a fully fledged operation, because what happens to nonzero prods? What about the simplest possible thing:
+I've chosen the $\sqcup$ symbol to suggestively look like the set union symbol, and made it square because prod has square vibes. But {eq}`GRAFT0` isn't enough for a fully fledged operation, because what happens to nonzero prods? What about the simplest possible thing:
 
 ```{math}
-:label: CUP1
+:label: GRAFT1
    [x_1, ..., x_n] \sqcup [y_1, ..., y_n] = [x_1 \sqcup y_1, ..., x_n \sqcup y_n]
 ```
 On trees this looks like:
@@ -75,7 +77,11 @@ On trees this looks like:
    :width: 500px
 ```
 
-So it's recursive! All {eq}`CUP1` does is the pass the work down one level. But that's enough because all prods eventually with zeros and then {eq}`CUP0` kicks in. By the way, you can safely assume that $x$ and $y$ are both the same length in {eq}`CUP1` by padding with zeros. 
+So it's recursive! All {eq}`GRAFT1` does is the pass the work down one level. But that's enough because all prods eventually end with zeros and then {eq}`GRAFT0` kicks in. By the way, you can safely assume that $x$ and $y$ are both the same length in {eq}`GRAFT1` by padding the shorter one with zeros. 
+
+```{admonition} Historical Clarification
+Just because I'm currently claiming this is the simplest possible operation, doesn't mean it was the first one I wrote down! In fact, the first operation I came up with was not well-defined. I found this out by trying to get python to compute it for me on the first 50 numbers. Python complained, so I mindlessly messed around with the base cases until something worked. The end result was something that could be eventually boiled down to {eq}`GRAFT0` and {eq}`GRAFT1`. So python deserves the credit for this one.
+```
 
 Let's see it in action! Here's a detailed walkthrough for how to compute $4 \sqcup 3$:
 ```{image} ../../tikz/egcup1.svg
@@ -85,14 +91,14 @@ Let's see it in action! Here's a detailed walkthrough for how to compute $4 \sqc
 ````
 
 
-Here's a more complicated example: $40 \sqcup 18$ (remember that $40 = 2^3 \times 5$ and $18 = 2 \times 3^2$):
+Here's a more complicated example: $40 \sqcup 90$ (remember that $40 = 2^3 \times 5$ and $90 = 2 \times 3^2 \times 5$):
 ```{image} ../../tikz/egcup2.svg
    :alt: cup tree
    :align: center
    :width: 750px
 ````
 
-The trick is to start off with everything padded so that they have roughly the same shape, then work bottom-up.
+The trick is to start off with everything padded so that they have roughly the same shape, then work bottom-up. Here's a few more examples:
 
 
 ```{list-table}
@@ -102,9 +108,224 @@ The trick is to start off with everything padded so that they have roughly the s
 * - $x$
   - $y$
   - $x \sqcup y$
-  - as a number
-* - $2$
-  - $3$
-  - $5$
-  - TODO
+  - as numbers
+* - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+         :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - $2 \sqcup 2 = 2$
+* - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p3.svg
+        :alt: 3 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p6.svg
+        :alt: 6 as tree
+        :height: 50px
+        :align: center
+    ```
+  - $2 \sqcup 3 = 6$
+* - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p4.svg
+        :alt: 4 as tree
+        :height: 100px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p4.svg
+        :alt: 4 as tree
+        :height: 100px
+        :align: center
+    ```
+  - $2 \sqcup 4 = 4$
+* - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p5.svg
+        :alt: 5 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p10.svg
+        :alt: 10 as tree
+        :height: 50px
+        :align: center
+    ```
+  - $2 \sqcup 5 = 10$
+* - ```{image} ../../tikz/p4.svg
+        :alt: 2 as tree
+        :height: 100px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p8.svg
+        :alt: 3 as tree
+        :height: 100px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p64.svg
+        :alt: 64 as tree
+        :height: 100px
+        :align: center
+    ```
+  - $4 \sqcup 8 = 64$
 ```
+
+If you can't see the pattern yet, I encourage you to try some examples out yourself either by hand or with [this code](sections:draw:ops).
+
+The easiest way to understand $x \sqcup y$ is to imagine placing $x$ on top of $y$ and keeping all the longest branches. When botanists merge trees together like this its called grafting, so I call $x \sqcup y$ the **graft** of $x$ and $y$. 
+
+If you look at the final column of the table, you might notice some other patterns: 
+1. When $x$ and $y$ don't share factors, they are multiplied.
+2. $x \sqcup x = x$. You can see the proof of that below, which is also our first example of a purely productive proof.
+3. When $x \neq y$ but they do share some factors, those factors are combined. 
+
+````{dropdown} Click me for proof of idempotence
+
+```{prf:proof} ($x \sqcup x = x$)
+
+   Proof by induction!
+
+   Base case ($x=0$): $0 \sqcup 0 = 0$ by {eq}`GRAFT0`.
+
+   Inductive step ($x = [x_1, ..., x_n]$): Assume for inductive hypothesis that $x_i \sqcup x_i = x_i$. 
+
+   Then $x \sqcup x = [x_1, ..., x_n] \sqcup [x_1, ..., x_n] = [x_1 \sqcup x_1, ..., x_n \sqcup x_n] = [x_1, ..., x_n] = x$, where the third equality comes from {eq}`GRAFT1` and the fourth from IH. 
+   
+   Done.
+```
+
+````
+
+
+Those properties make grafting look a lot like LCM. I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). This has dramatic consequences: $LCM(4, 8) = 8$, but $4 \sqcup 8 = 64 = 2^6$. In this case, the exponents were multiplied but that's just because the expontents $2$ and $3$ don't share factors (try out an example where they do like $4 \sqcup 16$). 
+
+We'll see in the [next section](sections:lattice) that graft shares a lot of *algebraic* properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to understand graft additively.
+
+### Proudly Pruning
+
+We've seen with graft that a very simple definition can produce quite a cool operation. So why not do it again? There's a very natural dual operation to graft, which I will denote $x \sqcap y$, that can be defined as follows:
+
+```{math}
+:label: PRUNE0
+   0 \sqcap x = 0 = x \sqcap 0
+```
+
+```{math}
+:label: PRUNE1
+   [x_1, ..., x_n] \sqcap [y_1, ..., y_n] = [x_1 \sqcap y_1, ..., x_n \sqcap y_n]
+```
+
+This is almost identical to graft. The only real difference is that the base case {eq}`PRUNE0` destroys branches where {eq}`GRAFT0` preserves them. Since lopping branches off trees is called pruning, I call the operation $x \sqcap y$ the **prune** of $x$ and $y$. Here's a new table of examples:
+
+```{list-table}
+:align: center 
+:header-rows: 1
+:widths: auto
+* - $x$
+  - $y$
+  - $x \sqcap y$
+  - as numbers
+* - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+         :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - $2 \sqcap 2 = 2$
+* - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p3.svg
+        :alt: 3 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p1.svg
+        :alt: 1 as tree
+        :height: 25px
+        :align: center
+    ```
+  - $2 \sqcap 3 = 1$
+* - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p4.svg
+        :alt: 4 as tree
+        :height: 100px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 100px
+        :align: center
+    ```
+  - $2 \sqcap 4 = 2$
+* - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p5.svg
+        :alt: 5 as tree
+        :height: 50px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p1.svg
+        :alt: 1 as tree
+        :height: 25px
+        :align: center
+    ```
+  - $2 \sqcap 5 = 1$
+* - ```{image} ../../tikz/p4.svg
+        :alt: 2 as tree
+        :height: 100px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p8.svg
+        :alt: 3 as tree
+        :height: 100px
+        :align: center
+    ```
+  - ```{image} ../../tikz/p2.svg
+        :alt: 2 as tree
+        :height: 50px
+        :align: center
+    ```
+  - $4 \sqcap 8 = 2$
+```
+
+Hopefully you can see that pruning is basically just GCD but with same differences as prune/LCM. For example, $gcd(4, 8) = 4$ but $4 \sqcap 8 = 2$. As before, you can play around with [the code](sections:draw:ops) if you want. 

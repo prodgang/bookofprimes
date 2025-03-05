@@ -68,7 +68,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Draw" href="draw.html" />
+    <link rel="next" title="Lattices" href="latt.html" />
     <link rel="prev" title="Define" href="defs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,6 +183,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="prod.html">PROD</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="defs.html">Define</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Operate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latt.html">Lattices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="draw.html">Draw</a></li>
 </ul>
 </details></li>
@@ -339,7 +340,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">List operations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productive-operations">Productive operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productive-operations">Productive operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grokking-graft">Grokking Graft</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proudly-pruning">Proudly Pruning</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -357,10 +362,10 @@
 <p>In this section, we’ll take a look at some extremely simple operations that do some extremely cool things. But first, let’s take a look at some bad operations.</p>
 <section id="counter-productive-operations">
 <h2>Counter-productive operations<a class="headerlink" href="#counter-productive-operations" title="Link to this heading">#</a></h2>
-<p>My criteria for a bad operation is that it cannot be defined in a similar manner to productive numbers themselves. We’ll see that counting is a bad operation - hence counter-productive. Haha.</p>
+<p>My criteria for a bad operation is that it cannot be defined in a form that’s coherent with productive numbers themselves. We’ll see that counting is a bad operation - hence counter-productive. Haha.</p>
 <section id="addition">
 <h3>Addition<a class="headerlink" href="#addition" title="Link to this heading">#</a></h3>
-<p>Recall that <a class="reference internal" href="../pre/numbers.html#sections-numbers-peano"><span class="std std-ref">Peano arithmetic</span></a> kicks off by defining addition. How do you think we can define addition in productive arithmetic?</p>
+<p>Recall that <a class="reference internal" href="../pre/numbers.html#sections-numbers-peano"><span class="std std-ref">Peano arithmetic</span></a> kicks off by defining addition. How do you think we could define addition in productive arithmetic?</p>
 <p>The quick answer is that you can’t. Just adding one to a number will change its factorization properties in very unpredictable ways. Basically all you can guarantee is that its factors will be completely different. So its not gonna happen. I don’t know how to formally prove this, so if you don’t believe me just try it yourself.</p>
 </section>
 <section id="multiplication">
@@ -387,37 +392,163 @@
 <section id="productive-operations">
 <h2>Productive operations<a class="headerlink" href="#productive-operations" title="Link to this heading">#</a></h2>
 <p>Let’s take a step back. Rather than trying to reinvent the wheel, let’s just find the simplest possible productive operation and see what it ends up doing.</p>
+<section id="grokking-graft">
+<h3>Grokking Graft<a class="headerlink" href="#grokking-graft" title="Link to this heading">#</a></h3>
 <p>The simplest prod is <span class="math notranslate nohighlight">\(0\)</span> and the simplest thing to do with <span class="math notranslate nohighlight">\(0\)</span> is nothing. So let’s define an operation that does nothing with zero:</p>
-<div class="math notranslate nohighlight" id="equation-cup0">
-<span class="eqno">(12)<a class="headerlink" href="#equation-cup0" title="Link to this equation">#</a></span>\[   0 \sqcup x = x = x \sqcup 0\]</div>
-<p>I’ve chosen the <span class="math notranslate nohighlight">\(\sqcup\)</span> symbol to suggestively look like the set union symbol, but square because prod has square vibes. But <a class="reference internal" href="#equation-cup0">(12)</a> isn’t enough for a fully fledged operation, because what happens to nonzero prods? What about the simplest possible thing:</p>
-<div class="math notranslate nohighlight" id="equation-cup1">
-<span class="eqno">(13)<a class="headerlink" href="#equation-cup1" title="Link to this equation">#</a></span>\[   [x_1, ..., x_n] \sqcup [y_1, ..., y_n] = [x_1 \sqcup y_1, ..., x_n \sqcup y_n]\]</div>
+<div class="math notranslate nohighlight" id="equation-graft0">
+<span class="eqno">(12)<a class="headerlink" href="#equation-graft0" title="Link to this equation">#</a></span>\[   0 \sqcup x = x = x \sqcup 0\]</div>
+<p>I’ve chosen the <span class="math notranslate nohighlight">\(\sqcup\)</span> symbol to suggestively look like the set union symbol, and made it square because prod has square vibes. But <a class="reference internal" href="#equation-graft0">(12)</a> isn’t enough for a fully fledged operation, because what happens to nonzero prods? What about the simplest possible thing:</p>
+<div class="math notranslate nohighlight" id="equation-graft1">
+<span class="eqno">(13)<a class="headerlink" href="#equation-graft1" title="Link to this equation">#</a></span>\[   [x_1, ..., x_n] \sqcup [y_1, ..., y_n] = [x_1 \sqcup y_1, ..., x_n \sqcup y_n]\]</div>
 <p>On trees this looks like:</p>
 <a class="reference internal image-reference" href="../../_images/cup1.svg"><img alt="cup tree" class="align-center" src="../../_images/cup1.svg" style="width: 500px;" /></a>
-<p>So it’s recursive! All <a class="reference internal" href="#equation-cup1">(13)</a> does is the pass the work down one level. But that’s enough because all prods eventually with zeros and then <a class="reference internal" href="#equation-cup0">(12)</a> kicks in. By the way, you can safely assume that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are both the same length in <a class="reference internal" href="#equation-cup1">(13)</a> by padding with zeros.</p>
+<p>So it’s recursive! All <a class="reference internal" href="#equation-graft1">(13)</a> does is the pass the work down one level. But that’s enough because all prods eventually end with zeros and then <a class="reference internal" href="#equation-graft0">(12)</a> kicks in. By the way, you can safely assume that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are both the same length in <a class="reference internal" href="#equation-graft1">(13)</a> by padding the shorter one with zeros.</p>
+<div class="admonition-historical-clarification admonition">
+<p class="admonition-title">Historical Clarification</p>
+<p>Just because I’m currently claiming this is the simplest possible operation, doesn’t mean it was the first one I wrote down! In fact, the first operation I came up with was not well-defined. I found this out by trying to get python to compute it for me on the first 50 numbers. Python complained, so I mindlessly messed around with the base cases until something worked. The end result was something that could be eventually boiled down to <a class="reference internal" href="#equation-graft0">(12)</a> and <a class="reference internal" href="#equation-graft1">(13)</a>. So python deserves the credit for this one.</p>
+</div>
 <p>Let’s see it in action! Here’s a detailed walkthrough for how to compute <span class="math notranslate nohighlight">\(4 \sqcup 3\)</span>:</p>
 <a class="reference internal image-reference" href="../../_images/egcup1.svg"><img alt="cup tree" class="align-center" src="../../_images/egcup1.svg" style="width: 500px;" /></a>
-<p>Here’s a more complicated example: <span class="math notranslate nohighlight">\(40 \sqcup 18\)</span> (remember that <span class="math notranslate nohighlight">\(40 = 2^3 \times 5\)</span> and <span class="math notranslate nohighlight">\(18 = 2 \times 3^2\)</span>):</p>
+<p>Here’s a more complicated example: <span class="math notranslate nohighlight">\(40 \sqcup 90\)</span> (remember that <span class="math notranslate nohighlight">\(40 = 2^3 \times 5\)</span> and <span class="math notranslate nohighlight">\(90 = 2 \times 3^2 \times 5\)</span>):</p>
 <a class="reference internal image-reference" href="../../_images/egcup2.svg"><img alt="cup tree" class="align-center" src="../../_images/egcup2.svg" style="width: 750px;" /></a>
-<p>The trick is to start off with everything padded so that they have roughly the same shape, then work bottom-up.</p>
+<p>The trick is to start off with everything padded so that they have roughly the same shape, then work bottom-up. Here’s a few more examples:</p>
 <div class="pst-scrollable-table-container"><table class="table table-center">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(x \sqcup y\)</span></p></th>
-<th class="head"><p>as a number</p></th>
+<th class="head"><p>as numbers</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
-<td><p>TODO</p></td>
+<tr class="row-even"><td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(2 \sqcup 2 = 2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p3.svg"><img alt="3 as tree" class="align-center" src="../../_images/p3.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p6.svg"><img alt="6 as tree" class="align-center" src="../../_images/p6.svg" style="height: 50px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(2 \sqcup 3 = 6\)</span></p></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p4.svg"><img alt="4 as tree" class="align-center" src="../../_images/p4.svg" style="height: 100px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p4.svg"><img alt="4 as tree" class="align-center" src="../../_images/p4.svg" style="height: 100px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(2 \sqcup 4 = 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p5.svg"><img alt="5 as tree" class="align-center" src="../../_images/p5.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p10.svg"><img alt="10 as tree" class="align-center" src="../../_images/p10.svg" style="height: 50px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(2 \sqcup 5 = 10\)</span></p></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal image-reference" href="../../_images/p4.svg"><img alt="2 as tree" class="align-center" src="../../_images/p4.svg" style="height: 100px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p8.svg"><img alt="3 as tree" class="align-center" src="../../_images/p8.svg" style="height: 100px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p64.svg"><img alt="64 as tree" class="align-center" src="../../_images/p64.svg" style="height: 100px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(4 \sqcup 8 = 64\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>If you can’t see the pattern yet, I encourage you to try some examples out yourself either by hand or with <a class="reference internal" href="draw.html#sections-draw-ops"><span class="std std-ref">this code</span></a>.</p>
+<p>The easiest way to understand <span class="math notranslate nohighlight">\(x \sqcup y\)</span> is to imagine placing <span class="math notranslate nohighlight">\(x\)</span> on top of <span class="math notranslate nohighlight">\(y\)</span> and keeping all the longest branches. When botanists merge trees together like this its called grafting, so I call <span class="math notranslate nohighlight">\(x \sqcup y\)</span> the <strong>graft</strong> of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>If you look at the final column of the table, you might notice some other patterns:</p>
+<ol class="arabic simple">
+<li><p>When <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> don’t share factors, they are multiplied.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \sqcup x = x\)</span>. You can see the proof of that below, which is also our first example of a purely productive proof.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(x \neq y\)</span> but they do share some factors, those factors are combined.</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click me for proof of idempotence</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="proof admonition" id="proof">
+<p class="sd-card-text">Proof. (<span class="math notranslate nohighlight">\(x \sqcup x = x\)</span>)</p>
+<p class="sd-card-text">Proof by induction!</p>
+<p class="sd-card-text">Base case (<span class="math notranslate nohighlight">\(x=0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcup 0 = 0\)</span> by <a class="reference internal" href="#equation-graft0">(12)</a>.</p>
+<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcup x_i = x_i\)</span>.</p>
+<p class="sd-card-text">Then <span class="math notranslate nohighlight">\(x \sqcup x = [x_1, ..., x_n] \sqcup [x_1, ..., x_n] = [x_1 \sqcup x_1, ..., x_n \sqcup x_n] = [x_1, ..., x_n] = x\)</span>, where the third equality comes from <a class="reference internal" href="#equation-graft1">(13)</a> and the fourth from IH.</p>
+<p class="sd-card-text">Done.</p>
+</div>
+</div>
+</details><p>Those properties make grafting look a lot like LCM. I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). This has dramatic consequences: <span class="math notranslate nohighlight">\(LCM(4, 8) = 8\)</span>, but <span class="math notranslate nohighlight">\(4 \sqcup 8 = 64 = 2^6\)</span>. In this case, the exponents were multiplied but that’s just because the expontents <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(3\)</span> don’t share factors (try out an example where they do like <span class="math notranslate nohighlight">\(4 \sqcup 16\)</span>).</p>
+<p>We’ll see in the <a class="reference internal" href="latt.html#sections-lattice"><span class="std std-ref">next section</span></a> that graft shares a lot of <em>algebraic</em> properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to understand graft additively.</p>
+</section>
+<section id="proudly-pruning">
+<h3>Proudly Pruning<a class="headerlink" href="#proudly-pruning" title="Link to this heading">#</a></h3>
+<p>We’ve seen with graft that a very simple definition can produce quite a cool operation. So why not do it again? There’s a very natural dual operation to graft, which I will denote <span class="math notranslate nohighlight">\(x \sqcap y\)</span>, that can be defined as follows:</p>
+<div class="math notranslate nohighlight" id="equation-prune0">
+<span class="eqno">(14)<a class="headerlink" href="#equation-prune0" title="Link to this equation">#</a></span>\[   0 \sqcap x = 0 = x \sqcap 0\]</div>
+<div class="math notranslate nohighlight" id="equation-prune1">
+<span class="eqno">(15)<a class="headerlink" href="#equation-prune1" title="Link to this equation">#</a></span>\[   [x_1, ..., x_n] \sqcap [y_1, ..., y_n] = [x_1 \sqcap y_1, ..., x_n \sqcap y_n]\]</div>
+<p>This is almost identical to graft. The only real difference is that the base case <a class="reference internal" href="#equation-prune0">(14)</a> destroys branches where <a class="reference internal" href="#equation-graft0">(12)</a> preserves them. Since lopping branches off trees is called pruning, I call the operation <span class="math notranslate nohighlight">\(x \sqcap y\)</span> the <strong>prune</strong> of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Here’s a new table of examples:</p>
+<div class="pst-scrollable-table-container"><table class="table table-center">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x \sqcap y\)</span></p></th>
+<th class="head"><p>as numbers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(2 \sqcap 2 = 2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p3.svg"><img alt="3 as tree" class="align-center" src="../../_images/p3.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p1.svg"><img alt="1 as tree" class="align-center" src="../../_images/p1.svg" style="height: 25px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(2 \sqcap 3 = 1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p4.svg"><img alt="4 as tree" class="align-center" src="../../_images/p4.svg" style="height: 100px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 100px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(2 \sqcap 4 = 2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p5.svg"><img alt="5 as tree" class="align-center" src="../../_images/p5.svg" style="height: 50px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p1.svg"><img alt="1 as tree" class="align-center" src="../../_images/p1.svg" style="height: 25px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(2 \sqcap 5 = 1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal image-reference" href="../../_images/p4.svg"><img alt="2 as tree" class="align-center" src="../../_images/p4.svg" style="height: 100px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p8.svg"><img alt="3 as tree" class="align-center" src="../../_images/p8.svg" style="height: 100px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
+</td>
+<td><p><span class="math notranslate nohighlight">\(4 \sqcap 8 = 2\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Hopefully you can see that pruning is basically just GCD but with same differences as prune/LCM. For example, <span class="math notranslate nohighlight">\(gcd(4, 8) = 4\)</span> but <span class="math notranslate nohighlight">\(4 \sqcap 8 = 2\)</span>. As before, you can play around with <a class="reference internal" href="draw.html#sections-draw-ops"><span class="std std-ref">the code</span></a> if you want.</p>
+</section>
 </section>
 </section>
 
@@ -461,11 +592,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="draw.html"
+       href="latt.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Draw</p>
+        <p class="prev-next-title">Lattices</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -493,7 +624,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">List operations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productive-operations">Productive operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productive-operations">Productive operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grokking-graft">Grokking Graft</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proudly-pruning">Proudly Pruning</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

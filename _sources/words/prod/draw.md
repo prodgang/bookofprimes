@@ -68,6 +68,16 @@ def draw_tree(G, tree, pos=None, root_pos=(0, 0), ax=None):
 
     return root_label
 
+def p_to_d(ps):
+    assert type(ps) == tuple or ps == 0, ("bad input", ps)
+    if ps == 0: return 0
+    
+    x = 1
+    for i, p in enumerate(ps):
+        x *= primes[i]**p_to_d(p)
+    
+    return x
+
 def d_to_p(x):
     if x == 0: return 0
     if x == 1: return () # use tuples because can be hashed
@@ -120,4 +130,112 @@ This block lets you enter any number:
 n = 24
 
 d2tree(n)
+```
+
+(sections:draw:ops)=
+## Operations
+
+```{code-cell} ipython3
+:tags: [thebe-init, hide-input]
+
+def pad(a, b, pure=True):
+    if a == 0 or b == 0:
+        return a, b
+    
+    a = list(a).copy()
+    b = list(b).copy()
+
+    # pad 0s
+    while len(a) < len(b):
+        a += [0]
+    while len(b) < len(a):
+        b += [0]
+    assert len(a) == len(b)
+    
+    return tuple(a), tuple(b)
+
+
+def trim(x, pure=True):
+    if x == 0:
+        return 0
+    if pure: x = list(x).copy()
+    if x == () or all(x[i] == 0 for i in range(len(x))):
+        return ()
+    while len(x)> 0 and x[-1] == 0:
+        x = x[:-1]
+    x = [trim(x[i]) for i in range(len(x))]
+    return tuple(x)
+
+
+def graft(a, b):
+    if a == 0:
+        return b
+    if b == 0:
+        return a
+
+    a, b = pad(a, b)
+    return tuple([graft(a[i], b[i]) for i in range(len(a))])
+
+def prune(a, b):
+    if a == 0 or b == 0:
+        return 0
+    
+    a, b = pad(a, b)
+    return tuple([prune(a[i], b[i]) for i in range(len(a))])
+
+def draw_graft(x, y):
+    fig, axs=plt.subplots(1,3, figsize=(12, 4))
+
+
+    px = d_to_p(x)
+    py = d_to_p(y)
+
+    print("x =", x)
+    draw_tree(nx.Graph(), px, ax=axs[0])
+
+    print("y =", y)
+    draw_tree(nx.Graph(), py, ax=axs[1])
+
+
+    gxy = graft(px, py)
+    print("x graft y =", p_to_d(gxy))
+    draw_tree(nx.Graph(), gxy, ax=axs[2])
+
+def draw_prune(x, y):
+    fig, axs=plt.subplots(1,3, figsize=(12, 4))
+
+    px = d_to_p(x)
+    py = d_to_p(y)
+
+    print("x =", x)
+    draw_tree(nx.Graph(), px, ax=axs[0])
+
+    print("y =", y)
+    draw_tree(nx.Graph(), py, ax=axs[1])
+
+    pxy = trim(prune(px, py))
+    print("x prune y =", p_to_d(pxy))
+    draw_tree(nx.Graph(), pxy)
+```
+
+Use this block to test your grafting:
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+# INSERT NUMBERS HERE
+x, y = 2,3
+
+draw_graft(x, y)
+```
+
+Use this block to test your pruning:
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+# INSERT NUMBERS HERE
+x, y = 2,3
+
+draw_prune(x, y)
 ```
