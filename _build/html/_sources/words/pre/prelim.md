@@ -9,4 +9,4 @@ If you can't be bothered to read the whole thing, but find yourself stuck later 
 - [Peano Axioms](sections:numbers)
 - [Induction](sections:numbers:induction)
 - [Groups](sections:algebra)
-- Partial order
+- [Partial order](sections:pre:order)

@@ -178,11 +178,14 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poset.html">Orders</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prod/prod.html">PROD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../prod/defs.html">Define</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prod/ops.html">Operate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prod/latt.html">Lattices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prod/draw.html">Draw</a></li>
 </ul>
 </details></li>
@@ -352,7 +355,7 @@
 \end{aligned}\end{align} \]</div>
 <p>And so on. If <span class="math notranslate nohighlight">\(a\)</span> is an element of a set <span class="math notranslate nohighlight">\(A\)</span>, we write <span class="math notranslate nohighlight">\(a \in A\)</span>.</p>
 <section id="set-operations">
-<h2>Set Operations<a class="headerlink" href="#set-operations" title="Link to this heading">#</a></h2>
+<span id="sections-sets-ops"></span><h2>Set Operations<a class="headerlink" href="#set-operations" title="Link to this heading">#</a></h2>
 <p>Sometimes, sets share elements. For example, <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> both contain <span class="math notranslate nohighlight">\(0\)</span>. If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are sets, then <span class="math notranslate nohighlight">\(A \cap B\)</span> is the set of all the shared elements of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, called the <em>intersection</em>. For example, <span class="math notranslate nohighlight">\(\mathbb{Z} \cap \mathbb{Q}^+ = \mathbb{N}\)</span>.</p>
 <p>Intersection has a dual operation called <em>union</em> and written <span class="math notranslate nohighlight">\(A \cup B\)</span> which gives you the set of elements that are either in <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> (as opposed to both). So if <span class="math notranslate nohighlight">\(EVEN\)</span> is the set of even integers and <span class="math notranslate nohighlight">\(ODD\)</span> is the set of odd integers, then <span class="math notranslate nohighlight">\(EVEN \cup ODD = \mathbb{Z}\)</span>.</p>
 <p>Finally, if all the elements of one set are also in another set, we write <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and say <span class="math notranslate nohighlight">\(A\)</span> is a <em>subset</em> of <span class="math notranslate nohighlight">\(B\)</span>. If there’s some <span class="math notranslate nohighlight">\(a \in A\)</span> that’s <em>not</em> in <span class="math notranslate nohighlight">\(B\)</span>, then <span class="math notranslate nohighlight">\(A \not\subseteq B\)</span>. For example, <span class="math notranslate nohighlight">\(\mathbb{N} \subseteq \mathbb{Z}\)</span> but <span class="math notranslate nohighlight">\(\mathbb{Z} \not\subseteq \mathbb{Q}^+\)</span>. Try and work out whether its true that <span class="math notranslate nohighlight">\(A \cap B \subseteq A \subseteq A \cup B\)</span> (or vice-versa).</p>

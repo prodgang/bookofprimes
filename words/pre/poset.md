@@ -1,0 +1,186 @@
+(sections:pre:order)=
+# Orders
+
+People just seem to love putting things in order.
+
+```{figure} ../../imgs/bercow.gif
+---
+align: center
+---
+[source](https://giphy.com/gifs/euronews-order-commons-john-bercow-l2AYpTe5FOOMkBZ3I3)
+```
+
+Sometimes this can get a bit ridiculous: there's a whole [corner of the internet](https://tiermaker.com/) dedicated to ranking things that realistically cannot be ranked. On the other side, [some people](https://culanth.org/fieldsights/comparison-the-impossible-method) are averse to any form of comparison altogether.
+
+These tensions are reconciled in what mathematicians call a *partial order*. A partial order is one of my favourite math gizmos because it has affected the way I understand not only the mathematical world, but also the real world. The idea behind partial orders can basically be summed up with the slogan:
+> Not everything is better or worse. Some things are just different.
+
+Here's an informal example. Suppose you want to buy a smoothie. You want it to be healthy, tasty and cheap. Some smoothies are genuinely better than others: a banana smoothie is healthier, tastier and cheaper than a chocolate and truffle smoothie which is itself slightly tastier but otherwise the same as a chocolate and balsamic vinegar smoothie. On the other hand, a superfood smoothie is tastier and healthier than a banana smoothie, but more expensive. So neither is wholly better than the other, which we will call *incomparable*. We can draw these relationships in what's called a *Hasse Diagram*:
+```{image} ../../tikz/smoothie.svg
+        :alt: smoothie order
+        :height: 200px
+        :align: center
+```
+
+If you disagree about any of the placements, just draw your own version. Hopefully this gives you a sense of how to order things that may be incomparable. Don't worry if this is boringly obvious, partial orders are pretty easy to understand themselves. So let's jump into the details!
+
+## Definition
+
+The formal definition is as follows. A set $P$ with a relation $\leq$ is a **partial order** if:
+```{math}
+:label: refl
+    x \leq x \hspace{1cm} \text{(Reflexivity)}
+```
+```{math}
+:label: trans
+    x \leq y \land y \leq z \implies x \leq z \hspace{1cm} \text{(Transitivity)}
+```
+```{math}
+:label: asymm
+    x \leq y \land y \leq x \implies x = y \hspace{1cm} \text{(Anti-symmetry)}
+```
+
+Let's break that definition down:
+- Reflexivity just means everything is less than or equal to itself. Not very problematic. Math definitions almost always start with some trivial requirement like this.
+- Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: 'tangerine' is synonymous with 'orange' and 'orange' is synomyous with 'yellowy-red', but 'tangerine' and 'yellowy-red' are not at all synonymous. The problem is that 'orange' is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons. 
+- Anti-symmetry is subtle. I initially wrote it off as chalkboard grease to help prove equality. But I've learned to think of it as enforcing the beautiful idea that x's relationships with everything else determine what x is. For example, the smoothie order I introduced above is not anti-symmetric because two smoothies that have the same taste, cost and healthiness could still be different smoothies. On the other hand, you should be able to guess what number I'm thinking of if I tell you it's both at least as big and at least as small as $2$.
+
+## Examples
+
+By the way, a partially ordered set is often abbreviated as a poset, which is quite a cute name. Let's look at some examples of posets in more detail.
+
+
+### Additive Numbers
+
+Additive numbers is indeed a poset. You probably think of $x \leq y$ as meaning $x$ comes before $y$ in the number line. But the technical definition is:
+
+```{math}
+:label: nleq
+    x \leq y \iff \text{ there exists some } z\in \mathbb{N} \text{ such that } x + z = y
+```
+
+Here's the Hasse diagram (which in this case is just the number line but rotated).
+```{image} ../../tikz/line.svg
+        :alt: number line
+        :height: 200px
+        :align: center
+```
+
+I'll call the $z$ in equation {eq}`nleq` the *witness* of $x \leq y$. This relation is indeed reflexive: just pick $0$ for the witness and check that $x + 0 = x$ (it does). Proof of other properties in box below.
+
+
+````{dropdown} Click me for full proof
+
+
+
+```{prf:proof} (Proof of transitivity)
+
+Suppose that $x \leq y$. Then there's some $w_1$ such that $x + w_1 = y$. Similarly, assuming $y \leq z$ means there's some $w_2$ such that $y + w_2 = z$. 
+
+Putting these together gives $(x + w_1) + w_2 = z$, which we can rearrange to $x + (w_1 + w_2) = z$, so $w_1 + w_2$ is the witness of $x \leq z$. Done.
+
+```
+
+```{prf:proof} (Proof of anti-symmetry)
+
+Let $w_1$ be the witness for $x \leq y$ and $w_2$ the witness for $y \leq x$. So we have $x + w_1 = y$ and $y + w_2 = x$. 
+
+Plugging the first equation into the second gives $(x + w_1) + w_2 = x$. Taking $x$ away from both sides gives $w_1 + w_2 = 0$. Since $w_1, w_2$ cannot be negative, $w_1 = w_2 = 0$. Therefore $x = y$. Done.
+
+```
+
+````
+
+The order of numbers satisfies one additional property which is solely responsible for making it so boring:
+```{math}
+:label: total
+    x \leq y \lor y \leq x \hspace{1cm} \text{(Totality)}
+```
+The proof is also boring and uses induction, so I won't bother.
+
+In other words, an order is *total* when everything is comparable. Though technically partial orders include total orders (i.e. *partial* $\leq$ *total* in the order of orders), calling something a partial order usually means it is not total. So let's look at an example of a genuinely partial order.
+
+
+### Multiplicative Numbers
+
+We can define a very similar to relation to {eq}`nleq`, but with multiplication. To avoid confusing notation, this is usually written $x | y$ and read as $x$ *divides* $y$.
+```{math}
+:label: div
+x | y \iff \text{there exists some } z \in \mathbb{N}^+ \text{such that } x \times z = y
+```
+
+As before, I'll call $z$ the *witness* of the divisibility of $y$ by $x$. The reason $z$ comes from $\mathbb{N}^+$ rather than $\mathbb{N}$ is because $0$ behaves horribly in times land, so is excluded altogether. 
+
+It's not hard to see that $x | x$ (choose $1$ as witness and check $x \times 1 = x$). Proof of other properties below:
+
+
+````{dropdown} Click me for full proof
+
+These are extremely similar to the additive proofs. Like I literally copied, pasted and replaced $+$ with $\times$ and a couple of other symbols. Skip unless you really care.
+
+
+```{prf:proof} (Proof of transitivity)
+
+Suppose that $x | y$. Then there's some $w_1$ such that $x \times w_1 = y$. Similarly, assuming $y | z$ means there's some $w_2$ such that $y \times w_2 = z$. 
+
+Putting these together gives $(x \times w_1) \times w_2 = z$, which we can rearrange to $x \times (w_1 \times w_2) = z$, so $w_1 \times w_2$ is the witness of $x | z$. Done.
+
+```
+
+```{prf:proof} (Proof of anti-symmetry)
+
+Let $w_1$ be the witness for $x | y$ and $w_2$ the witness for $y | x$. So we have $x \times w_1 = y$ and $y \times w_2 = x$. 
+
+Plugging the first equation into the second gives $(x \times w_1) \times w_2 = x$. Dividing by $x$ on both sides gives $w_1 \times w_2 = 1$. Since $w_1, w_2$ are both positive whole numbers, $w_1 = w_2 = 1$. Therefore $x = y$. Done.
+
+```
+
+````
+
+
+
+Very crucially, divisibility is not total. For example, $2$ can't divide $3$ and $3$ can't divide $2$. They are just different. This manifests in a far more intricate Hasse diagram than we've seen so far. As a reminder, a line going up from $x$ to $y$ now means $x | y$. 
+
+```{image} ../../tikz/div.svg
+        :alt: divisibility lattice
+        :height: 300px
+        :align: center
+```
+
+Unsurprisingly, the primes play a key role.
+
+### Subsets
+
+The most interesting and most important example of a partial order is the subset relation $A \subseteq B$ (i.e. $B$ contains all the elements of $A$) from (sections:sets:ops). 
+
+As a refresher, notice that $\{a\} \subseteq \{a, b\} \subseteq \{a, b, c\}$.
+
+The conditions are quite easy to check:
+- Reflexive: clearly $A \subseteq A$.
+- Transitive: if $A \subseteq B$ then $B$ contains all the elements of $B$. If $B \subseteq C$, then $C$ contains all the elements of $B$. So $C$ contains all the elements of $A$ which means $A \subseteq C$.
+- Anti-symmetric: if $A \subseteq B$ and $B \subseteq A$, then they each contain all the same elements. By definition, sets that contain the same elements are the same, so $A = B$.
+
+Crucially, $\subseteq$ is not total. For example, the sets $\{a, b, c\}$ and $\{0, 1\}$ are incomparable.
+
+We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the starting set $\{a, b, c\}$:
+
+### Fun examples
+
+# Lattices
+
+I won't say too much about lattices because I still don't fully understand them. The basic idea is you have a poset with some extra structure. The extra structure includes, at the very least, two operations $\land$ and $\lor$. These operations come in handy for finding shared properties of incomparable objects. 
+
+$x \land y$ is the *greatest* element $z$ such that $z \leq x$ and $z \leq y$. In the tree of life, $x \land y$ is like the last common ancestor of $x$ and $y$. 
+
+Dually, $x \lor y$ gives the *least* element such that $x \leq z$ and $y \leq z$. In a world where evolution somehow ultimately merges all species, $x \lor y$ would be the first common descendent of $x$ and $y$.
+
+A diagram may help:
+```{image} ../../tikz/diamond.svg
+        :alt: diamond lattice
+        :height: 200px
+        :align: center
+```
+
+In perhaps the worst clash of notations I've ever seen, $x \land y$ is found at the bottom of the v-shape between $x$ and $y$, while $x \lor y$ is found at the top of the hat *above* $x$ and $y$. Really sorry about that.
+
+There are some axioms for lattices but I don't have nice interpretations of them. Here's what wikipedia reckons:

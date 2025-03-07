@@ -10,6 +10,7 @@ chapters:
     - file: words/pre/sets
     - file: words/pre/numbers
     - file: words/pre/algebra
+    - file: words/pre/poset
 - file: words/prod/prod
   title: PROD
   sections:

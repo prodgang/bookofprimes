@@ -328,4 +328,4 @@ This is almost identical to graft. The only real difference is that the base cas
   - $4 \sqcap 8 = 2$
 ```
 
-Hopefully you can see that pruning is basically just GCD but with same differences as prune/LCM. For example, $gcd(4, 8) = 4$ but $4 \sqcap 8 = 2$. As before, you can play around with [the code](sections:draw:ops) if you want. 
+Hopefully you can see that pruning is very similar to GCD. In particular, $gcd(x, y) = 1$ iff $x \sqcap y = 1$. Once again there's some important differences: for example, $gcd(4, 8) = 4$ but $4 \sqcap 8 = 2$. As before, you can play around with [the code](sections:draw:ops) if you want. 
