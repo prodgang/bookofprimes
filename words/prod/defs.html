@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
   
@@ -178,6 +178,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../pre/sets.html">Sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pre/numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pre/algebra.html">Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pre/poset.html">Orders</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="prod.html">PROD</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -358,22 +360,22 @@
 <p>Rather than working from additive to productive, its a little easier to define productive numbers from scratch and then see later how they can be related to additive numbers. Also, productive numbers is a mouthful so I’ll call them <em>prods</em>.</p>
 <p>So here it is. The formal definition of the set of prods <span class="math notranslate nohighlight">\(\mathbb{\Pi}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-prod0">
-<span class="eqno">(7)<a class="headerlink" href="#equation-prod0" title="Link to this equation">#</a></span>\[    0 \in \mathbb{\Pi}\]</div>
+<span class="eqno">(13)<a class="headerlink" href="#equation-prod0" title="Link to this equation">#</a></span>\[    0 \in \mathbb{\Pi}\]</div>
 <div class="math notranslate nohighlight" id="equation-prod1">
-<span class="eqno">(8)<a class="headerlink" href="#equation-prod1" title="Link to this equation">#</a></span>\[    \{x_1, x_2, ... x_n \} \subseteq \mathbb{\Pi} \implies [x_1, x_2, ..., x_n] \in \mathbb{\Pi}\]</div>
+<span class="eqno">(14)<a class="headerlink" href="#equation-prod1" title="Link to this equation">#</a></span>\[    \{x_1, x_2, ... x_n \} \subseteq \mathbb{\Pi} \implies [x_1, x_2, ..., x_n] \in \mathbb{\Pi}\]</div>
 <div class="math notranslate nohighlight" id="equation-prodpad">
-<span class="eqno">(9)<a class="headerlink" href="#equation-prodpad" title="Link to this equation">#</a></span>\[    x \neq 0 \implies [x_1, ..., x_n] = [x_1, ..., x_n, 0]\]</div>
+<span class="eqno">(15)<a class="headerlink" href="#equation-prodpad" title="Link to this equation">#</a></span>\[    x \neq 0 \implies [x_1, ..., x_n] = [x_1, ..., x_n, 0]\]</div>
 <p>That’s it. The rest is commentary.</p>
-<p>The first equation <a class="reference internal" href="#equation-prod0">(7)</a> is not a surprise. The second <a class="reference internal" href="#equation-prod1">(8)</a> is where all the action happens. The third <a class="reference internal" href="#equation-prodpad">(9)</a> just says you can pad a prod with zeros without changing it<a class="footnote-reference brackets" href="#padref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
-<p>Let’s see how these axioms interact. So we must start with <span class="math notranslate nohighlight">\(0\)</span>. Then by <a class="reference internal" href="#equation-prod1">(8)</a>, <span class="math notranslate nohighlight">\([0, 0]\)</span> is a prod. By <a class="reference internal" href="#equation-prodpad">(9)</a> and our earlier convention <span class="math notranslate nohighlight">\([0, 0] = [0] = []\)</span>. So <span class="math notranslate nohighlight">\([[]]\)</span> is a prod, and so is <span class="math notranslate nohighlight">\([0, []]\)</span> and <span class="math notranslate nohighlight">\([[0, []], 0, []]\)</span> and so on.</p>
+<p>The first equation <a class="reference internal" href="#equation-prod0">(13)</a> is not a surprise. The second <a class="reference internal" href="#equation-prod1">(14)</a> is where all the action happens. The third <a class="reference internal" href="#equation-prodpad">(15)</a> just says you can pad a prod with zeros without changing it<a class="footnote-reference brackets" href="#padref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>Let’s see how these axioms interact. So we must start with <span class="math notranslate nohighlight">\(0\)</span>. Then by <a class="reference internal" href="#equation-prod1">(14)</a>, <span class="math notranslate nohighlight">\([0, 0]\)</span> is a prod. By <a class="reference internal" href="#equation-prodpad">(15)</a> and our earlier convention <span class="math notranslate nohighlight">\([0, 0] = [0] = []\)</span>. So <span class="math notranslate nohighlight">\([[]]\)</span> is a prod, and so is <span class="math notranslate nohighlight">\([0, []]\)</span> and <span class="math notranslate nohighlight">\([[0, []], 0, []]\)</span> and so on.</p>
 </section>
 <section id="isomorphism">
 <span id="sections-prod-iso"></span><h2>Isomorphism<a class="headerlink" href="#isomorphism" title="Link to this heading">#</a></h2>
 <p>The interpretation of a productive number (i.e. what additive number it corresponds to) is given by the following recursive function <span class="math notranslate nohighlight">\(I: \mathbb{\Pi} \to \mathbb{N}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-int0">
-<span class="eqno">(10)<a class="headerlink" href="#equation-int0" title="Link to this equation">#</a></span>\[    I(0) = 0\]</div>
+<span class="eqno">(16)<a class="headerlink" href="#equation-int0" title="Link to this equation">#</a></span>\[    I(0) = 0\]</div>
 <div class="math notranslate nohighlight" id="equation-int1">
-<span class="eqno">(11)<a class="headerlink" href="#equation-int1" title="Link to this equation">#</a></span>\[    I([x_1, x_2, ..., x_n]) = 2^{I(x_1)} \times 3^{I(x_2)} \times ... \times p_n^{I(x_n)}\]</div>
+<span class="eqno">(17)<a class="headerlink" href="#equation-int1" title="Link to this equation">#</a></span>\[    I([x_1, x_2, ..., x_n]) = 2^{I(x_1)} \times 3^{I(x_2)} \times ... \times p_n^{I(x_n)}\]</div>
 <p>(<span class="math notranslate nohighlight">\(p_n\)</span> is the nth prime)</p>
 <p>As an example, let’s work out <span class="math notranslate nohighlight">\(I([[[]], 0, []])\)</span>. Remember that <span class="math notranslate nohighlight">\([]\)</span> is just shorthand for <span class="math notranslate nohighlight">\([0]\)</span> so <span class="math notranslate nohighlight">\(I([]) = 2^0 = 1\)</span>. So:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -389,7 +391,7 @@ I([[[]], 0, []]) &amp;= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
 <section class="theorem-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(I\)</span> is bijective, i.e. <span class="math notranslate nohighlight">\(\mathbb{\Pi} \simeq \mathbb{N}\)</span></p>
 </section>
-</div><p>Pretentious names aside, this is not a huge surprise. Notice how the definition of <span class="math notranslate nohighlight">\(I\)</span> in equation <a class="reference internal" href="#equation-int1">(11)</a> is pretty much the same as <a class="reference internal" href="prod.html#fta">Theorem 4</a>. In any case, you can look at the proof below if you want.</p>
+</div><p>Pretentious names aside, this is not a huge surprise. Notice how the definition of <span class="math notranslate nohighlight">\(I\)</span> in equation <a class="reference internal" href="#equation-int1">(17)</a> is pretty much the same as <a class="reference internal" href="prod.html#fta">Theorem 4</a>. In any case, you can look at the proof below if you want.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click me for proof</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -397,10 +399,10 @@ I([[[]], 0, []]) &amp;= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
 <div class="proof admonition" id="proof">
 <p class="sd-card-text">Proof. Prove by strong induction the following statement: <span class="math notranslate nohighlight">\(\forall n \in \mathbb{N}, \exists ! p \in \mathbb{\Pi}, I(p) = n\)</span></p>
 <p class="sd-card-text"><em>Base cases</em>:</p>
-<p class="sd-card-text">By <a class="reference internal" href="#equation-int0">(10)</a>, <span class="math notranslate nohighlight">\(I(0) = 0\)</span>. This is unique, since <span class="math notranslate nohighlight">\(I(x) \geq 1\)</span> for any <span class="math notranslate nohighlight">\(x \neq 0\)</span> by <a class="reference internal" href="#equation-int1">(11)</a>.</p>
-<p class="sd-card-text">For <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(I([0]) = 2^0 = 1\)</span>. This is unique since <span class="math notranslate nohighlight">\([] = [0, ..., 0] = [0]\)</span> by <a class="reference internal" href="#equation-prodpad">(9)</a>.</p>
+<p class="sd-card-text">By <a class="reference internal" href="#equation-int0">(16)</a>, <span class="math notranslate nohighlight">\(I(0) = 0\)</span>. This is unique, since <span class="math notranslate nohighlight">\(I(x) \geq 1\)</span> for any <span class="math notranslate nohighlight">\(x \neq 0\)</span> by <a class="reference internal" href="#equation-int1">(17)</a>.</p>
+<p class="sd-card-text">For <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(I([0]) = 2^0 = 1\)</span>. This is unique since <span class="math notranslate nohighlight">\([] = [0, ..., 0] = [0]\)</span> by <a class="reference internal" href="#equation-prodpad">(15)</a>.</p>
 <p class="sd-card-text"><em>Inductive step</em> (<span class="math notranslate nohighlight">\(n &gt; 1\)</span>): Assume for inductive hypothesis (IH) <span class="math notranslate nohighlight">\(\forall m &lt; n, \exists ! p, I(p) = m\)</span>.</p>
-<p class="sd-card-text">By <a class="reference internal" href="prod.html#fta">Theorem 4</a>, <span class="math notranslate nohighlight">\(n\)</span> factors uniquely into exponents <span class="math notranslate nohighlight">\(e_1, ..., e_k\)</span>. Since every <span class="math notranslate nohighlight">\(e_i &lt; n\)</span> (because x <span class="math notranslate nohighlight">\(n \geq p_i^{e_i}\)</span> for each <span class="math notranslate nohighlight">\(i\)</span>), apply IH to find unique <span class="math notranslate nohighlight">\(x_i\)</span> such that <span class="math notranslate nohighlight">\(I(x_i) = e_i\)</span> for every <span class="math notranslate nohighlight">\(i\)</span>. Then by <a class="reference internal" href="#equation-int1">(11)</a>, <span class="math notranslate nohighlight">\(I([x_1, ..., x_k]) = 2^{I(x_1)} \times ... \times p_k^{I(x_k)} = 2^{e_1} \times ... \times p_k^{e_k} = n\)</span>. Done.</p>
+<p class="sd-card-text">By <a class="reference internal" href="prod.html#fta">Theorem 4</a>, <span class="math notranslate nohighlight">\(n\)</span> factors uniquely into exponents <span class="math notranslate nohighlight">\(e_1, ..., e_k\)</span>. Since every <span class="math notranslate nohighlight">\(e_i &lt; n\)</span> (because x <span class="math notranslate nohighlight">\(n \geq p_i^{e_i}\)</span> for each <span class="math notranslate nohighlight">\(i\)</span>), apply IH to find unique <span class="math notranslate nohighlight">\(x_i\)</span> such that <span class="math notranslate nohighlight">\(I(x_i) = e_i\)</span> for every <span class="math notranslate nohighlight">\(i\)</span>. Then by <a class="reference internal" href="#equation-int1">(17)</a>, <span class="math notranslate nohighlight">\(I([x_1, ..., x_k]) = 2^{I(x_1)} \times ... \times p_k^{I(x_k)} = 2^{e_1} \times ... \times p_k^{e_k} = n\)</span>. Done.</p>
 </div>
 </div>
 </details><div class="admonition note">
