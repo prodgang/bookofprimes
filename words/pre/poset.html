@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
   
@@ -362,10 +362,10 @@
   <section class="tex2jax_ignore mathjax_ignore" id="orders">
 <span id="sections-pre-order"></span><h1>Orders<a class="headerlink" href="#orders" title="Link to this heading">#</a></h1>
 <p>People just seem to love putting things in order.</p>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id2">
 <img alt="../../_images/bercow.gif" src="../../_images/bercow.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><a class="reference external" href="https://giphy.com/gifs/euronews-order-commons-john-bercow-l2AYpTe5FOOMkBZ3I3">source</a></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><a class="reference external" href="https://giphy.com/gifs/euronews-order-commons-john-bercow-l2AYpTe5FOOMkBZ3I3">source</a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Sometimes this can get a bit ridiculous: there’s a whole <a class="reference external" href="https://tiermaker.com/">corner of the internet</a> dedicated to ranking things that realistically cannot be ranked. On the other side, <a class="reference external" href="https://culanth.org/fieldsights/comparison-the-impossible-method">some people</a> are averse to any form of comparison altogether.</p>
@@ -405,7 +405,7 @@
 <p>I’ll call the <span class="math notranslate nohighlight">\(z\)</span> in equation <a class="reference internal" href="#equation-nleq">(10)</a> the <em>witness</em> of <span class="math notranslate nohighlight">\(x \leq y\)</span>. This relation is indeed reflexive: just pick <span class="math notranslate nohighlight">\(0\)</span> for the witness and check that <span class="math notranslate nohighlight">\(x + 0 = x\)</span> (it does). Proof of other properties in box below.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Click me for full proof</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Click me for proof of transitivity and anti-symmetry</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <div class="proof admonition" id="proof">
 <p class="sd-card-text">Proof. (Proof of transitivity)</p>
 <p class="sd-card-text">Suppose that <span class="math notranslate nohighlight">\(x \leq y\)</span>. Then there’s some <span class="math notranslate nohighlight">\(w_1\)</span> such that <span class="math notranslate nohighlight">\(x + w_1 = y\)</span>. Similarly, assuming <span class="math notranslate nohighlight">\(y \leq z\)</span> means there’s some <span class="math notranslate nohighlight">\(w_2\)</span> such that <span class="math notranslate nohighlight">\(y + w_2 = z\)</span>.</p>
@@ -432,7 +432,7 @@
 <p>It’s not hard to see that <span class="math notranslate nohighlight">\(x | x\)</span> (choose <span class="math notranslate nohighlight">\(1\)</span> as witness and check <span class="math notranslate nohighlight">\(x \times 1 = x\)</span>). Proof of other properties below:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Click me for full proof</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Click me for proof of transitivity and anti-symmetry</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">These are extremely similar to the additive proofs. Like I literally copied, pasted and replaced <span class="math notranslate nohighlight">\(+\)</span> with <span class="math notranslate nohighlight">\(\times\)</span> and a couple of other symbols. Skip unless you really care.</p>
 <div class="proof admonition" id="proof">
 <p class="sd-card-text">Proof. (Proof of transitivity)</p>
@@ -451,7 +451,7 @@
 </section>
 <section id="subsets">
 <h3>Subsets<a class="headerlink" href="#subsets" title="Link to this heading">#</a></h3>
-<p>The most interesting and most important example of a partial order is the subset relation <span class="math notranslate nohighlight">\(A \subseteq B\)</span> (i.e. <span class="math notranslate nohighlight">\(B\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span>) from (sections:sets:ops).</p>
+<p>The most interesting and most important example of a partial order is the subset relation <span class="math notranslate nohighlight">\(A \subseteq B\)</span> (i.e. <span class="math notranslate nohighlight">\(B\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span>) that we met back <a class="reference internal" href="sets.html#sections-sets-ops"><span class="std std-ref">here</span></a>.</p>
 <p>As a refresher, notice that <span class="math notranslate nohighlight">\(\{a\} \subseteq \{a, b\} \subseteq \{a, b, c\}\)</span>.</p>
 <p>The conditions are quite easy to check:</p>
 <ul class="simple">
@@ -459,23 +459,48 @@
 <li><p>Transitive: if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> then <span class="math notranslate nohighlight">\(B\)</span> contains all the elements of <span class="math notranslate nohighlight">\(B\)</span>. If <span class="math notranslate nohighlight">\(B \subseteq C\)</span>, then <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(B\)</span>. So <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span> which means <span class="math notranslate nohighlight">\(A \subseteq C\)</span>.</p></li>
 <li><p>Anti-symmetric: if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and <span class="math notranslate nohighlight">\(B \subseteq A\)</span>, then they each contain all the same elements. By definition, sets that contain the same elements are the same, so <span class="math notranslate nohighlight">\(A = B\)</span>.</p></li>
 </ul>
-<p>Crucially, <span class="math notranslate nohighlight">\(\subseteq\)</span> is not total. For example, the sets <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span> and <span class="math notranslate nohighlight">\(\{0, 1\}\)</span> are incomparable.</p>
-<p>We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the starting set <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span>:</p>
+<p>Crucially, <span class="math notranslate nohighlight">\(\subseteq\)</span> is not total. For example, the sets <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span> and <span class="math notranslate nohighlight">\(\{a,c,d\}\)</span> are incomparable.</p>
+<p>We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the set <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span>, (where a line now means a set is contained in another):</p>
+<a class="reference internal image-reference" href="../../_images/subset.svg"><img alt="subset lattice" class="align-center" src="../../_images/subset.svg" style="height: 250px;" /></a>
+<p>(yes - the empty set is technically a subset of everything)</p>
 </section>
 <section id="fun-examples">
 <h3>Fun examples<a class="headerlink" href="#fun-examples" title="Link to this heading">#</a></h3>
+<p>Here are some other examples that can be helpful to think about:</p>
+<ol class="arabic simple">
+<li><p><strong>Time</strong> In special relativity, observers can see the same events happening in a different order (e.g. A happens before B for one person, but A happens after B for another person). This forms a partial order - see <a class="reference external" href="https://physics.stackexchange.com/questions/227049/is-causality-a-total-order">here</a> for more info.</p></li>
+<li><p><strong>Getting Dressed</strong> A similar, but much simpler, time-based example is how to get dressed. You have to put your T-shirt on before your sweater before your coat, but you could put your socks on before or after any of these. I got this from <a class="reference external" href="https://courses.grainger.illinois.edu/cs173/fa2008/lectures/lect_34.pdf">here</a>, where you can see a few more examples.</p></li>
+<li><p><strong>Family Trees</strong> People are (transitively) descended from other people. But when we draw family trees, they are not straight lines because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.</p></li>
+<li><p><strong>Privelege</strong> In our society, some groups of people are more privleged than others. Intersectionality is the idea that combining priveleges makes things more complicated. <a class="reference external" href="https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&amp;amp;t=2213">This talk</a> explores how partial orders can help clarify some of these complications.</p></li>
+</ol>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="lattices">
 <h1>Lattices<a class="headerlink" href="#lattices" title="Link to this heading">#</a></h1>
 <p>I won’t say too much about lattices because I still don’t fully understand them. The basic idea is you have a poset with some extra structure. The extra structure includes, at the very least, two operations <span class="math notranslate nohighlight">\(\land\)</span> and <span class="math notranslate nohighlight">\(\lor\)</span>. These operations come in handy for finding shared properties of incomparable objects.</p>
-<p><span class="math notranslate nohighlight">\(x \land y\)</span> is the <em>greatest</em> element <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(z \leq x\)</span> and <span class="math notranslate nohighlight">\(z \leq y\)</span>. In the tree of life, <span class="math notranslate nohighlight">\(x \land y\)</span> is like the last common ancestor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p>Dually, <span class="math notranslate nohighlight">\(x \lor y\)</span> gives the <em>least</em> element such that <span class="math notranslate nohighlight">\(x \leq z\)</span> and <span class="math notranslate nohighlight">\(y \leq z\)</span>. In a world where evolution somehow ultimately merges all species, <span class="math notranslate nohighlight">\(x \lor y\)</span> would be the first common descendent of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(x \land y\)</span> is the <em>greatest</em> element <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(z \leq x\)</span> and <span class="math notranslate nohighlight">\(z \leq y\)</span>. This is often called the <em>greatest lower bound</em>. In the tree of life, <span class="math notranslate nohighlight">\(x \land y\)</span> is like the last common ancestor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>There are two distinct parts to this definition: firstly that there is at least one element that is less than both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and secondly that out of all the ancestors of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> we can uniquely pick out the one that is closest to <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> (according to <span class="math notranslate nohighlight">\(\leq\)</span>). The second part is why we can talk of <em>the</em> greatest lower bound.</p>
+<p>Dually, <span class="math notranslate nohighlight">\(x \lor y\)</span> gives the <em>least</em> element such that <span class="math notranslate nohighlight">\(x \leq z\)</span> and <span class="math notranslate nohighlight">\(y \leq z\)</span>. This is often called the <em>least upper bound</em>. In a world where evolution somehow ultimately merges all species, <span class="math notranslate nohighlight">\(x \lor y\)</span> would be the first common <em>descendent</em> of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>A diagram may help:</p>
 <a class="reference internal image-reference" href="../../_images/diamond.svg"><img alt="diamond lattice" class="align-center" src="../../_images/diamond.svg" style="height: 200px;" /></a>
 <p>In perhaps the worst clash of notations I’ve ever seen, <span class="math notranslate nohighlight">\(x \land y\)</span> is found at the bottom of the v-shape between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, while <span class="math notranslate nohighlight">\(x \lor y\)</span> is found at the top of the hat <em>above</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Really sorry about that.</p>
-<p>There are some axioms for lattices but I don’t have nice interpretations of them. Here’s what wikipedia reckons:</p>
+<p>The operations do have names: <span class="math notranslate nohighlight">\(\land\)</span> is called the <em>meet</em> and <span class="math notranslate nohighlight">\(\lor\)</span> is called the join. But I always get these names mixed up so won’t use them that much.</p>
+<p>There’s another way of defining lattices that I have no intution for but you can read about on <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure">wikipedia</a> if you want.</p>
+<p>I’ll end with some examples of lattices:</p>
+<ul class="simple">
+<li><p>The <em>Boolean</em> lattice is just the total order <span class="math notranslate nohighlight">\(0 \leq 1\)</span> (interepreted as False and True), where <span class="math notranslate nohighlight">\(x \land y\)</span> equals the truth value of <span class="math notranslate nohighlight">\(x\)</span> AND <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(x \lor y\)</span> the truth value of <span class="math notranslate nohighlight">\(x\)</span> OR <span class="math notranslate nohighlight">\(y\)</span>. Even though this is an extremely boring lattice, it seems to play a very important role and is actually where the <span class="math notranslate nohighlight">\(\land,\lor\)</span> symbols come from.</p></li>
+<li><p>The divisibility partial order from above is a lattice. <span class="math notranslate nohighlight">\(x \land y\)</span> is defined as the greatest common divisor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x \lor y\)</span> is the least common multiple. Not too suprising - if <span class="math notranslate nohighlight">\(z\)</span> is a common divisor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, then <span class="math notranslate nohighlight">\(z | x\)</span> and <span class="math notranslate nohighlight">\(z | y\)</span> and it is greatest by definition.</p></li>
+<li><p>The subset partial order from above is also a lattice! <span class="math notranslate nohighlight">\(\land\)</span> is the intersection <span class="math notranslate nohighlight">\(A \cap B\)</span>, <span class="math notranslate nohighlight">\(\lor\)</span> is the union <span class="math notranslate nohighlight">\(A \cup B\)</span>. That <span class="math notranslate nohighlight">\(A \cap B\)</span> is contained in both <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is fairly obvious. That it is the greatest such subset is because if it were any bigger, it would contain elements that either weren’t in <span class="math notranslate nohighlight">\(A\)</span> or weren’t in <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+</ul>
+<p>The last two examples are extremely important to keep in mind because in the next chapter because we’ll see that productive numbers form a lattice which sort of sits halfway between the divisibility lattice and the subset lattice. In short, <span class="math notranslate nohighlight">\(\sqsubseteq \ \cong \ | \ \land \subseteq \)</span><a class="footnote-reference brackets" href="#latref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="latref" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>This is kind of a joke but also not really. There are order-preserving maps (which alas aren’t lattice homomorphisms) from productive numbers to both the divisibility order and the subset order. So it’s halfway there to being the coproduct in the category of posets, we just need the universal property.</p>
+</aside>
+</aside>
 </section>
 
     <script type="text/x-thebe-config">
