@@ -69,7 +69,7 @@ Here's the Hasse diagram (which in this case is just the number line but rotated
 I'll call the $z$ in equation {eq}`nleq` the *witness* of $x \leq y$. This relation is indeed reflexive: just pick $0$ for the witness and check that $x + 0 = x$ (it does). Proof of other properties in box below.
 
 
-````{dropdown} Click me for full proof
+````{dropdown} Click me for proof of transitivity and anti-symmetry
 
 
 
@@ -114,7 +114,7 @@ As before, I'll call $z$ the *witness* of the divisibility of $y$ by $x$. The re
 It's not hard to see that $x | x$ (choose $1$ as witness and check $x \times 1 = x$). Proof of other properties below:
 
 
-````{dropdown} Click me for full proof
+````{dropdown} Click me for proof of transitivity and anti-symmetry
 
 These are extremely similar to the additive proofs. Like I literally copied, pasted and replaced $+$ with $\times$ and a couple of other symbols. Skip unless you really care.
 
@@ -151,7 +151,7 @@ Unsurprisingly, the primes play a key role.
 
 ### Subsets
 
-The most interesting and most important example of a partial order is the subset relation $A \subseteq B$ (i.e. $B$ contains all the elements of $A$) from (sections:sets:ops). 
+The most interesting and most important example of a partial order is the subset relation $A \subseteq B$ (i.e. $B$ contains all the elements of $A$) that we met back [here](sections:sets:ops). 
 
 As a refresher, notice that $\{a\} \subseteq \{a, b\} \subseteq \{a, b, c\}$.
 
@@ -160,19 +160,34 @@ The conditions are quite easy to check:
 - Transitive: if $A \subseteq B$ then $B$ contains all the elements of $B$. If $B \subseteq C$, then $C$ contains all the elements of $B$. So $C$ contains all the elements of $A$ which means $A \subseteq C$.
 - Anti-symmetric: if $A \subseteq B$ and $B \subseteq A$, then they each contain all the same elements. By definition, sets that contain the same elements are the same, so $A = B$.
 
-Crucially, $\subseteq$ is not total. For example, the sets $\{a, b, c\}$ and $\{0, 1\}$ are incomparable.
+Crucially, $\subseteq$ is not total. For example, the sets $\{a, b, c\}$ and $\{a,c,d\}$ are incomparable.
 
-We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the starting set $\{a, b, c\}$:
+We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the set $\{a, b, c\}$, (where a line now means a set is contained in another):
+```{image} ../../tikz/subset.svg
+        :alt: subset lattice
+        :height: 250px
+        :align: center
+```
+(yes - the empty set is technically a subset of everything)
 
 ### Fun examples
+
+Here are some other examples that can be helpful to think about:
+1. **Time** In special relativity, observers can see the same events happening in a different order (e.g. A happens before B for one person, but A happens after B for another person). This forms a partial order - see [here](https://physics.stackexchange.com/questions/227049/is-causality-a-total-order) for more info.
+2. **Getting Dressed** A similar, but much simpler, time-based example is how to get dressed. You have to put your T-shirt on before your sweater before your coat, but you could put your socks on before or after any of these. I got this from [here](https://courses.grainger.illinois.edu/cs173/fa2008/lectures/lect_34.pdf), where you can see a few more examples.
+3. **Family Trees** People are (transitively) descended from other people. But when we draw family trees, they are not straight lines because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.
+4. **Privelege** In our society, some groups of people are more privleged than others. Intersectionality is the idea that combining priveleges makes things more complicated. [This talk](https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&t=2213) explores how partial orders can help clarify some of these complications. 
 
 # Lattices
 
 I won't say too much about lattices because I still don't fully understand them. The basic idea is you have a poset with some extra structure. The extra structure includes, at the very least, two operations $\land$ and $\lor$. These operations come in handy for finding shared properties of incomparable objects. 
 
-$x \land y$ is the *greatest* element $z$ such that $z \leq x$ and $z \leq y$. In the tree of life, $x \land y$ is like the last common ancestor of $x$ and $y$. 
+$x \land y$ is the *greatest* element $z$ such that $z \leq x$ and $z \leq y$. This is often called the *greatest lower bound*. In the tree of life, $x \land y$ is like the last common ancestor of $x$ and $y$. 
 
-Dually, $x \lor y$ gives the *least* element such that $x \leq z$ and $y \leq z$. In a world where evolution somehow ultimately merges all species, $x \lor y$ would be the first common descendent of $x$ and $y$.
+There are two distinct parts to this definition: firstly that there is at least one element that is less than both $x$ and $y$ and secondly that out of all the ancestors of $x$ and $y$ we can uniquely pick out the one that is closest to $x$ and $y$ (according to $\leq$). The second part is why we can talk of *the* greatest lower bound.
+
+Dually, $x \lor y$ gives the *least* element such that $x \leq z$ and $y \leq z$. This is often called the *least upper bound*. In a world where evolution somehow ultimately merges all species, $x \lor y$ would be the first common *descendent* of $x$ and $y$.
+
 
 A diagram may help:
 ```{image} ../../tikz/diamond.svg
@@ -183,4 +198,18 @@ A diagram may help:
 
 In perhaps the worst clash of notations I've ever seen, $x \land y$ is found at the bottom of the v-shape between $x$ and $y$, while $x \lor y$ is found at the top of the hat *above* $x$ and $y$. Really sorry about that.
 
-There are some axioms for lattices but I don't have nice interpretations of them. Here's what wikipedia reckons:
+The operations do have names: $\land$ is called the *meet* and $\lor$ is called the join. But I always get these names mixed up so won't use them that much. 
+
+There's another way of defining lattices that I have no intution for but you can read about on [wikipedia](https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure) if you want. 
+
+I'll end with some examples of lattices:
+- The *Boolean* lattice is just the total order $0 \leq 1$ (interepreted as False and True), where $x \land y$ equals the truth value of $x$ AND $y$, $x \lor y$ the truth value of $x$ OR $y$. Even though this is an extremely boring lattice, it seems to play a very important role and is actually where the $\land,\lor$ symbols come from.   
+- The divisibility partial order from above is a lattice. $x \land y$ is defined as the greatest common divisor of $x$ and $y$ and $x \lor y$ is the least common multiple. Not too suprising - if $z$ is a common divisor of $x$ and $y$, then $z | x$ and $z | y$ and it is greatest by definition.
+- The subset partial order from above is also a lattice! $\land$ is the intersection $A \cap B$, $\lor$ is the union $A \cup B$. That $A \cap B$ is contained in both $A$ and $B$ is fairly obvious. That it is the greatest such subset is because if it were any bigger, it would contain elements that either weren't in $A$ or weren't in $B$. 
+
+
+The last two examples are extremely important to keep in mind because in the next chapter because we'll see that productive numbers form a lattice which sort of sits halfway between the divisibility lattice and the subset lattice. In short, $\sqsubseteq \ \cong \ | \ \land \subseteq $[^latref]. 
+
+
+[^latref]: This is kind of a joke but also not really. There are order-preserving maps (which alas aren't lattice homomorphisms) from productive numbers to both the divisibility order and the subset order. So it's halfway there to being the coproduct in the category of posets, we just need the universal property.
+

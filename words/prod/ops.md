@@ -202,9 +202,13 @@ If you look at the final column of the table, you might notice some other patter
 
 ````{dropdown} Click me for proof of idempotence
 
-```{prf:proof} ($x \sqcup x = x$)
+This is our first instance of productive induction!
 
-   Proof by induction!
+Remember from [here](sections:numbers:induction) that additive induction proves something for every number by showing that it holds for $0$, and that if it holds for $n$ then it holds for $n+1$. 
+
+So productive induction is very similar: first show that some property holds for $0$. Then assume that it holds for $x_1, ..., x_n$ and show that it holds for $[x_1, ..., x_n]$. Since all prods are built in such a way, this proves the property holds for every prod.
+
+```{prf:proof} ($x \sqcup x = x$)
 
    Base case ($x=0$): $0 \sqcup 0 = 0$ by {eq}`GRAFT0`.
 
@@ -222,7 +226,7 @@ Those properties make grafting look a lot like LCM. I initially thought they wer
 
 We'll see in the [next section](sections:lattice) that graft shares a lot of *algebraic* properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to understand graft additively.
 
-### Proudly Pruning
+### ... and Prune
 
 We've seen with graft that a very simple definition can produce quite a cool operation. So why not do it again? There's a very natural dual operation to graft, which I will denote $x \sqcap y$, that can be defined as follows:
 
@@ -329,3 +333,10 @@ This is almost identical to graft. The only real difference is that the base cas
 ```
 
 Hopefully you can see that pruning is very similar to GCD. In particular, $gcd(x, y) = 1$ iff $x \sqcap y = 1$. Once again there's some important differences: for example, $gcd(4, 8) = 4$ but $4 \sqcap 8 = 2$. As before, you can play around with [the code](sections:draw:ops) if you want. 
+
+Here's a brief highlight of some other properties of these operations. If you don't know what the words mean, don't worry about it.
+- Like any merge-like operation worth its salt, graft is a commutative monoid. 
+  - The identity is obviously $0$ because of the base case {eq}`GRAFT0`. But $[]$ is also the identity on everything else, which you can check for yourself.
+  - I spent the longest time trying to make it a group, because at the time groups were the only structure I was familiar with, but you can't. For very obvious reasons.
+- Although its not the least, graft does give you a common multiple. Similarly, prune gives you a (not-necessarily-greatest) common divisor. 
+- Prune distributes over graft! I'll prove this in the next section, but perhaps you were already wondering. 

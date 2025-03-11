@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
   
@@ -338,6 +338,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-the-problem">Fixing the Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism">Isomorphism</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing">Computing</a></li>
 </ul>
             </nav>
         </div>
@@ -365,7 +366,7 @@
 <span class="eqno">(14)<a class="headerlink" href="#equation-prod1" title="Link to this equation">#</a></span>\[    \{x_1, x_2, ... x_n \} \subseteq \mathbb{\Pi} \implies [x_1, x_2, ..., x_n] \in \mathbb{\Pi}\]</div>
 <div class="math notranslate nohighlight" id="equation-prodpad">
 <span class="eqno">(15)<a class="headerlink" href="#equation-prodpad" title="Link to this equation">#</a></span>\[    x \neq 0 \implies [x_1, ..., x_n] = [x_1, ..., x_n, 0]\]</div>
-<p>That’s it. The rest is commentary.</p>
+<p>That’s it^[axref]. The rest is commentary.</p>
 <p>The first equation <a class="reference internal" href="#equation-prod0">(13)</a> is not a surprise. The second <a class="reference internal" href="#equation-prod1">(14)</a> is where all the action happens. The third <a class="reference internal" href="#equation-prodpad">(15)</a> just says you can pad a prod with zeros without changing it<a class="footnote-reference brackets" href="#padref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <p>Let’s see how these axioms interact. So we must start with <span class="math notranslate nohighlight">\(0\)</span>. Then by <a class="reference internal" href="#equation-prod1">(14)</a>, <span class="math notranslate nohighlight">\([0, 0]\)</span> is a prod. By <a class="reference internal" href="#equation-prodpad">(15)</a> and our earlier convention <span class="math notranslate nohighlight">\([0, 0] = [0] = []\)</span>. So <span class="math notranslate nohighlight">\([[]]\)</span> is a prod, and so is <span class="math notranslate nohighlight">\([0, []]\)</span> and <span class="math notranslate nohighlight">\([[0, []], 0, []]\)</span> and so on.</p>
 </section>
@@ -539,12 +540,18 @@ I([[[]], 0, []]) &amp;= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
 </table>
 </div>
 <p>If you want to see more examples, check out <a class="reference internal" href="draw.html#sections-draw"><span class="std std-ref">this page</span></a> which allows you to draw any prod you want!</p>
+</section>
+<section id="computing">
+<h2>Computing<a class="headerlink" href="#computing" title="Link to this heading">#</a></h2>
+<p>It’s not as easy as you might think to factor <span class="math notranslate nohighlight">\(n\)</span> into its exponents. The obvious idea of “is <span class="math notranslate nohighlight">\(n\)</span> a multiple of <span class="math notranslate nohighlight">\(2\)</span>? Nope. Ok but is it a multiple of <span class="math notranslate nohighlight">\(3\)</span>? Nope… Ok but is it a multiple of <span class="math notranslate nohighlight">\(\sqrt{n}\)</span>?” works great except for the fact that when <span class="math notranslate nohighlight">\(n\)</span> is large this can take a very long time. So, at least until quantum computers scale beyond <a class="reference external" href="https://quantumcomputing.stackexchange.com/questions/14340/what-is-a-maximal-number-factored-by-shors-algorithm-so-far">factoring 35</a>, it is not practically feasible to convert additive numbers into productive form.</p>
+<p>On the other hand, multiplying shouldn’t be too hard right? Well yes, but also because exponentiation is involved you can very compactly write some very large numbers. <span class="math notranslate nohighlight">\([[[[]]]] = 16\)</span>, so <span class="math notranslate nohighlight">\([[[[[]]]]] = 2^{16} = 65536\)</span>. <span class="math notranslate nohighlight">\([[[[[[]]]]]] = 2^{65536}\)</span>, which is too large to compute (trust me - I wasted a day trying).</p>
+<p>So let me get this straight. There’s no way that prods will ever turn to be useful for additive arithmetic. Once you go productive, you never go back.</p>
 <p>That’s all for now. In the <a class="reference internal" href="ops.html#sections-prod-ops"><span class="std std-ref">next section</span></a>, we’ll take a look at the what you can do with prods.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="padref" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>The padding axiom is kind of inelegant and I wish it didn’t need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that <span class="math notranslate nohighlight">\(2 = 02 = 002 = 002.000\)</span>?</p>
+<p>The padding axiom is kind of inelegant and I wish it didn’t need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros or as partial functions from primes to prods. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that <span class="math notranslate nohighlight">\(2 = 02 = 002 = 002.000\)</span>?</p>
 </aside>
 </aside>
 </section>
@@ -618,6 +625,7 @@ I([[[]], 0, []]) &amp;= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-the-problem">Fixing the Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism">Isomorphism</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing">Computing</a></li>
 </ul>
   </nav></div>
 

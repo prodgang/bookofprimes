@@ -36,7 +36,7 @@ So here it is. The formal definition of the set of prods $\mathbb{\Pi}$:
     x \neq 0 \implies [x_1, ..., x_n] = [x_1, ..., x_n, 0]
 ```
 
-That's it. The rest is commentary.
+That's it^[axref]. The rest is commentary.
 
 
 The first equation {eq}`PROD0` is not a surprise. The second {eq}`PROD1` is where all the action happens. The third {eq}`PRODPAD` just says you can pad a prod with zeros without changing it[^padref].
@@ -201,8 +201,18 @@ As you can see already, it gets quite fiddly to parse these nested brackets. Luc
 
 If you want to see more examples, check out [this page](sections:draw) which allows you to draw any prod you want!
 
+## Computing
+
+It's not as easy as you might think to factor $n$ into its exponents. The obvious idea of "is $n$ a multiple of $2$? Nope. Ok but is it a multiple of $3$? Nope... Ok but is it a multiple of $\sqrt{n}$?" works great except for the fact that when $n$ is large this can take a very long time. So, at least until quantum computers scale beyond [factoring 35](https://quantumcomputing.stackexchange.com/questions/14340/what-is-a-maximal-number-factored-by-shors-algorithm-so-far), it is not practically feasible to convert additive numbers into productive form.
+
+On the other hand, multiplying shouldn't be too hard right? Well yes, but also because exponentiation is involved you can very compactly write some very large numbers. $[[[[]]]] = 16$, so $[[[[[]]]]] = 2^{16} = 65536$. $[[[[[[]]]]]] = 2^{65536}$, which is too large to compute (trust me - I wasted a day trying).
+
+So let me get this straight. There's no way that prods will ever turn to be useful for additive arithmetic. Once you go productive, you never go back.
+
+
 That's all for now. In the [next section](sections:prod:ops), we'll take a look at the what you can do with prods.
 
-[^padref]: The padding axiom is kind of inelegant and I wish it didn't need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that $2 = 02 = 002 = 002.000$?
+[^axref]: A complete axiomitization would probably include some axioms asserting that $0$ does not equal anything else and things like that. But having basically only studied algebra, I'm scared of asserting inequalities and will continue to steer clear of them for the remainder of this book.
+[^padref]: The padding axiom is kind of inelegant and I wish it didn't need to be there. Technically, you could define the underlying lists as implicitly having an infinite number of trailing zeros or as partial functions from primes to prods. Alternatively, you could bite the bullet and point the finger at decimal notation for also having redundant padding: ever noticed that $2 = 02 = 002 = 002.000$?
 
 

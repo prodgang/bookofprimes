@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
   
@@ -62,6 +62,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'words/prod/latt';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -347,8 +349,118 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lattices">
 <span id="sections-lattice"></span><h1>Lattices<a class="headerlink" href="#lattices" title="Link to this heading">#</a></h1>
+<p>One day, I was sitting on a roof top practicing some … breathing excercises … and it occured to me that maybe graft and prune form a lattice. I didn’t really know what a lattice was, so I went downstairs, pulled up the <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure">wikipedia definition</a> and coded up some python to check which conditions were satisfied. It went pretty well.</p>
+<p>It turns out there’s a whole family of different type of lattices that form a kind of poset:</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/Lattice_v4.png"><img alt="../../_images/Lattice_v4.png" src="../../_images/Lattice_v4.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text"><a class="reference external" href="https://en.wikipedia.org/wiki/Map_of_lattices">source</a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Almost immediately, I realized I had accidentally discovered a distributive lattice. A week later, I had proven it. After a few more months, I finally worked out how to produce Boolean algebras. The following sections detail this journey but with hindsight’s gift of clarity.</p>
 <section id="order">
 <h2>Order<a class="headerlink" href="#order" title="Link to this heading">#</a></h2>
+<p>As you can see from the image above, a lattice is at the very least a partial order. So how do we make a productive partial order?</p>
+<p>First of all, it makes sense to require that <span class="math notranslate nohighlight">\(0\)</span> is less than everything else:</p>
+<div class="math notranslate nohighlight" id="equation-pleq0">
+<span class="eqno">(22)<a class="headerlink" href="#equation-pleq0" title="Link to this equation">#</a></span>\[   0 \sqsubseteq x \text{ , for any } x \in \mathbb{\Pi}\]</div>
+<p>I’ve chosen the <span class="math notranslate nohighlight">\(\sqsubseteq\)</span> symbol to maintain the square vibes.</p>
+<p>The other natural requirements are for the primes to be incomparable and that if <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>, then <span class="math notranslate nohighlight">\([x] \sqsubseteq [y]\)</span>. This second part generalizes to:</p>
+<div class="math notranslate nohighlight" id="equation-pleq1">
+<span class="eqno">(23)<a class="headerlink" href="#equation-pleq1" title="Link to this equation">#</a></span>\[   x_1 \sqsubseteq y_1, ..., x_n \sqsubseteq y_n \implies [x_1, ..., x_n] \sqsubseteq [y_1, ..., y_n]\]</div>
+<p>And that’s it<a class="footnote-reference brackets" href="#leqref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Let’s try a couple of examples:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\([] \sqsubseteq []\)</span>. Remember that <span class="math notranslate nohighlight">\([] = [0]\)</span> by <a class="reference internal" href="defs.html#equation-prodpad">(15)</a>. Since <span class="math notranslate nohighlight">\(0 \sqsubseteq 0\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a>, then <span class="math notranslate nohighlight">\([0] \sqsubseteq [0]\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([] \sqsubseteq x\)</span>, for any <span class="math notranslate nohighlight">\(x \neq 0\)</span>. Expand <span class="math notranslate nohighlight">\([]\)</span> to <span class="math notranslate nohighlight">\([0, ..., 0]\)</span> and <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span>. Apply <a class="reference internal" href="#equation-pleq0">(22)</a> to every component and then <a class="reference internal" href="#equation-pleq1">(23)</a> on the whole thing.</p></li>
+<li><p><span class="math notranslate nohighlight">\([[]] \sqsubseteq [[], []]\)</span>. Firstly, pad <span class="math notranslate nohighlight">\([[]]\)</span> to <span class="math notranslate nohighlight">\([[], 0]\)</span>. We just saw that <span class="math notranslate nohighlight">\([] \sqsubseteq []\)</span>. Meanwhile, <span class="math notranslate nohighlight">\(0 \sqsubseteq []\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a>. So by <a class="reference internal" href="#equation-pleq1">(23)</a>, <span class="math notranslate nohighlight">\([[], 0] \subseteq [[], []]\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([[], 0] \not \sqsubseteq [0, []]\)</span>. <span class="math notranslate nohighlight">\(0 \sqsubseteq []\)</span> so both sides are part greater and part less than the other. Since neither is uniformly greater, we cannot use <a class="reference internal" href="#equation-pleq1">(23)</a>, so different primes are incomparable.</p></li>
+<li><p><span class="math notranslate nohighlight">\([[[]]] \not \sqsubseteq [[0, []]]\)</span>. We just saw that <span class="math notranslate nohighlight">\([[]] \not \sqsubseteq [0, []]\)</span>, so of course wrapping each side in another bracket doesn’t change anything. But this is example is important because the corresponding numbers divide: <span class="math notranslate nohighlight">\(4 | 8\)</span>. Therefore <span class="math notranslate nohighlight">\(\sqsubseteq\)</span> is different to divisibility.</p></li>
+</ol>
+<p>Here’s a snapshot of the Hasse diagram:</p>
+<a class="reference internal image-reference" href="../../_images/plat.svg"><img alt="productive lattice" class="align-center" src="../../_images/plat.svg" style="height: 250px;" /></a>
+<p>Once again, its much easier to interpret things with trees. The general pattern is that <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> if the you can place <span class="math notranslate nohighlight">\(y\)</span> on top of <span class="math notranslate nohighlight">\(x\)</span> and completely cover it. Practice a few for yourself if you want.</p>
+<p>We’d better check that this does actually define a partial order! I’ll go through the reflexivity proof in detail and you can check out the other parts if you want. They’re all not-particularly-insightful inductions.</p>
+<div class="proof theorem admonition" id="pleqrefl">
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
+<section class="theorem-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(x \sqsubseteq x\)</span></p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Base case (<span class="math notranslate nohighlight">\(x=0\)</span>): <span class="math notranslate nohighlight">\(0 \sqsubseteq 0\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a></p>
+<p>Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>). Assume for inductive hypothesis <span class="math notranslate nohighlight">\(x_i \sqsubseteq x_i\)</span>. Then by <a class="reference internal" href="#equation-pleq1">(23)</a>, <span class="math notranslate nohighlight">\([x_1, ..., x_n] \sqsubseteq [x_1, ..., x_n]\)</span>, so <span class="math notranslate nohighlight">\(x \sqsubseteq x\)</span>. Done.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click me for proofs of transitivity and anti-symmetry</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We’ll go with anti-symmetry first because its merely a double induction.</p>
+<div class="proof theorem admonition" id="pleqasymm">
+<p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
+<section class="theorem-content" id="proof-content">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(x \sqsubseteq y \land y \sqsubseteq x \implies x = y\)</span></p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p class="sd-card-text">Proof. Base case (<span class="math notranslate nohighlight">\(x = 0\)</span>): If <span class="math notranslate nohighlight">\(y \sqsubseteq 0\)</span>, then <span class="math notranslate nohighlight">\(y = 0 = x\)</span>.</p>
+<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n])\)</span>. <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>, so <span class="math notranslate nohighlight">\(y \neq 0\)</span> and we can expand to <span class="math notranslate nohighlight">\([y_1, ..., y_n]\)</span>. Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i \land y_i \sqsubseteq x_i \implies x_i = y_i\)</span>.</p>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>, then <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span> for every <span class="math notranslate nohighlight">\(i\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a>. Similarly, <span class="math notranslate nohighlight">\(y \sqsubseteq x\)</span> implies <span class="math notranslate nohighlight">\(y_i \sqsubseteq x_i\)</span>.</p>
+<p class="sd-card-text">Now apply inductive hypothesis to get <span class="math notranslate nohighlight">\(x_i = y_i\)</span>. So <span class="math notranslate nohighlight">\([x_1, ..., x_n] = [y_1, ..., y_n]\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>. Done</p>
+</div>
+<p class="sd-card-text">Transitivity triple induction time!</p>
+<div class="proof theorem admonition" id="pleqtrans">
+<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
+<section class="theorem-content" id="proof-content">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(x \sqsubseteq y \land y \sqsubseteq z \implies x \sqsubseteq z\)</span></p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p class="sd-card-text">Proof. Base case split on <span class="math notranslate nohighlight">\(x,y,z\)</span>:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(x=0\)</span> immediately implies <span class="math notranslate nohighlight">\(x \sqsubseteq z\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(y=0\)</span> and <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> implies <span class="math notranslate nohighlight">\(x = 0\)</span> and so <span class="math notranslate nohighlight">\(x \sqsubseteq z\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(z=0\)</span> and <span class="math notranslate nohighlight">\(y \sqsubseteq z\)</span> implies <span class="math notranslate nohighlight">\(y=0\)</span> which implies <span class="math notranslate nohighlight">\(x=0\)</span> and so <span class="math notranslate nohighlight">\(x \subseteq z\)</span>.</p></li>
+</ul>
+<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n], y=[y_1, ..., y_n], z=[z_1, ..., z_n]\)</span>): assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i \land y_i \sqsubseteq z_i \implies x_i \sqsubseteq z_i\)</span>, for every <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p class="sd-card-text">Then <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> implies <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a>. Similarly, <span class="math notranslate nohighlight">\(y \sqsubseteq z\)</span> implies <span class="math notranslate nohighlight">\(y_i \sqsubseteq z_i\)</span>.</p>
+<p class="sd-card-text">Applying inductive hypothesis, <span class="math notranslate nohighlight">\(x_i \sqsubseteq z_i\)</span> for every <span class="math notranslate nohighlight">\(i\)</span>. So <span class="math notranslate nohighlight">\([x_1, ..., x_n] \sqsubseteq [z_1, ..., z_n]\)</span> which means <span class="math notranslate nohighlight">\(x \sqsubseteq z\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a>. Done</p>
+</div>
+<p class="sd-card-text">These proofs are so mechanical and uninteresting I don’t really see the point in reading them. Most of my intuition for <span class="math notranslate nohighlight">\(\sqsubsteq\)</span> comes from its semantic similarities to <span class="math notranslate nohighlight">\(\subseteq\)</span> and <span class="math notranslate nohighlight">\(|\)</span>. But if that’s too informal you, symbol shunt away!</p>
+</div>
+</details><p>That trick I mentioned about fitting <span class="math notranslate nohighlight">\(y\)</span> on top of <span class="math notranslate nohighlight">\(x\)</span> to check whether its bigger segues nicely into the next observation. If you’ve read the wikipedia article on lattices closely (or just know enough about them already), you’ll know that there’s two different ways to different a lattice: either starting with a poset and looking for greatest/least upper/lower bounds or starting with two operations <span class="math notranslate nohighlight">\(\land, \lor\)</span> and using them to define a poset. Conveniently, these are identical in our case.</p>
+<div class="proof theorem admonition" id="pleqeqlatt">
+<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
+<section class="theorem-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(x \sqsubseteq y \iff x = x \sqcap y\)</span></p>
+</section>
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click me for proof of equivalence</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You’d never have guessed - its more inductions!</p>
+<div class="proof admonition" id="proof">
+<p class="sd-card-text">Proof.    Forwards direction: <span class="math notranslate nohighlight">\(x \sqsubseteq y \implies x = x \sqcap y\)</span></p>
+<p class="sd-card-text">Base case (<span class="math notranslate nohighlight">\(x = 0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcap y = 0\)</span> by <a class="reference internal" href="ops.html#equation-prune0">(20)</a>.</p>
+<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): suppose <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>. Then <span class="math notranslate nohighlight">\(y \neq 0\)</span>, so let <span class="math notranslate nohighlight">\(y = [y_1, ..., y_n]\)</span>.</p>
+<p class="sd-card-text">By <a class="reference internal" href="#equation-pleq1">(23)</a>, we have <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span>. By inductive hypothesis, <span class="math notranslate nohighlight">\(x_i = x_i \sqcap y_i\)</span>.</p>
+<p class="sd-card-text">Therefore, <span class="math notranslate nohighlight">\(x \sqcap y = [x_1, ..., x_n] \sqcap [y_1, ..., y_n] = [x_1 \sqcap y_1, ..., x_n \sqcap y_n] = [y_1, ..., y_n] = y\)</span>. Done.</p>
+<p class="sd-card-text">Backwards direction: <span class="math notranslate nohighlight">\(x = x \sqcap y \implies x \sqsubseteq y\)</span>.</p>
+<p class="sd-card-text">Base case (<span class="math notranslate nohighlight">\(x = 0\)</span>): <span class="math notranslate nohighlight">\(0 \sqsubseteq y\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a>.</p>
+<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): suppose <span class="math notranslate nohighlight">\(x = x \sqcap y\)</span>. Then <span class="math notranslate nohighlight">\(y \neq 0\)</span>, so let <span class="math notranslate nohighlight">\(y = [y_1, ..., y_n]\)</span>.</p>
+<p class="sd-card-text">By <a class="reference internal" href="ops.html#equation-prune1">(21)</a>, <span class="math notranslate nohighlight">\(x_i = x_i \sqcap y_i\)</span>. By inductive hypothesis, <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span>. Therefore, <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a>. Done.</p>
+</div>
+</div>
+</details><div class="admonition-historical-tangent admonition">
+<p class="admonition-title">Historical Tangent</p>
+<p>This equivalence was pretty exciting for me when I first noticed it because I had written down the definitions of <span class="math notranslate nohighlight">\(\sqsubseteq\)</span> and <span class="math notranslate nohighlight">\(\sqcap\)</span> completely independently, years apart, and they ended up working together in the nicest possible way, forming some structure I had barely even heard of. The only link between their definitions was that both times, I had tried to write down the simplest thing I could imagine. This gave the same sense of eery excitement as realizing the way you butter your toast is the same as the way you brush your teeth, and these similiarities could help you solve a rubik’s cube.</p>
+<p>The fact that both definitions had split into a <span class="math notranslate nohighlight">\(0\)</span> case and a <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span> case is what led me to write down <a class="reference internal" href="defs.html#equation-prod0">(13)</a> and <a class="reference internal" href="defs.html#equation-prod1">(14)</a>, where your journey began. Only then did I realize I could prove things by induction at which point the proofs wrote themselves and I could write this book. The point is that the structure of this book is not chronological but pedagogical.</p>
+</div>
+<p>Remember to prove:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x \sqsubseteq y \implies x | y\)</span> (and also <span class="math notranslate nohighlight">\(x \subseteq y\)</span> when interpetred properly)</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="leqref" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Technically, the definition should be written as <span class="math notranslate nohighlight">\(x \sqsubseteq y \iff x = 0 \lor\)</span> <a class="reference internal" href="#equation-pleq1">(23)</a> but you get the idea.</p>
+</aside>
+</aside>
 </section>
 </section>
 
