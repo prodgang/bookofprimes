@@ -208,13 +208,18 @@ Remember from [here](sections:numbers:induction) that additive induction proves 
 
 So productive induction is very similar: first show that some property holds for $0$. Then assume that it holds for $x_1, ..., x_n$ and show that it holds for $[x_1, ..., x_n]$. Since all prods are built in such a way, this proves the property holds for every prod.
 
-```{prf:proof} ($x \sqcup x = x$)
+```{prf:theorem}
+:label: graftidem
+$x \sqcup x = x$
+```
+
+```{prf:proof} 
 
    Base case ($x=0$): $0 \sqcup 0 = 0$ by {eq}`GRAFT0`.
 
-   Inductive step ($x = [x_1, ..., x_n]$): Assume for inductive hypothesis that $x_i \sqcup x_i = x_i$. 
+   Inductive step ($x = [x_1, ..., x_n]$): Assume for inductive hypothesis that $x_i \sqcup x_i = x_i$, for every $i \leq n$. 
 
-   Then $x \sqcup x = [x_1, ..., x_n] \sqcup [x_1, ..., x_n] = [x_1 \sqcup x_1, ..., x_n \sqcup x_n] = [x_1, ..., x_n] = x$, where the third equality comes from {eq}`GRAFT1` and the fourth from IH. 
+   Then $x \sqcup x = [x_1, ..., x_n] \sqcup [x_1, ..., x_n] = [x_1 \sqcup x_1, ..., x_n \sqcup x_n] = [x_1, ..., x_n] = x$, where the second equality comes from {eq}`GRAFT1` and the third from IH. 
    
    Done.
 ```
