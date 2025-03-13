@@ -480,11 +480,15 @@
 <p class="sd-card-text">This is our first instance of productive induction!</p>
 <p class="sd-card-text">Remember from <a class="reference internal" href="../pre/numbers.html#sections-numbers-induction"><span class="std std-ref">here</span></a> that additive induction proves something for every number by showing that it holds for <span class="math notranslate nohighlight">\(0\)</span>, and that if it holds for <span class="math notranslate nohighlight">\(n\)</span> then it holds for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 <p class="sd-card-text">So productive induction is very similar: first show that some property holds for <span class="math notranslate nohighlight">\(0\)</span>. Then assume that it holds for <span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span> and show that it holds for <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span>. Since all prods are built in such a way, this proves the property holds for every prod.</p>
-<div class="proof admonition" id="proof">
-<p class="sd-card-text">Proof. (<span class="math notranslate nohighlight">\(x \sqcup x = x\)</span>)</p>
-<p class="sd-card-text">Base case (<span class="math notranslate nohighlight">\(x=0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcup 0 = 0\)</span> by <a class="reference internal" href="#equation-graft0">(18)</a>.</p>
-<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcup x_i = x_i\)</span>.</p>
-<p class="sd-card-text">Then <span class="math notranslate nohighlight">\(x \sqcup x = [x_1, ..., x_n] \sqcup [x_1, ..., x_n] = [x_1 \sqcup x_1, ..., x_n \sqcup x_n] = [x_1, ..., x_n] = x\)</span>, where the third equality comes from <a class="reference internal" href="#equation-graft1">(19)</a> and the fourth from IH.</p>
+<div class="proof theorem admonition" id="graftidem">
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
+<section class="theorem-content" id="proof-content">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(x \sqcup x = x\)</span></p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p class="sd-card-text">Proof.    Base case (<span class="math notranslate nohighlight">\(x=0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcup 0 = 0\)</span> by <a class="reference internal" href="#equation-graft0">(18)</a>.</p>
+<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcup x_i = x_i\)</span>, for every <span class="math notranslate nohighlight">\(i \leq n\)</span>.</p>
+<p class="sd-card-text">Then <span class="math notranslate nohighlight">\(x \sqcup x = [x_1, ..., x_n] \sqcup [x_1, ..., x_n] = [x_1 \sqcup x_1, ..., x_n \sqcup x_n] = [x_1, ..., x_n] = x\)</span>, where the second equality comes from <a class="reference internal" href="#equation-graft1">(19)</a> and the third from IH.</p>
 <p class="sd-card-text">Done.</p>
 </div>
 </div>

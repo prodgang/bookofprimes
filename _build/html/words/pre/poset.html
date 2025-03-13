@@ -425,7 +425,7 @@
 </section>
 <section id="multiplicative-numbers">
 <h3>Multiplicative Numbers<a class="headerlink" href="#multiplicative-numbers" title="Link to this heading">#</a></h3>
-<p>We can define a very similar to relation to <a class="reference internal" href="#equation-nleq">(10)</a>, but with multiplication. To avoid confusing notation, this is usually written <span class="math notranslate nohighlight">\(x | y\)</span> and read as <span class="math notranslate nohighlight">\(x\)</span> <em>divides</em> <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>We can define a very similar relation to <a class="reference internal" href="#equation-nleq">(10)</a>, but with multiplication. To avoid confusing notation, this is usually written <span class="math notranslate nohighlight">\(x | y\)</span> and read as <span class="math notranslate nohighlight">\(x\)</span> <em>divides</em> <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-div">
 <span class="eqno">(12)<a class="headerlink" href="#equation-div" title="Link to this equation">#</a></span>\[x | y \iff \text{there exists some } z \in \mathbb{N}^+ \text{such that } x \times z = y\]</div>
 <p>As before, I’ll call <span class="math notranslate nohighlight">\(z\)</span> the <em>witness</em> of the divisibility of <span class="math notranslate nohighlight">\(y\)</span> by <span class="math notranslate nohighlight">\(x\)</span>. The reason <span class="math notranslate nohighlight">\(z\)</span> comes from <span class="math notranslate nohighlight">\(\mathbb{N}^+\)</span> rather than <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> is because <span class="math notranslate nohighlight">\(0\)</span> behaves horribly in times land, so is excluded altogether.</p>
@@ -446,8 +446,8 @@
 </div>
 </div>
 </details><p>Very crucially, divisibility is not total. For example, <span class="math notranslate nohighlight">\(2\)</span> can’t divide <span class="math notranslate nohighlight">\(3\)</span> and <span class="math notranslate nohighlight">\(3\)</span> can’t divide <span class="math notranslate nohighlight">\(2\)</span>. They are just different. This manifests in a far more intricate Hasse diagram than we’ve seen so far. As a reminder, a line going up from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> now means <span class="math notranslate nohighlight">\(x | y\)</span>.</p>
-<a class="reference internal image-reference" href="../../_images/div.svg"><img alt="divisibility lattice" class="align-center" src="../../_images/div.svg" style="height: 300px;" /></a>
-<p>Unsurprisingly, the primes play a key role.</p>
+<a class="reference internal image-reference" href="../../_images/div.svg" id="divlatt"><img alt="divisibility lattice" class="align-center" id="divlatt" src="../../_images/div.svg" style="height: 300px;" /></a>
+<p>Unsurprisingly, the primes play a foundational role.</p>
 </section>
 <section id="subsets">
 <h3>Subsets<a class="headerlink" href="#subsets" title="Link to this heading">#</a></h3>
@@ -456,12 +456,12 @@
 <p>The conditions are quite easy to check:</p>
 <ul class="simple">
 <li><p>Reflexive: clearly <span class="math notranslate nohighlight">\(A \subseteq A\)</span>.</p></li>
-<li><p>Transitive: if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> then <span class="math notranslate nohighlight">\(B\)</span> contains all the elements of <span class="math notranslate nohighlight">\(B\)</span>. If <span class="math notranslate nohighlight">\(B \subseteq C\)</span>, then <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(B\)</span>. So <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span> which means <span class="math notranslate nohighlight">\(A \subseteq C\)</span>.</p></li>
+<li><p>Transitive: if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> then <span class="math notranslate nohighlight">\(B\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span>. If <span class="math notranslate nohighlight">\(B \subseteq C\)</span>, then <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(B\)</span>. So <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span> which means <span class="math notranslate nohighlight">\(A \subseteq C\)</span>.</p></li>
 <li><p>Anti-symmetric: if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and <span class="math notranslate nohighlight">\(B \subseteq A\)</span>, then they each contain all the same elements. By definition, sets that contain the same elements are the same, so <span class="math notranslate nohighlight">\(A = B\)</span>.</p></li>
 </ul>
 <p>Crucially, <span class="math notranslate nohighlight">\(\subseteq\)</span> is not total. For example, the sets <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span> and <span class="math notranslate nohighlight">\(\{a,c,d\}\)</span> are incomparable.</p>
-<p>We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the set <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span>, (where a line now means a set is contained in another):</p>
-<a class="reference internal image-reference" href="../../_images/subset.svg"><img alt="subset lattice" class="align-center" src="../../_images/subset.svg" style="height: 250px;" /></a>
+<p>We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the set <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span>, (where a line now means a set is contained in the one above):</p>
+<a class="reference internal image-reference" href="../../_images/subset.svg" id="sublatt"><img alt="subset lattice" class="align-center" id="sublatt" src="../../_images/subset.svg" style="height: 250px;" /></a>
 <p>(yes - the empty set is technically a subset of everything)</p>
 </section>
 <section id="fun-examples">
@@ -470,14 +470,14 @@
 <ol class="arabic simple">
 <li><p><strong>Time</strong> In special relativity, observers can see the same events happening in a different order (e.g. A happens before B for one person, but A happens after B for another person). This forms a partial order - see <a class="reference external" href="https://physics.stackexchange.com/questions/227049/is-causality-a-total-order">here</a> for more info.</p></li>
 <li><p><strong>Getting Dressed</strong> A similar, but much simpler, time-based example is how to get dressed. You have to put your T-shirt on before your sweater before your coat, but you could put your socks on before or after any of these. I got this from <a class="reference external" href="https://courses.grainger.illinois.edu/cs173/fa2008/lectures/lect_34.pdf">here</a>, where you can see a few more examples.</p></li>
-<li><p><strong>Family Trees</strong> People are (transitively) descended from other people. But when we draw family trees, they are not straight lines because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.</p></li>
+<li><p><strong>Family Trees</strong> People are (transitively) descended from other people. But when we draw family trees, they are not total because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.</p></li>
 <li><p><strong>Privelege</strong> In our society, some groups of people are more privleged than others. Intersectionality is the idea that combining priveleges makes things more complicated. <a class="reference external" href="https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&amp;amp;t=2213">This talk</a> explores how partial orders can help clarify some of these complications.</p></li>
 </ol>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="lattices">
-<h1>Lattices<a class="headerlink" href="#lattices" title="Link to this heading">#</a></h1>
+<span id="sections-pre-lattice"></span><h1>Lattices<a class="headerlink" href="#lattices" title="Link to this heading">#</a></h1>
 <p>I won’t say too much about lattices because I still don’t fully understand them. The basic idea is you have a poset with some extra structure. The extra structure includes, at the very least, two operations <span class="math notranslate nohighlight">\(\land\)</span> and <span class="math notranslate nohighlight">\(\lor\)</span>. These operations come in handy for finding shared properties of incomparable objects.</p>
 <p><span class="math notranslate nohighlight">\(x \land y\)</span> is the <em>greatest</em> element <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(z \leq x\)</span> and <span class="math notranslate nohighlight">\(z \leq y\)</span>. This is often called the <em>greatest lower bound</em>. In the tree of life, <span class="math notranslate nohighlight">\(x \land y\)</span> is like the last common ancestor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>There are two distinct parts to this definition: firstly that there is at least one element that is less than both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and secondly that out of all the ancestors of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> we can uniquely pick out the one that is closest to <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> (according to <span class="math notranslate nohighlight">\(\leq\)</span>). The second part is why we can talk of <em>the</em> greatest lower bound.</p>

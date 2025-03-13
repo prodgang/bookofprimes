@@ -103,7 +103,7 @@ In other words, an order is *total* when everything is comparable. Though techni
 
 ### Multiplicative Numbers
 
-We can define a very similar to relation to {eq}`nleq`, but with multiplication. To avoid confusing notation, this is usually written $x | y$ and read as $x$ *divides* $y$.
+We can define a very similar relation to {eq}`nleq`, but with multiplication. To avoid confusing notation, this is usually written $x | y$ and read as $x$ *divides* $y$.
 ```{math}
 :label: div
 x | y \iff \text{there exists some } z \in \mathbb{N}^+ \text{such that } x \times z = y
@@ -145,9 +145,10 @@ Very crucially, divisibility is not total. For example, $2$ can't divide $3$ and
         :alt: divisibility lattice
         :height: 300px
         :align: center
+        :name: divlatt
 ```
 
-Unsurprisingly, the primes play a key role.
+Unsurprisingly, the primes play a foundational role.
 
 ### Subsets
 
@@ -157,16 +158,17 @@ As a refresher, notice that $\{a\} \subseteq \{a, b\} \subseteq \{a, b, c\}$.
 
 The conditions are quite easy to check:
 - Reflexive: clearly $A \subseteq A$.
-- Transitive: if $A \subseteq B$ then $B$ contains all the elements of $B$. If $B \subseteq C$, then $C$ contains all the elements of $B$. So $C$ contains all the elements of $A$ which means $A \subseteq C$.
+- Transitive: if $A \subseteq B$ then $B$ contains all the elements of $A$. If $B \subseteq C$, then $C$ contains all the elements of $B$. So $C$ contains all the elements of $A$ which means $A \subseteq C$.
 - Anti-symmetric: if $A \subseteq B$ and $B \subseteq A$, then they each contain all the same elements. By definition, sets that contain the same elements are the same, so $A = B$.
 
 Crucially, $\subseteq$ is not total. For example, the sets $\{a, b, c\}$ and $\{a,c,d\}$ are incomparable.
 
-We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the set $\{a, b, c\}$, (where a line now means a set is contained in another):
+We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the set $\{a, b, c\}$, (where a line now means a set is contained in the one above):
 ```{image} ../../tikz/subset.svg
         :alt: subset lattice
         :height: 250px
         :align: center
+        :name: sublatt
 ```
 (yes - the empty set is technically a subset of everything)
 
@@ -175,9 +177,10 @@ We are not allowed to talk about the set of all sets, so we cannot define the po
 Here are some other examples that can be helpful to think about:
 1. **Time** In special relativity, observers can see the same events happening in a different order (e.g. A happens before B for one person, but A happens after B for another person). This forms a partial order - see [here](https://physics.stackexchange.com/questions/227049/is-causality-a-total-order) for more info.
 2. **Getting Dressed** A similar, but much simpler, time-based example is how to get dressed. You have to put your T-shirt on before your sweater before your coat, but you could put your socks on before or after any of these. I got this from [here](https://courses.grainger.illinois.edu/cs173/fa2008/lectures/lect_34.pdf), where you can see a few more examples.
-3. **Family Trees** People are (transitively) descended from other people. But when we draw family trees, they are not straight lines because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.
+3. **Family Trees** People are (transitively) descended from other people. But when we draw family trees, they are not total because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.
 4. **Privelege** In our society, some groups of people are more privleged than others. Intersectionality is the idea that combining priveleges makes things more complicated. [This talk](https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&t=2213) explores how partial orders can help clarify some of these complications. 
 
+(sections:pre:lattice)=
 # Lattices
 
 I won't say too much about lattices because I still don't fully understand them. The basic idea is you have a poset with some extra structure. The extra structure includes, at the very least, two operations $\land$ and $\lor$. These operations come in handy for finding shared properties of incomparable objects. 
