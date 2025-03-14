@@ -1,3 +1,5 @@
-# Conclusion
+(sections:post:summary)=
+# Summary
 
-And whatever
+In case you couldn't be bothered to read the whole thing, here's a summary:
+

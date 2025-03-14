@@ -3,7 +3,7 @@
 
 title: BOOK OF PRIMES
 author: ProdGang
-logo: logo.png
+logo: imgs/logo.svg
 
 execute:
   execute_notebooks: auto

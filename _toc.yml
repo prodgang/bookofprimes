@@ -4,20 +4,22 @@
 format: jb-book
 root: words/intro
 chapters:
-- file: words/pre/prelim
-  title: PRE
-  sections:
-    - file: words/pre/sets
-    - file: words/pre/numbers
-    - file: words/pre/algebra
-    - file: words/pre/poset
-- file: words/prod/prod
-  title: PROD
-  sections:
-    - file: words/prod/defs
-    - file: words/prod/ops
-    - file: words/prod/latt
-    - file: words/prod/draw
-- file: words/post/post
-  title: POST
-
+  - file: words/pre/prelim
+    title: PRE
+    sections:
+      - file: words/pre/sets
+      - file: words/pre/numbers
+      - file: words/pre/algebra
+      - file: words/pre/poset
+  - file: words/prod/prod
+    title: PROD
+    sections:
+      - file: words/prod/defs
+      - file: words/prod/ops
+      - file: words/prod/latt
+      - file: words/prod/draw
+  - file: words/post/post
+    title: POST
+    sections:
+      - file: words/post/next
+      - file: words/post/note
