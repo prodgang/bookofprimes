@@ -357,9 +357,9 @@ I: OK cool. Can you tell me which objects?
 C: No.
 I: Not really a proof then is it lol
 
-Formally speaking, the difference between the logics all comes down to whether or not you're willing to automatically assume that for any $a$, $a \lor \lnot a$. This is called the Law of Excluded Middel because it rules out any weird edge cases between True and False. Classical logicians say yes to excluded middle, intuitionistic logicians say no. It's worth emphasizing intuitionists don't assume the opposite (though there is [another logic](https://en.wikipedia.org/wiki/Paraconsistent_logic) which allows it), they just stay silent on it. While the classical logician says "of course $a$ is either true of false", the intuitionist says "I am yet to prove $a$ and yet to prove $\lnot a$". 
+Formally speaking, the difference between the logics all comes down to whether or not you're willing to automatically assume that for any $a$, $a \lor \lnot a$. This is called the Law of Excluded Middle because it rules out any weird edge cases between True and False. Classical logicians say yes to excluded middle, intuitionistic logicians don't. It's worth emphasizing intuitionists don't assume the opposite (though there is [another logic](https://en.wikipedia.org/wiki/Paraconsistent_logic) which allows it), they just stay silent on it. While the classical logician says "of course $a$ is either true of false", the intuitionist says "I am yet to prove $a$ or $\lnot a$". 
 
-Heyting is a dead intuitionist and so Heyting algebras are all about intuitionistic logic. Boole is a dead classical logician and so Boolean algebras are all about classical logic. In particular, a Boolean algebra is a Heyting algebra which also satisfies the equation $a \lor \lnot a = \top$ for every $a$. The subset lattice from [here](sections:pre:lattice) is actually a Boolean algebra. The negation of a subset is the subset that has all the elements the first one didn't so taking the union gives back the whole set.
+Having been through a non-classical logic phase myself, it was quite a fun coincidence that intutionism appeared to be making a come back in a completely independent number system. From what I understand, lattices are a useful way for comparing the differences between classical and intuitionistic logic. Heyting is a dead intuitionist and so Heyting algebras are all about intuitionistic logic. Boole is a dead classical logician and so Boolean algebras are all about classical logic. In particular, a Boolean algebra is a Heyting algebra which also satisfies the equation $a \lor \lnot a = \top$ for every $a$. The subset lattice from [here](sections:pre:lattice) is actually a Boolean algebra. The negation of a subset is the subset that has all and only the elements the first one didn't, so taking the union gives back the whole set.
 
 Let's check some examples on $\downarrow 30$ from [before](lat30). Remember that $\top$ is $[[], [], []]$ and $\bot$ is $[]$ because we got rid of $0$:
 * Recall $[[]] \to [] = [0, [], []]$. Then $[[]] \sqcup [0, [], []] = [[], [], []]$. No middle!
@@ -374,21 +374,23 @@ And so on.  It turns out that $\downarrow 30$ actually is a Boolean algebra. On 
         :name: lat24
 ```
 
-Now things get more interesting. $[[]] \to [[], []] = [0, []]$ but then $[[]] \sqcup [0, []] = [[], []] \neq [[0, []], []]$! So $[[]] \sqcup \lnot [[]] \neq \top$. So it's not Boolean. It turns out the example of $30$ was quite special. The downset of $x$ is only Boolean when it's tree is shallow, i.e. all of the $x_i$ are $[]$ or $0$. It's very similar to the subset case, because shallow prods kind of are sets of primes.
+Now things get more interesting. $[[]] \to [] = [0, []]$ but then $[[]] \sqcup [0, []] = [[], []] \neq [[0, []], []]$! So $[[]] \sqcup \lnot [[]] \neq \top$. So it's not Boolean. It turns out the example of $30$ was quite special. The downset of $x$ is only Boolean when it's tree is shallow, i.e. all of the $x_i$ are $[]$ or $0$. It's very similar to the subset case, because shallow prods kind of are sets of primes.
 
 ```{prf:theorem}
-:label: distrib
-If $x$ is shallow then $\downarrow x$ is Boolean
+:label: shallowbool
+$x$ is shallow if and only if $\downarrow x$ is a Boolean algebra
 ```
 ```{prf:proof}
-Since $x$ is shallow, it is of the form $[[], ..., [], 0, ...]$ (if not, just imagine reordering the components). Suppose $x$ has $n_x$ non-zero components.
 
-Now take some $y \sqsubseteq x$. Then $y$ has $n_y$ components with $n_y \leq n_x$. Then $\lnot y$ will simply be the opposite of $y$, in the sense that each of the $n_y$ $[]$'s become $0$ and all the $n_x - n_y$ $0$'s become $[]$. This equals $y \to []$ since pruning will compare at least one $0$ for each $y_i \sqcap \lnot y_i$. Moreover, $\lnot y$ is maximal since any larger $y'$ would either be greater than $x$ or have some overlap with $y$. 
+In the forwards direction, assume that $x$ is shallow. Then identify $x$ with the set of primes $\{p_1, ..., p_k\}$ such that $x_i = []$ (since $x$ is shallow, all other $x_j$ are $0$). Then every $y \sqsubseteq x$ corresponds to a subset of $\{p_1, ..., p_k\}$. Since the lattice of subsets is a Boolean algebra, so is the lattice $\downarrow x$.
 
-Finally, $y \sqcup \lnot y = x$ since each has a $[]$ where the other doesn't, covering all the $[]$'s of $x$. 
+In the other direction, suppose that $x = [x_1, ..., x_n]$ is not shallow. Without loss of generality, we can assume $x_1$ is strictly greater than $[]$. Thus $[[]]$ is an element of the lattice strictly less than $[x_1]$. 
+
+Consider $\lnot [[]] = [[]] \to []$.  By definition, $[[]] \sqcap \lnot [[]] = []$ and so $\lnot [[]] = [0, y_2, ..., y_n]$ for some $y_i$. But that means $[[]] \sqcup \lnot [[]] = [[], y_2, ..., y_n] \sqsubset [x_1, y_2, ..., y_n] \sqsubseteq x$. Therefore $[[]] \sqcup \lnot [[]] \neq x$, so $\downarrow x$ is not a Boolean algebra.
 ```
 
-To be fair, I don't have a proof in the opposite direction. But I'm pretty sure no deep $x$ are Boolean. Especially since that's how it works in the [divisibility case](https://en.wikipedia.org/wiki/Division_lattice) (which I regrettably only learnt after struggling on this for ages) and python has checked the first $100$ numbers. 
+Reassuringly, the same dichotomy happens in the [divisibility lattice](https://en.wikipedia.org/wiki/Division_lattice) for numbers that are *square-free* (which I regrettably only learnt after struggling on this for ages). The lattices of shallow prods are identical to those of square-free numbers which are both basically identical to subset lattices. So all of the interesting differences are amongst Heyting algebras. If I understand them better, that's where I would look next.
 
+That's it. {prf:ref}`shallowbool` gets us to the top of the [map](latt-map). I don't really know where else to go, so I leave it up to you. See the [next section](sections:post:next) for some vague suggestions.
 
 [^leqref]: Technically, the definition should be written as $x \sqsubseteq y \iff x = 0 \lor$ {eq}`PLEQ1` but you get the idea.
