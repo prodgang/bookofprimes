@@ -34,11 +34,11 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=afb57fd3" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -186,7 +186,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../prod/defs.html">Define</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prod/ops.html">Operate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prod/latt.html">Lattices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prod/draw.html">Draw</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../post/post.html">POST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -194,6 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prod/draw.html">Draw</a></li>
 </ul>
 
     </div>
@@ -369,7 +370,7 @@
 <figure class="align-center" id="id2">
 <img alt="../../_images/bercow.gif" src="../../_images/bercow.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><a class="reference external" href="https://giphy.com/gifs/euronews-order-commons-john-bercow-l2AYpTe5FOOMkBZ3I3">source</a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text"><a class="reference external" href="https://giphy.com/gifs/euronews-order-commons-john-bercow-l2AYpTe5FOOMkBZ3I3">source</a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Sometimes this can get a bit ridiculous: there’s a whole <a class="reference external" href="https://tiermaker.com/">corner of the internet</a> dedicated to ranking things that realistically cannot be ranked. On the other side, <a class="reference external" href="https://culanth.org/fieldsights/comparison-the-impossible-method">some people</a> are averse to any form of comparison altogether.</p>
@@ -379,10 +380,11 @@
 </div></blockquote>
 <p>Here’s an informal example. Suppose you want to buy a smoothie. You want it to be healthy, tasty and cheap. Some smoothies are genuinely better than others: a banana smoothie is healthier, tastier and cheaper than a chocolate and truffle smoothie which is itself slightly tastier but otherwise the same as a chocolate and balsamic vinegar smoothie. On the other hand, a superfood smoothie is tastier and healthier than a banana smoothie, but more expensive. So neither is wholly better than the other, which we will call <em>incomparable</em>. We can draw these relationships in what’s called a <em>Hasse Diagram</em>:</p>
 <a class="reference internal image-reference" href="../../_images/smoothie.svg"><img alt="smoothie order" class="align-center" src="../../_images/smoothie.svg" style="height: 200px;" /></a>
+<p>Remember: Hasse diagrams always go up.</p>
 <p>If you disagree about any of the placements, just draw your own version. Hopefully this gives you a sense of how to order things that may be incomparable. Don’t worry if this is boringly obvious, partial orders are pretty easy to understand themselves. So let’s jump into the details!</p>
 <section id="definition">
 <h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
-<p>The formal definition is as follows. A set <span class="math notranslate nohighlight">\(P\)</span> with a relation <span class="math notranslate nohighlight">\(\leq\)</span> is a <strong>partial order</strong> if:</p>
+<p>The formal definition is as follows. Some relation <span class="math notranslate nohighlight">\(x \leq y\)</span> is a <strong>partial order</strong> if:</p>
 <div class="math notranslate nohighlight" id="equation-refl">
 <span class="eqno">(7)<a class="headerlink" href="#equation-refl" title="Link to this equation">#</a></span>\[    x \leq x \hspace{1cm} \text{(Reflexivity)}\]</div>
 <div class="math notranslate nohighlight" id="equation-trans">
@@ -392,7 +394,7 @@
 <p>Let’s break that definition down:</p>
 <ul class="simple">
 <li><p>Reflexivity just means everything is less than or equal to itself. Not very problematic. Math definitions almost always start with some trivial requirement like this.</p></li>
-<li><p>Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: ‘tangerine’ is synonymous with ‘orange’ and ‘orange’ is synomyous with ‘yellowy-red’, but ‘tangerine’ and ‘yellowy-red’ are not at all synonymous. The problem is that ‘orange’ is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons.</p></li>
+<li><p>Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: ‘tangerine’ is synonymous with ‘orange’ and ‘orange’ is synomyous with ‘yellowy-red’, but ‘tangerine’ and ‘yellowy-red’ are not at all synonymous. The problem is that ‘orange’ is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons. Similarly, the “is beaten by” relation is not transitive in rock-paper-scissors, but is in poker.</p></li>
 <li><p>Anti-symmetry is subtle. I initially wrote it off as chalkboard grease to help prove equality. But I’ve learned to think of it as enforcing the beautiful idea that x’s relationships with everything else determine what x is. For example, the smoothie order I introduced above is not anti-symmetric because two smoothies that have the same taste, cost and healthiness could still be different smoothies. On the other hand, you should be able to guess what number I’m thinking of if I tell you it’s both at least as big and at least as small as <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
 </ul>
 </section>
@@ -475,7 +477,7 @@
 <li><p><strong>Time</strong> In special relativity, observers can see the same events happening in a different order (e.g. A happens before B for one person, but A happens after B for another person). This forms a partial order - see <a class="reference external" href="https://physics.stackexchange.com/questions/227049/is-causality-a-total-order">here</a> for more info.</p></li>
 <li><p><strong>Getting Dressed</strong> A similar, but much simpler, time-based example is how to get dressed. You have to put your T-shirt on before your sweater before your coat, but you could put your socks on before or after any of these. I got this from <a class="reference external" href="https://courses.grainger.illinois.edu/cs173/fa2008/lectures/lect_34.pdf">here</a>, where you can see a few more examples.</p></li>
 <li><p><strong>Family Trees</strong> People are (transitively) descended from other people. But when we draw family trees, they are not total because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.</p></li>
-<li><p><strong>Privelege</strong> In our society, some groups of people are more privleged than others. Intersectionality is the idea that combining priveleges makes things more complicated. <a class="reference external" href="https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&amp;amp;t=2213">This talk</a> explores how partial orders can help clarify some of these complications.</p></li>
+<li><p><strong>Privilege</strong> In our society, some groups of people are more privileged than others. Intersectionality is the idea that combining privileges makes things more complicated. <a class="reference external" href="https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&amp;amp;t=2213">This talk</a> explores how partial orders can help clarify some of these complications.</p></li>
 </ol>
 </section>
 </section>
@@ -485,11 +487,11 @@
 <p>I won’t say too much about lattices because I still don’t fully understand them. The basic idea is you have a poset with some extra structure. The extra structure includes, at the very least, two operations <span class="math notranslate nohighlight">\(\land\)</span> and <span class="math notranslate nohighlight">\(\lor\)</span>. These operations come in handy for finding shared properties of incomparable objects.</p>
 <p><span class="math notranslate nohighlight">\(x \land y\)</span> is the <em>greatest</em> element <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(z \leq x\)</span> and <span class="math notranslate nohighlight">\(z \leq y\)</span>. This is often called the <em>greatest lower bound</em>. In the tree of life, <span class="math notranslate nohighlight">\(x \land y\)</span> is like the last common ancestor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>There are two distinct parts to this definition: firstly that there is at least one element that is less than both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and secondly that out of all the ancestors of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> we can uniquely pick out the one that is closest to <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> (according to <span class="math notranslate nohighlight">\(\leq\)</span>). The second part is why we can talk of <em>the</em> greatest lower bound.</p>
-<p>Dually, <span class="math notranslate nohighlight">\(x \lor y\)</span> gives the <em>least</em> element such that <span class="math notranslate nohighlight">\(x \leq z\)</span> and <span class="math notranslate nohighlight">\(y \leq z\)</span>. This is often called the <em>least upper bound</em>. In a world where evolution somehow ultimately merges all species, <span class="math notranslate nohighlight">\(x \lor y\)</span> would be the first common <em>descendent</em> of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>Dually, <span class="math notranslate nohighlight">\(x \lor y\)</span> gives the <em>least</em> element such that <span class="math notranslate nohighlight">\(x \leq z\)</span> and <span class="math notranslate nohighlight">\(y \leq z\)</span>. This is often called the <em>least upper bound</em>. In a world where evolution somehow ultimately merges all species, <span class="math notranslate nohighlight">\(x \lor y\)</span> would be the first common <em>descendent</em> of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. The fact that our tree of life lacks this feature is a useful reminder that not every poset is a lattice.</p>
 <p>A diagram may help:</p>
 <a class="reference internal image-reference" href="../../_images/diamond.svg"><img alt="diamond lattice" class="align-center" src="../../_images/diamond.svg" style="height: 200px;" /></a>
 <p>In perhaps the worst clash of notations I’ve ever seen, <span class="math notranslate nohighlight">\(x \land y\)</span> is found at the bottom of the v-shape between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, while <span class="math notranslate nohighlight">\(x \lor y\)</span> is found at the top of the hat <em>above</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Really sorry about that.</p>
-<p>The operations do have names: <span class="math notranslate nohighlight">\(\land\)</span> is called the <em>meet</em> and <span class="math notranslate nohighlight">\(\lor\)</span> is called the join. But I always get these names mixed up so won’t use them that much.</p>
+<p>The operations do have names: <span class="math notranslate nohighlight">\(\land\)</span> is called the <em>meet</em> and <span class="math notranslate nohighlight">\(\lor\)</span> is called the <em>join</em>. But I always get these names mixed up so won’t use them that much.</p>
 <p>There’s another way of defining lattices that I have no intution for but you can read about on <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure">wikipedia</a> if you want.</p>
 <p>I’ll end with some examples of lattices:</p>
 <ul class="simple">
@@ -502,7 +504,7 @@
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="latref" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>This is kind of a joke but also not really. There are order-preserving maps (which alas aren’t lattice homomorphisms) from productive numbers to both the divisibility order and the subset order. So it’s halfway there to being the coproduct in the category of posets, we just need the universal property.</p>
+<p>This is kind of a joke but also not really. There are order-preserving maps (which alas aren’t lattice homomorphisms) from productive numbers to both the divisibility order and the subset order. So it’s halfway there to being the product in the category of posets, just without the universal property.</p>
 </aside>
 </aside>
 </section>

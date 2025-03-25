@@ -12,7 +12,7 @@ Recap so far:
 Behind the scenes, the reason PA works is because of the following basic fact:
 ````{prf:theorem} 
 :label: ftaa
-$n = 1 + 1 + ...$ ($n$ times)
+$n = 1 + 1 + ... + 1$ ($n$ times)
 ````
 Though extremely dull, this is nice because it shows how to additively represent any number using only more basic numbers.
 
@@ -21,14 +21,16 @@ For productive numbers to work, we're gonna need a similar guarantee that we can
 ````{prf:theorem} 
 :label: fta
 
-For any number $n > 1$, $n$ can be factored as $\prod_i p_i^{e_i}$, where $p_i$ is the $i$th prime number and $e_i \geq 0$. This is unique up to the ordering of primes and inclusion of $e_i = 0$.
+For any number $n > 1$, $n$ can be factored as $n = 2^{e_1} \times 3^{e_2} \times ... \times p_k^{e_k}$, where $p_k$ is the $k$th prime number and $e_i \geq 0$. This is unique up to the ordering of primes and inclusion of $e_i = 0$.
 ````
 Those $e_i$ guys are going to play an important role, and I will call them the *exponents* of $n$. 
 
 In short, any number can be uniquely written as the product of some primes. That it can be done at all is obvious - if a number can't be decomposed then it's a prime so we're done. The interesting part is that this can be done uniquely which means you can't have two different ways of writing the same number (excluding the boring edge cases like $2 \times 3 = 3 \times 2 = 3 \times 2 \times 1$).
 
-So the most obvious thing way to write $n$ productively would be $[e_1, e_2, ..., e_k]$. The $i$th value in the list is just the exponent of the $i$th prime.
+## Productivization
+
+So the most obvious way to write $n$ productively would be $[e_1, e_2, ..., e_k]$. The $i$th value in the list is just the exponent of the $i$th prime.
 
 Then $6$ would be $[1, 1]$, $8$ would be $[3]$ (because $8 = 2^3$) and $20$ would be $[2, 0, 1]$. Sounds pretty good right?
 
-Well, no. It took me about to year to realize, but there is a big problem with this definition that basically defeats the entire point. I'll let you think about what the problem is and how to fix it (not necessarily for a year) before moving to the next part.
+Well, no. It took me about a year to realize, but there is a big problem with this definition that basically defeats the entire point. I'll let you think about what the problem is and how to fix it (not necessarily for a year) before moving to the next part.

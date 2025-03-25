@@ -34,11 +34,11 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=afb57fd3" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -186,7 +186,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../prod/defs.html">Define</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prod/ops.html">Operate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prod/latt.html">Lattices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prod/draw.html">Draw</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../post/post.html">POST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -194,6 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prod/draw.html">Draw</a></li>
 </ul>
 
     </div>
@@ -340,13 +341,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peano-arithmetic">Peano Arithmetic</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction">Induction</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-induction">Strong Induction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction">Induction</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-bases">Number Bases</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-bases">Number Bases</a></li>
 </ul>
             </nav>
         </div>
@@ -367,18 +365,18 @@
 <p>Numbers are so fundamental that you can’t really define them in terms of anything else. So you basically have to start from nothing. Conveniently, nothing is itself a number: <em>zero</em>. So the first stage of axiomatizing numbers is to simply demand that zero is a number. Symbolically,</p>
 <div class="math notranslate nohighlight" id="equation-pa0">
 <span class="eqno">(1)<a class="headerlink" href="#equation-pa0" title="Link to this equation">#</a></span>\[    0 \in \mathbb{N} \]</div>
-<p>OK great. We have our first number. The next stage of axiomatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number <span class="math notranslate nohighlight">\(n\)</span> to the ‘next’ number. This is called the successor function, written <span class="math notranslate nohighlight">\(S(n)\)</span>. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren’t allowed to call it that yet. Instead, we can now say that <span class="math notranslate nohighlight">\(S(0)\)</span> is number and that this is the <em>definition</em> of one. Then we can get <span class="math notranslate nohighlight">\(S(S(0))\)</span> and call it two. And so on and so on and so on. In summary, if <span class="math notranslate nohighlight">\(n\)</span> is a number, then so is <span class="math notranslate nohighlight">\(S(n)\)</span>. Symbolically, this is:</p>
+<p>OK great. We have our first number. The next stage of axiomatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number <span class="math notranslate nohighlight">\(n\)</span> to the ‘next’ number. This is called the successor function, written <span class="math notranslate nohighlight">\(S(n)\)</span>. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren’t allowed to call it that yet. Instead, we can now say that <span class="math notranslate nohighlight">\(S(0)\)</span> is a number and that this is the <em>definition</em> of one. Then we can get <span class="math notranslate nohighlight">\(S(S(0))\)</span> and call it two. And so on and so on and so on. In summary, if <span class="math notranslate nohighlight">\(n\)</span> is a number, then so is <span class="math notranslate nohighlight">\(S(n)\)</span>. Symbolically, this is:</p>
 <div class="math notranslate nohighlight" id="equation-pa1">
 <span class="eqno">(2)<a class="headerlink" href="#equation-pa1" title="Link to this equation">#</a></span>\[    n \in \mathbb{N}  \implies S(n) \in \mathbb{N} \]</div>
-<p>Intuitively, we think of numbers arranging themselves on a line that stretches out foreover. We know this line continues forever because we know we can always just add another one on the end. We need to make sure that <span class="math notranslate nohighlight">\(S\)</span> behaves in the same way so that it never produces an old number and makes numbers go in circles. A concise way of expressing this is that different numbers have different successors. Symbolically,</p>
+<p>Intuitively, we think of numbers arranging themselves on a line that stretches out foreover. We know this line continues forever because we know we can always just add another one on the end. But <span class="math notranslate nohighlight">\(S\)</span> doesn’t know that yet, so we have to give it a rule so that it never produces an old number and makes numbers go in circles. A concise way of expressing this is that different numbers have different successors. Symbolically,</p>
 <div class="math notranslate nohighlight" id="equation-pa2">
 <span class="eqno">(3)<a class="headerlink" href="#equation-pa2" title="Link to this equation">#</a></span>\[    n \neq m \implies S(n) \neq S(m) \]</div>
-<p>That just about completes our definition of numbers. All we need now is something to do with them. Let’s try addition. Take a moment to think about what adding really means and try to find a way of expressing it using only <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(S\)</span>. Once upon a time, some dude called Peano did exactly this and ended up coming up with following two conditions. Actually, there’s some disagreement about whether it was Peano or some other dude called Dedekin. But who cares - they’re both dead now anyway. What lives on are the following two equations:</p>
+<p>That just about completes our definition of numbers. All we need now is something to do with them. Let’s try addition. Take a moment to think about what adding really means and try to find a way of expressing it using only <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(S\)</span>. Once upon a time, some dude called Peano did exactly this and ended up coming up with the following two conditions. Actually, there’s some disagreement about whether it was Peano or some other dude called Dedekind. But who cares - they’re both dead now anyway. What lives on are the following two equations:</p>
 <div class="math notranslate nohighlight" id="equation-pa3">
 <span class="eqno">(4)<a class="headerlink" href="#equation-pa3" title="Link to this equation">#</a></span>\[    0 + m = m \]</div>
 <div class="math notranslate nohighlight" id="equation-pa4">
 <span class="eqno">(5)<a class="headerlink" href="#equation-pa4" title="Link to this equation">#</a></span>\[    S(n) + m = S(n+m) \]</div>
-<p>The equation <a class="reference internal" href="#equation-pa3">(4)</a> shouldn’t come as much of a surprise. The second equation <a class="reference internal" href="#equation-pa4">(5)</a>, is a little weirder. Doesn’t using <span class="math notranslate nohighlight">\(+\)</span> on both sides of the equals sign mean we’re defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying <a class="reference internal" href="#equation-pa4">(5)</a>, you’ll eventually hit rock bottom. That’s where <a class="reference internal" href="#equation-pa3">(4)</a> comes in. Such symbolic witchcraft is called <em>recursion</em>. Let’s see it in action as we prove our first theorem!</p>
+<p>The equation <a class="reference internal" href="#equation-pa3">(4)</a> shouldn’t come as much of a surprise. The second equation <a class="reference internal" href="#equation-pa4">(5)</a>, is a little weirder. Doesn’t using <span class="math notranslate nohighlight">\(+\)</span> on both sides of the equals sign mean we’re defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying <a class="reference internal" href="#equation-pa4">(5)</a>, you’ll keep peeling of layers of <span class="math notranslate nohighlight">\(S\)</span> from the left until you hit <span class="math notranslate nohighlight">\(0\)</span>. That’s where <a class="reference internal" href="#equation-pa3">(4)</a> comes in. Such symbolic witchcraft is called <em>recursion</em>. Let’s see it in action as we prove our first theorem!</p>
 <div class="proof theorem admonition" id="oneplusone">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -407,19 +405,31 @@
 <p><span class="math notranslate nohighlight">\(n + 0 = n\)</span></p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. In this case <span class="math notranslate nohighlight">\(\phi(n)\)</span> will be the statement <span class="math notranslate nohighlight">\(n + 0 = n\)</span>. To use induction, we need to prove it seperately for <span class="math notranslate nohighlight">\(0\)</span> and then for everything else. The <span class="math notranslate nohighlight">\(0\)</span> case really is just <a class="reference internal" href="#equation-pa3">(4)</a>: <span class="math notranslate nohighlight">\(0 + 0 = 0\)</span>.</p>
+<p>Proof. In this case <span class="math notranslate nohighlight">\(\phi(n)\)</span> will be the statement <span class="math notranslate nohighlight">\(n + 0 = n\)</span>. To use induction, we need to prove it separately for <span class="math notranslate nohighlight">\(0\)</span> and then for everything else. The <span class="math notranslate nohighlight">\(0\)</span> case really is just <a class="reference internal" href="#equation-pa3">(4)</a>: <span class="math notranslate nohighlight">\(0 + 0 = 0\)</span>.</p>
 <p>The remaining case is more interesting. We can assume that <span class="math notranslate nohighlight">\(x + 0 = x\)</span>. Now we must show <span class="math notranslate nohighlight">\(S(x) + 0 = S(x)\)</span>. By <a class="reference internal" href="#equation-pa4">(5)</a>, <span class="math notranslate nohighlight">\(S(x) + 0 = S(x+0)\)</span>. Now using our assumption <span class="math notranslate nohighlight">\(S(x + 0) = S(x)\)</span>, so we are done.</p>
 </div>
-<p>It may feel strange that we can get away with just assuming <span class="math notranslate nohighlight">\(x + 0 = x\)</span> in the second part, when that looks a lot like the thing we were originally proving. But that’s the beauty of induction: assume the thing you’re trying to prove is indeed true and then just show that it gets inherited by the sucessor. The role of <span class="math notranslate nohighlight">\(\phi(0)\)</span> (which is often called the base case) is to kick off the chain of inheritance in the first place, but that’s usually even easier to prove than inheritance.</p>
-<p>If you want to learn more about Peano Arithmetic, I recommend playing the natural numbers game (link). It’s where I learnt about all this and enjoyed it a lot.</p>
+<p>It may feel strange that we can get away with just assuming <span class="math notranslate nohighlight">\(x + 0 = x\)</span> in the second part, when that looks a lot like the thing we were originally proving. But that’s the beauty of induction: assume the thing you’re trying to prove is indeed true for <span class="math notranslate nohighlight">\(x\)</span> and then just show that it gets inherited by the sucessor <span class="math notranslate nohighlight">\(S(x)\)</span>. The role of <span class="math notranslate nohighlight">\(\phi(0)\)</span> (which is often called the base case) is to kick off the chain of inheritance in the first place, but that’s usually even easier to prove than inheritance.</p>
+<p>There’s a variant of induction called <em>strong induction</em> which is basically the same except rather than assuming <span class="math notranslate nohighlight">\(\phi(n)\)</span> to get <span class="math notranslate nohighlight">\(\phi(n+1)\)</span>, you assume <span class="math notranslate nohighlight">\(\phi(m)\)</span> for every <span class="math notranslate nohighlight">\(m &lt; n\)</span> to get <span class="math notranslate nohighlight">\(\phi(n)\)</span>. They’re morally the same, but strong induction is sometimes needed when you <span class="math notranslate nohighlight">\(n\)</span> is somehow built out of many smaller things, rather than just one. It turns out you can even use induction on things that aren’t numbers, but we’ll get to that later.</p>
+<p>If you want to learn more about Peano Arithmetic, I recommend playing the <a class="reference external" href="https://adam.math.hhu.de/#/g/leanprover-community/nng4">natural numbers game</a>. It’s where I learnt about all this and enjoyed it a lot.</p>
 <p>Before ending on too positive of a note, I do want to trash talk the Peano axioms a bit. From a logical point of view, its great news that we have condensed so many numbers into so few rules. But don’t you feel a small nagging sense of sadness to watch the weird and wonderful world of numbers being so coldly reduced into an endless sucession of symbolic successors? Well, I certainly do. That’s why I present to you my solution: a slightly more complicated set of mechanical manipulations that reduce numbers to some slightly prettier symbols. But you’ll have to be patient. We’re not even halfway through this rambling introduction.</p>
-<section id="strong-induction">
-<span id="sections-numbers-strong"></span><h4>Strong Induction<a class="headerlink" href="#strong-induction" title="Link to this heading">#</a></h4>
 </section>
 </section>
 <section id="number-bases">
-<h3>Number Bases<a class="headerlink" href="#number-bases" title="Link to this heading">#</a></h3>
-</section>
+<h2>Number Bases<a class="headerlink" href="#number-bases" title="Link to this heading">#</a></h2>
+<p>In the real world you’ll rarely find yourself writing <span class="math notranslate nohighlight">\(SSSSSSSSSSS0 + SSSS0 = SSSSSSSSSSSSSSS0\)</span>. Instead, we use decimal notation and write <span class="math notranslate nohighlight">\(11 + 4 = 15\)</span>. Much nicer. Behind the scenes, decimal works by each digit having a position which corresponds to some power of ten. For example,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+124 = 1 \times 10^2 + 2 \times 10^1 + 4 \times 10^0 = 100 + 20 + 4
+\end{equation*}\]</div>
+<p>But other than the way our hands are built, there’s nothing that special about ten. Computers prefer to work in two’s, so represent numbers using binary. This means that each bit (i.e. binary digit) corresponds to some power of two. For example,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+1011 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 8 + 2 + 1 = 11
+\end{equation*}\]</div>
+<p>To distinguish between <span class="math notranslate nohighlight">\(11\)</span> meaning eleven in decimal and <span class="math notranslate nohighlight">\(11\)</span> meaning three in binary, it helps to add a little subscript to distinguish <span class="math notranslate nohighlight">\(11_{10}\)</span> from <span class="math notranslate nohighlight">\(11_2\)</span>. Of course, <span class="math notranslate nohighlight">\(10\)</span> is the most ambiguous number of all, because in base <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(10_d\)</span> is always <span class="math notranslate nohighlight">\(d\)</span>!</p>
+<p>Anyway, what’s interesting about being able to write numbers in different bases is that it helps you get used to the idea that numbers are not just symbols, but things that happen to be referenced by symbols. The fact that <span class="math notranslate nohighlight">\(11_{2}\)</span> and <span class="math notranslate nohighlight">\(3_{10}\)</span> refer to the same thing is a reminder that <em>threeness</em> is something that goes beyond either notation.</p>
+<p>So what are the numbers beyond the symbols? In my opinion, the main difference between numerology and number theory hinges on that distinction: numerologists get excited about <span class="math notranslate nohighlight">\(777\)</span> but that depends on its decimal form, number theorists get excited about primes but primeness transcends base.</p>
+<p>This books sits somewhere between the two. Starting with the following question: can we find a new way to write down numbers that enables a new perspective on them?</p>
 </section>
 </section>
 
@@ -489,13 +499,10 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peano-arithmetic">Peano Arithmetic</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction">Induction</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-induction">Strong Induction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction">Induction</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-bases">Number Bases</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-bases">Number Bases</a></li>
 </ul>
   </nav></div>
 

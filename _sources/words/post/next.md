@@ -39,6 +39,10 @@ Then there's uncountably many infinite prods. They seem well-defined, but I don'
 
 * We've seen that productive Heyting algebras are subtly different from the divisibility lattices. Does this give rise to meaningful differences in the internal logics?
 
+## Indepedence
+
+I've claimed that addition can't be defined productively. I have a hunch that $\sqcup$ can't be defined additively. Would be nice to prove those claims. More generally, I reckon a model theoretic analysis on the productive axioms (plus induction schema of course) would be useful. 
+
 ## Number Theory
 
 Do prods simplify the proof of Fermat's Last Theorem? I wrote down a version of this once, but can't remember where I put it. What about the Riemmann hypothesis? I wouldn't be much of a crackpot internet number theorist if I didn't claim to have solved it, would I?

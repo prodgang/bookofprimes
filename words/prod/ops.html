@@ -34,11 +34,11 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=afb57fd3" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -186,7 +186,6 @@
 <li class="toctree-l2"><a class="reference internal" href="defs.html">Define</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Operate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="latt.html">Lattices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="draw.html">Draw</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../post/post.html">POST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -194,6 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw.html">Draw</a></li>
 </ul>
 
     </div>
@@ -348,7 +349,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productive-operations">Productive operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grokking-graft">Grokking Graft</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-prune">… and Prune</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-prune">… and prune</a></li>
 </ul>
 </li>
 </ul>
@@ -364,7 +365,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="operate">
 <span id="sections-prod-ops"></span><h1>Operate<a class="headerlink" href="#operate" title="Link to this heading">#</a></h1>
-<p>The <a class="reference internal" href="defs.html#sections-prod-iso"><span class="std std-ref">previous section</span></a> showed we can write any number uniquely as a prod. That’s great. But what can we do with prods?</p>
+<p>The <a class="reference internal" href="defs.html#sections-prod-iso"><span class="std std-ref">previous section</span></a> showed we can write any natural number uniquely as a prod. That’s great. But what can we do with prods?</p>
 <p>In this section, we’ll take a look at some extremely simple operations that do some extremely cool things. But first, let’s take a look at some bad operations.</p>
 <section id="counter-productive-operations">
 <h2>Counter-productive operations<a class="headerlink" href="#counter-productive-operations" title="Link to this heading">#</a></h2>
@@ -391,13 +392,13 @@
 <h3>List operations<a class="headerlink" href="#list-operations" title="Link to this heading">#</a></h3>
 <p>A fun way to test the rapidly developing abilities of language models is to try to get them to recreate prod arithmetic from scratch. Its a useful test case because there’s been no trace of prods on the internet (until now) and so they really are required to work things out from scratch, as opposed to memorizing the thousands of training examples they’ve seen. In the past few years, they’ve gone from being incapable of consistently writing numbers productively to proving <a class="reference internal" href="defs.html#ftpa">Theorem 5</a> given only the axioms.</p>
 <p>However, even the newest models continue to suck at coming up with productive operations. What usually happens is they propose some additive operation, I repeat the argument from above to show its not productive and then they switch to list based operations.</p>
-<p>For example, given two lists you can <em>concantenate</em> them which just means stick one on the end of the other one. So <span class="math notranslate nohighlight">\([a, b, c] ++ [d, e] = [a, b, c, d, e]\)</span>. But this is not a productive operation because it does not respect the padding axiom <a class="reference internal" href="defs.html#equation-prodpad">(15)</a>: you can pad then concatenate to get <span class="math notranslate nohighlight">\([0] ++ [[]] = [0, []]\)</span> or you can concatenate then pad to get <span class="math notranslate nohighlight">\([] ++ [[]] = [[]] = [[], 0]\)</span>, which is very different.</p>
+<p>For example, given two lists you can <em>concantenate</em> them which just means stick one on the end of the other one. So <span class="math notranslate nohighlight">\([a, b, c] + [d, e] = [a, b, c, d, e]\)</span>. But this is not a productive operation because it does not respect the padding axiom <a class="reference internal" href="defs.html#equation-prodpad">(15)</a>: you can pad then concatenate to get <span class="math notranslate nohighlight">\([0] + [[]] = [0, []]\)</span> or you can concatenate then pad to get <span class="math notranslate nohighlight">\([] + [[]] = [[]] = [[], 0]\)</span>, which is very different.</p>
 <p>So operations that are natural for lists are not necessarily productive.</p>
 </section>
 </section>
 <section id="productive-operations">
 <h2>Productive operations<a class="headerlink" href="#productive-operations" title="Link to this heading">#</a></h2>
-<p>Let’s take a step back. Rather than trying to reinvent the wheel, let’s just find the simplest possible productive operation and see what it ends up doing.</p>
+<p>Let’s take a step back. Rather than trying to reinvent the wheel, let’s just find the simplest possible productive operations and see what they end up doing.</p>
 <section id="grokking-graft">
 <h3>Grokking Graft<a class="headerlink" href="#grokking-graft" title="Link to this heading">#</a></h3>
 <p>The simplest prod is <span class="math notranslate nohighlight">\(0\)</span> and the simplest thing to do with <span class="math notranslate nohighlight">\(0\)</span> is nothing. So let’s define an operation that does nothing with zero:</p>
@@ -496,11 +497,11 @@
 <p class="sd-card-text">Done.</p>
 </div>
 </div>
-</details><p>Those properties make grafting look a lot like LCM. I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). This has dramatic consequences: <span class="math notranslate nohighlight">\(LCM(4, 8) = 8\)</span>, but <span class="math notranslate nohighlight">\(4 \sqcup 8 = 64 = 2^6\)</span>. In this case, the exponents were multiplied but that’s just because the expontents <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(3\)</span> don’t share factors (try out an example where they do like <span class="math notranslate nohighlight">\(4 \sqcup 16\)</span>).</p>
-<p>We’ll see in the <a class="reference internal" href="latt.html#sections-lattice"><span class="std std-ref">next section</span></a> that graft shares a lot of <em>algebraic</em> properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to understand graft additively.</p>
+</details><p>Those properties make grafting look a lot like LCM. I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). This has dramatic consequences: <span class="math notranslate nohighlight">\(lcm(4, 8) = 8\)</span>, but <span class="math notranslate nohighlight">\(4 \sqcup 8 = 64 = 2^6\)</span>. In this case, the exponents were multiplied but that’s just because the exponents <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(3\)</span> don’t share factors (try out an example where they do like <span class="math notranslate nohighlight">\(4 \sqcup 16\)</span>).</p>
+<p>We’ll see in the <a class="reference internal" href="latt.html#sections-lattice"><span class="std std-ref">next section</span></a> that graft shares a lot of <em>algebraic</em> properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to interpret graft additively.</p>
 </section>
 <section id="and-prune">
-<h3>… and Prune<a class="headerlink" href="#and-prune" title="Link to this heading">#</a></h3>
+<h3>… and prune<a class="headerlink" href="#and-prune" title="Link to this heading">#</a></h3>
 <p>We’ve seen with graft that a very simple definition can produce quite a cool operation. So why not do it again? There’s a very natural dual operation to graft, which I will denote <span class="math notranslate nohighlight">\(x \sqcap y\)</span>, that can be defined as follows:</p>
 <div class="math notranslate nohighlight" id="equation-prune0">
 <span class="eqno">(20)<a class="headerlink" href="#equation-prune0" title="Link to this equation">#</a></span>\[   0 \sqcap x = 0 = x \sqcap 0\]</div>
@@ -536,7 +537,7 @@
 </td>
 <td><a class="reference internal image-reference" href="../../_images/p4.svg"><img alt="4 as tree" class="align-center" src="../../_images/p4.svg" style="height: 100px;" /></a>
 </td>
-<td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 100px;" /></a>
+<td><a class="reference internal image-reference" href="../../_images/p2.svg"><img alt="2 as tree" class="align-center" src="../../_images/p2.svg" style="height: 50px;" /></a>
 </td>
 <td><p><span class="math notranslate nohighlight">\(2 \sqcap 4 = 2\)</span></p></td>
 </tr>
@@ -562,10 +563,10 @@
 <p>Hopefully you can see that pruning is very similar to GCD. In particular, <span class="math notranslate nohighlight">\(gcd(x, y) = 1\)</span> iff <span class="math notranslate nohighlight">\(x \sqcap y = 1\)</span>. Once again there’s some important differences: for example, <span class="math notranslate nohighlight">\(gcd(4, 8) = 4\)</span> but <span class="math notranslate nohighlight">\(4 \sqcap 8 = 2\)</span>. As before, you can play around with <a class="reference internal" href="draw.html#sections-draw-ops"><span class="std std-ref">the code</span></a> if you want.</p>
 <p>Here’s a brief highlight of some other properties of these operations. If you don’t know what the words mean, don’t worry about it.</p>
 <ul class="simple">
-<li><p>Like any merge-like operation worth its salt, graft is a commutative monoid.</p>
+<li><p>Like any mergey operation worth its salt, graft is a commutative monoid.</p>
 <ul>
 <li><p>The identity is obviously <span class="math notranslate nohighlight">\(0\)</span> because of the base case <a class="reference internal" href="#equation-graft0">(18)</a>. But <span class="math notranslate nohighlight">\([]\)</span> is also the identity on everything else, which you can check for yourself.</p></li>
-<li><p>I spent the longest time trying to make it a group, because at the time groups were the only structure I was familiar with, but you can’t. For very obvious reasons.</p></li>
+<li><p>I spent the longest time trying to make it a group, because at the time groups were the only structure I was familiar with, but you can’t. Because of the idempotence, for one thing.</p></li>
 </ul>
 </li>
 <li><p>Although its not the least, graft does give you a common multiple. Similarly, prune gives you a (not-necessarily-greatest) common divisor.</p></li>
@@ -649,7 +650,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productive-operations">Productive operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grokking-graft">Grokking Graft</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-prune">… and Prune</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-prune">… and prune</a></li>
 </ul>
 </li>
 </ul>
