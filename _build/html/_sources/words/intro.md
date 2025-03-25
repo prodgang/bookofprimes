@@ -23,7 +23,7 @@ So let's crack on!
 ```{warning}
 This book does rely on some concepts that would have been too fun to teach at high school. I've written a [preliminaries](sections:pre) to catch you up on the basics. 
 
-Alternatively, skip straight to the [main action](sections:prod) if you want. I don't care. I definitely didn't spend way too long coming up with niche analogies for obscure concepts that aren't even necessarily relevant for the rest of the book. 
+Alternatively, skip straight to the [main action](sections:prod) if you want. If you're really short for time, there's a [summary](sections:post:summary) too.
 ```
 
 

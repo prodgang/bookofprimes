@@ -16,7 +16,7 @@ Numbers are so fundamental that you can't really define them in terms of anythin
     0 \in \mathbb{N} 
 ```
 
-OK great. We have our first number. The next stage of axiomatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number $n$ to the 'next' number. This is called the successor function, written $S(n)$. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren't allowed to call it that yet. Instead, we can now say that $S(0)$ is number and that this is the *definition* of one. Then we can get $S(S(0))$ and call it two. And so on and so on and so on. In summary, if $n$ is a number, then so is $S(n)$. Symbolically, this is:
+OK great. We have our first number. The next stage of axiomatizing numbers is to come up with a way of making old numbers from new numbers. The idea is to have a function that takes a number $n$ to the 'next' number. This is called the successor function, written $S(n)$. You can think of the successor function as adding one, but technically we are yet to define what one is and so aren't allowed to call it that yet. Instead, we can now say that $S(0)$ is a number and that this is the *definition* of one. Then we can get $S(S(0))$ and call it two. And so on and so on and so on. In summary, if $n$ is a number, then so is $S(n)$. Symbolically, this is:
 
 ```{math}
 :label: PA1
@@ -25,14 +25,14 @@ OK great. We have our first number. The next stage of axiomatizing numbers is to
 
 
 
-Intuitively, we think of numbers arranging themselves on a line that stretches out foreover. We know this line continues forever because we know we can always just add another one on the end. We need to make sure that $S$ behaves in the same way so that it never produces an old number and makes numbers go in circles. A concise way of expressing this is that different numbers have different successors. Symbolically,
+Intuitively, we think of numbers arranging themselves on a line that stretches out foreover. We know this line continues forever because we know we can always just add another one on the end. But $S$ doesn't know that yet, so we have to give it a rule so that it never produces an old number and makes numbers go in circles. A concise way of expressing this is that different numbers have different successors. Symbolically,
 
 ```{math}
 :label: PA2
     n \neq m \implies S(n) \neq S(m) 
 ```
 
-That just about completes our definition of numbers. All we need now is something to do with them. Let's try addition. Take a moment to think about what adding really means and try to find a way of expressing it using only $0$ and $S$. Once upon a time, some dude called Peano did exactly this and ended up coming up with following two conditions. Actually, there's some disagreement about whether it was Peano or some other dude called Dedekin. But who cares - they're both dead now anyway. What lives on are the following two equations:
+That just about completes our definition of numbers. All we need now is something to do with them. Let's try addition. Take a moment to think about what adding really means and try to find a way of expressing it using only $0$ and $S$. Once upon a time, some dude called Peano did exactly this and ended up coming up with the following two conditions. Actually, there's some disagreement about whether it was Peano or some other dude called Dedekind. But who cares - they're both dead now anyway. What lives on are the following two equations:
 
 
 ```{math}
@@ -46,7 +46,7 @@ That just about completes our definition of numbers. All we need now is somethin
     S(n) + m = S(n+m) 
 ```
 
-The equation {eq}`PA3` shouldn't come as much of a surprise. The second equation {eq}`PA4`, is a little weirder. Doesn't using $+$ on both sides of the equals sign mean we're defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying {eq}`PA4`, you'll eventually hit rock bottom. That's where {eq}`PA3` comes in. Such symbolic witchcraft is called *recursion*. Let's see it in action as we prove our first theorem!
+The equation {eq}`PA3` shouldn't come as much of a surprise. The second equation {eq}`PA4`, is a little weirder. Doesn't using $+$ on both sides of the equals sign mean we're defining addition in terms of itself? Well yes, but also no. We are defining addition in terms of itself, but also in such a way that if you keep applying {eq}`PA4`, you'll keep peeling of layers of $S$ from the left until you hit $0$. That's where {eq}`PA3` comes in. Such symbolic witchcraft is called *recursion*. Let's see it in action as we prove our first theorem!
 
 ````{prf:theorem} 
 :label: oneplusone
@@ -93,23 +93,38 @@ $n + 0 = n$
 ````
 
 ````{prf:proof}
-In this case $\phi(n)$ will be the statement $n + 0 = n$. To use induction, we need to prove it seperately for $0$ and then for everything else. The $0$ case really is just {eq}`PA3`: $0 + 0 = 0$.
+In this case $\phi(n)$ will be the statement $n + 0 = n$. To use induction, we need to prove it separately for $0$ and then for everything else. The $0$ case really is just {eq}`PA3`: $0 + 0 = 0$.
 
 The remaining case is more interesting. We can assume that $x + 0 = x$. Now we must show $S(x) + 0 = S(x)$. By {eq}`PA4`, $S(x) + 0 = S(x+0)$. Now using our assumption $S(x + 0) = S(x)$, so we are done.
 
 ````
 
-It may feel strange that we can get away with just assuming $x + 0 = x$ in the second part, when that looks a lot like the thing we were originally proving. But that's the beauty of induction: assume the thing you're trying to prove is indeed true and then just show that it gets inherited by the sucessor. The role of $\phi(0)$ (which is often called the base case) is to kick off the chain of inheritance in the first place, but that's usually even easier to prove than inheritance. 
+It may feel strange that we can get away with just assuming $x + 0 = x$ in the second part, when that looks a lot like the thing we were originally proving. But that's the beauty of induction: assume the thing you're trying to prove is indeed true for $x$ and then just show that it gets inherited by the sucessor $S(x)$. The role of $\phi(0)$ (which is often called the base case) is to kick off the chain of inheritance in the first place, but that's usually even easier to prove than inheritance. 
 
-If you want to learn more about Peano Arithmetic, I recommend playing the natural numbers game (link). It's where I learnt about all this and enjoyed it a lot. 
+There's a variant of induction called *strong induction* which is basically the same except rather than assuming $\phi(n)$ to get $\phi(n+1)$, you assume $\phi(m)$ for every $m < n$ to get $\phi(n)$. They're morally the same, but strong induction is sometimes needed when you $n$ is somehow built out of many smaller things, rather than just one. It turns out you can even use induction on things that aren't numbers, but we'll get to that later.
+
+If you want to learn more about Peano Arithmetic, I recommend playing the [natural numbers game](https://adam.math.hhu.de/#/g/leanprover-community/nng4). It's where I learnt about all this and enjoyed it a lot. 
 
 Before ending on too positive of a note, I do want to trash talk the Peano axioms a bit. From a logical point of view, its great news that we have condensed so many numbers into so few rules. But don't you feel a small nagging sense of sadness to watch the weird and wonderful world of numbers being so coldly reduced into an endless sucession of symbolic successors? Well, I certainly do. That's why I present to you my solution: a slightly more complicated set of mechanical manipulations that reduce numbers to some slightly prettier symbols. But you'll have to be patient. We're not even halfway through this rambling introduction.
 
-(sections:numbers:strong)=
-#### Strong Induction
 
 
-		
-		
-	
-### Number Bases
+## Number Bases
+
+In the real world you'll rarely find yourself writing $SSSSSSSSSSS0 + SSSS0 = SSSSSSSSSSSSSSS0$. Instead, we use decimal notation and write $11 + 4 = 15$. Much nicer. Behind the scenes, decimal works by each digit having a position which corresponds to some power of ten. For example, 
+\begin{equation*}
+124 = 1 \times 10^2 + 2 \times 10^1 + 4 \times 10^0 = 100 + 20 + 4
+\end{equation*}
+
+But other than the way our hands are built, there's nothing that special about ten. Computers prefer to work in two's, so represent numbers using binary. This means that each bit (i.e. binary digit) corresponds to some power of two. For example,
+\begin{equation*}
+1011 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 8 + 2 + 1 = 11
+\end{equation*}
+
+To distinguish between $11$ meaning eleven in decimal and $11$ meaning three in binary, it helps to add a little subscript to distinguish $11_{10}$ from $11_2$. Of course, $10$ is the most ambiguous number of all, because in base $d$, $10_d$ is always $d$!
+
+Anyway, what's interesting about being able to write numbers in different bases is that it helps you get used to the idea that numbers are not just symbols, but things that happen to be referenced by symbols. The fact that $11_{2}$ and $3_{10}$ refer to the same thing is a reminder that *threeness* is something that goes beyond either notation. 
+
+So what are the numbers beyond the symbols? In my opinion, the main difference between numerology and number theory hinges on that distinction: numerologists get excited about $777$ but that depends on its decimal form, number theorists get excited about primes but primeness transcends base.
+
+This books sits somewhere between the two. Starting with the following question: can we find a new way to write down numbers that enables a new perspective on them?

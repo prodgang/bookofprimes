@@ -12,7 +12,7 @@ kernelspec:
 (sections:draw)=
 # Draw
 
-Draw your favourite productive number! Navigate to {fa}`rocket` --> {guilabel}`Live Code`, wait for a minute and then drag the slider around.
+Draw your favourite productive number! Navigate to {fa}`rocket` --> {guilabel}`Live Code`, wait until it says ready and then drag the slider around.
 
 
 

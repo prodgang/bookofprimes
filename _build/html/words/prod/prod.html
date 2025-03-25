@@ -34,11 +34,11 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=afb57fd3" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -186,7 +186,6 @@
 <li class="toctree-l2"><a class="reference internal" href="defs.html">Define</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ops.html">Operate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="latt.html">Lattices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="draw.html">Draw</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../post/post.html">POST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -194,6 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw.html">Draw</a></li>
 </ul>
 
     </div>
@@ -340,6 +341,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorization">Factorization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productivization">Productivization</a></li>
 </ul>
             </nav>
         </div>
@@ -365,20 +367,23 @@
 <div class="proof theorem admonition" id="ftaa">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
 <section class="theorem-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\(n = 1 + 1 + ...\)</span> (<span class="math notranslate nohighlight">\(n\)</span> times)</p>
+<p><span class="math notranslate nohighlight">\(n = 1 + 1 + ... + 1\)</span> (<span class="math notranslate nohighlight">\(n\)</span> times)</p>
 </section>
 </div><p>Though extremely dull, this is nice because it shows how to additively represent any number using only more basic numbers.</p>
 <p>For productive numbers to work, we’re gonna need a similar guarantee that we can productively represent any number. Thankfully, we don’t have to look too far. There’s a niche little result called <em>The Fundamental Theorem of Arithmetic</em> that fits the bill perfectly.</p>
 <div class="proof theorem admonition" id="fta">
 <p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>For any number <span class="math notranslate nohighlight">\(n &gt; 1\)</span>, <span class="math notranslate nohighlight">\(n\)</span> can be factored as <span class="math notranslate nohighlight">\(\prod_i p_i^{e_i}\)</span>, where <span class="math notranslate nohighlight">\(p_i\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>th prime number and <span class="math notranslate nohighlight">\(e_i \geq 0\)</span>. This is unique up to the ordering of primes and inclusion of <span class="math notranslate nohighlight">\(e_i = 0\)</span>.</p>
+<p>For any number <span class="math notranslate nohighlight">\(n &gt; 1\)</span>, <span class="math notranslate nohighlight">\(n\)</span> can be factored as <span class="math notranslate nohighlight">\(n = 2^{e_1} \times 3^{e_2} \times ... \times p_k^{e_k}\)</span>, where <span class="math notranslate nohighlight">\(p_k\)</span> is the <span class="math notranslate nohighlight">\(k\)</span>th prime number and <span class="math notranslate nohighlight">\(e_i \geq 0\)</span>. This is unique up to the ordering of primes and inclusion of <span class="math notranslate nohighlight">\(e_i = 0\)</span>.</p>
 </section>
 </div><p>Those <span class="math notranslate nohighlight">\(e_i\)</span> guys are going to play an important role, and I will call them the <em>exponents</em> of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>In short, any number can be uniquely written as the product of some primes. That it can be done at all is obvious - if a number can’t be decomposed then it’s a prime so we’re done. The interesting part is that this can be done uniquely which means you can’t have two different ways of writing the same number (excluding the boring edge cases like <span class="math notranslate nohighlight">\(2 \times 3 = 3 \times 2 = 3 \times 2 \times 1\)</span>).</p>
-<p>So the most obvious thing way to write <span class="math notranslate nohighlight">\(n\)</span> productively would be <span class="math notranslate nohighlight">\([e_1, e_2, ..., e_k]\)</span>. The <span class="math notranslate nohighlight">\(i\)</span>th value in the list is just the exponent of the <span class="math notranslate nohighlight">\(i\)</span>th prime.</p>
+</section>
+<section id="productivization">
+<h2>Productivization<a class="headerlink" href="#productivization" title="Link to this heading">#</a></h2>
+<p>So the most obvious way to write <span class="math notranslate nohighlight">\(n\)</span> productively would be <span class="math notranslate nohighlight">\([e_1, e_2, ..., e_k]\)</span>. The <span class="math notranslate nohighlight">\(i\)</span>th value in the list is just the exponent of the <span class="math notranslate nohighlight">\(i\)</span>th prime.</p>
 <p>Then <span class="math notranslate nohighlight">\(6\)</span> would be <span class="math notranslate nohighlight">\([1, 1]\)</span>, <span class="math notranslate nohighlight">\(8\)</span> would be <span class="math notranslate nohighlight">\([3]\)</span> (because <span class="math notranslate nohighlight">\(8 = 2^3\)</span>) and <span class="math notranslate nohighlight">\(20\)</span> would be <span class="math notranslate nohighlight">\([2, 0, 1]\)</span>. Sounds pretty good right?</p>
-<p>Well, no. It took me about to year to realize, but there is a big problem with this definition that basically defeats the entire point. I’ll let you think about what the problem is and how to fix it (not necessarily for a year) before moving to the next part.</p>
+<p>Well, no. It took me about a year to realize, but there is a big problem with this definition that basically defeats the entire point. I’ll let you think about what the problem is and how to fix it (not necessarily for a year) before moving to the next part.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -450,6 +455,7 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorization">Factorization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productivization">Productivization</a></li>
 </ul>
   </nav></div>
 

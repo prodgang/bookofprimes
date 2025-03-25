@@ -22,11 +22,13 @@ Here's an informal example. Suppose you want to buy a smoothie. You want it to b
         :align: center
 ```
 
+Remember: Hasse diagrams always go up.
+
 If you disagree about any of the placements, just draw your own version. Hopefully this gives you a sense of how to order things that may be incomparable. Don't worry if this is boringly obvious, partial orders are pretty easy to understand themselves. So let's jump into the details!
 
 ## Definition
 
-The formal definition is as follows. A set $P$ with a relation $\leq$ is a **partial order** if:
+The formal definition is as follows. Some relation $x \leq y$ is a **partial order** if:
 ```{math}
 :label: refl
     x \leq x \hspace{1cm} \text{(Reflexivity)}
@@ -42,7 +44,7 @@ The formal definition is as follows. A set $P$ with a relation $\leq$ is a **par
 
 Let's break that definition down:
 - Reflexivity just means everything is less than or equal to itself. Not very problematic. Math definitions almost always start with some trivial requirement like this.
-- Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: 'tangerine' is synonymous with 'orange' and 'orange' is synomyous with 'yellowy-red', but 'tangerine' and 'yellowy-red' are not at all synonymous. The problem is that 'orange' is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons. 
+- Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: 'tangerine' is synonymous with 'orange' and 'orange' is synomyous with 'yellowy-red', but 'tangerine' and 'yellowy-red' are not at all synonymous. The problem is that 'orange' is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons. Similarly, the "is beaten by" relation is not transitive in rock-paper-scissors, but is in poker.
 - Anti-symmetry is subtle. I initially wrote it off as chalkboard grease to help prove equality. But I've learned to think of it as enforcing the beautiful idea that x's relationships with everything else determine what x is. For example, the smoothie order I introduced above is not anti-symmetric because two smoothies that have the same taste, cost and healthiness could still be different smoothies. On the other hand, you should be able to guess what number I'm thinking of if I tell you it's both at least as big and at least as small as $2$.
 
 ## Examples
@@ -178,7 +180,7 @@ Here are some other examples that can be helpful to think about:
 1. **Time** In special relativity, observers can see the same events happening in a different order (e.g. A happens before B for one person, but A happens after B for another person). This forms a partial order - see [here](https://physics.stackexchange.com/questions/227049/is-causality-a-total-order) for more info.
 2. **Getting Dressed** A similar, but much simpler, time-based example is how to get dressed. You have to put your T-shirt on before your sweater before your coat, but you could put your socks on before or after any of these. I got this from [here](https://courses.grainger.illinois.edu/cs173/fa2008/lectures/lect_34.pdf), where you can see a few more examples.
 3. **Family Trees** People are (transitively) descended from other people. But when we draw family trees, they are not total because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.
-4. **Privelege** In our society, some groups of people are more privleged than others. Intersectionality is the idea that combining priveleges makes things more complicated. [This talk](https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&t=2213) explores how partial orders can help clarify some of these complications. 
+4. **Privilege** In our society, some groups of people are more privileged than others. Intersectionality is the idea that combining privileges makes things more complicated. [This talk](https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&t=2213) explores how partial orders can help clarify some of these complications. 
 
 (sections:pre:lattice)=
 # Lattices
@@ -189,7 +191,7 @@ $x \land y$ is the *greatest* element $z$ such that $z \leq x$ and $z \leq y$. T
 
 There are two distinct parts to this definition: firstly that there is at least one element that is less than both $x$ and $y$ and secondly that out of all the ancestors of $x$ and $y$ we can uniquely pick out the one that is closest to $x$ and $y$ (according to $\leq$). The second part is why we can talk of *the* greatest lower bound.
 
-Dually, $x \lor y$ gives the *least* element such that $x \leq z$ and $y \leq z$. This is often called the *least upper bound*. In a world where evolution somehow ultimately merges all species, $x \lor y$ would be the first common *descendent* of $x$ and $y$.
+Dually, $x \lor y$ gives the *least* element such that $x \leq z$ and $y \leq z$. This is often called the *least upper bound*. In a world where evolution somehow ultimately merges all species, $x \lor y$ would be the first common *descendent* of $x$ and $y$. The fact that our tree of life lacks this feature is a useful reminder that not every poset is a lattice.
 
 
 A diagram may help:
@@ -201,7 +203,7 @@ A diagram may help:
 
 In perhaps the worst clash of notations I've ever seen, $x \land y$ is found at the bottom of the v-shape between $x$ and $y$, while $x \lor y$ is found at the top of the hat *above* $x$ and $y$. Really sorry about that.
 
-The operations do have names: $\land$ is called the *meet* and $\lor$ is called the join. But I always get these names mixed up so won't use them that much. 
+The operations do have names: $\land$ is called the *meet* and $\lor$ is called the *join*. But I always get these names mixed up so won't use them that much. 
 
 There's another way of defining lattices that I have no intution for but you can read about on [wikipedia](https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure) if you want. 
 
@@ -214,5 +216,5 @@ I'll end with some examples of lattices:
 The last two examples are extremely important to keep in mind because in the next chapter because we'll see that productive numbers form a lattice which sort of sits halfway between the divisibility lattice and the subset lattice. In short, $\sqsubseteq \ \cong \ | \ \land \subseteq $[^latref]. 
 
 
-[^latref]: This is kind of a joke but also not really. There are order-preserving maps (which alas aren't lattice homomorphisms) from productive numbers to both the divisibility order and the subset order. So it's halfway there to being the coproduct in the category of posets, we just need the universal property.
+[^latref]: This is kind of a joke but also not really. There are order-preserving maps (which alas aren't lattice homomorphisms) from productive numbers to both the divisibility order and the subset order. So it's halfway there to being the product in the category of posets, just without the universal property.
 

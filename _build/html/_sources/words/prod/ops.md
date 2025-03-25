@@ -1,7 +1,7 @@
 (sections:prod:ops)=
 # Operate
 
-The [previous section](sections:prod:iso) showed we can write any number uniquely as a prod. That's great. But what can we do with prods? 
+The [previous section](sections:prod:iso) showed we can write any natural number uniquely as a prod. That's great. But what can we do with prods? 
 
 In this section, we'll take a look at some extremely simple operations that do some extremely cool things. But first, let's take a look at some bad operations.
 
@@ -33,6 +33,9 @@ Next operation: multiplication. There's a very good case that you should be able
 :align: right
 ```
 
+
+
+
 You can literally see how four and three are just attached to each other side by side to give $12$! Indeed, any time $x,y$ don't share any factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they *do* share factors, then we're back to the classic equation: $a^b \times a^c = a^{b+c}$. So multiplication reduces to addition. So multiplication is counter-productive.
 
 ### Expontentiation
@@ -47,13 +50,13 @@ A fun way to test the rapidly developing abilities of language models is to try 
 
 However, even the newest models continue to suck at coming up with productive operations. What usually happens is they propose some additive operation, I repeat the argument from above to show its not productive and then they switch to list based operations. 
 
-For example, given two lists you can *concantenate* them which just means stick one on the end of the other one. So $[a, b, c] ++ [d, e] = [a, b, c, d, e]$. But this is not a productive operation because it does not respect the padding axiom {eq}`PRODPAD`: you can pad then concatenate to get $[0] ++ [[]] = [0, []]$ or you can concatenate then pad to get $[] ++ [[]] = [[]] = [[], 0]$, which is very different. 
+For example, given two lists you can *concantenate* them which just means stick one on the end of the other one. So $[a, b, c] + [d, e] = [a, b, c, d, e]$. But this is not a productive operation because it does not respect the padding axiom {eq}`PRODPAD`: you can pad then concatenate to get $[0] + [[]] = [0, []]$ or you can concatenate then pad to get $[] + [[]] = [[]] = [[], 0]$, which is very different. 
 
 So operations that are natural for lists are not necessarily productive.
 
 ## Productive operations
 
-Let's take a step back. Rather than trying to reinvent the wheel, let's just find the simplest possible productive operation and see what it ends up doing. 
+Let's take a step back. Rather than trying to reinvent the wheel, let's just find the simplest possible productive operations and see what they end up doing. 
 
 ### Grokking Graft
 
@@ -227,11 +230,11 @@ $x \sqcup x = x$
 ````
 
 
-Those properties make grafting look a lot like LCM. I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). This has dramatic consequences: $LCM(4, 8) = 8$, but $4 \sqcup 8 = 64 = 2^6$. In this case, the exponents were multiplied but that's just because the expontents $2$ and $3$ don't share factors (try out an example where they do like $4 \sqcup 16$). 
+Those properties make grafting look a lot like LCM. I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). This has dramatic consequences: $lcm(4, 8) = 8$, but $4 \sqcup 8 = 64 = 2^6$. In this case, the exponents were multiplied but that's just because the exponents $2$ and $3$ don't share factors (try out an example where they do like $4 \sqcup 16$). 
 
-We'll see in the [next section](sections:lattice) that graft shares a lot of *algebraic* properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to understand graft additively.
+We'll see in the [next section](sections:lattice) that graft shares a lot of *algebraic* properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to interpret graft additively.
 
-### ... and Prune
+### ... and prune
 
 We've seen with graft that a very simple definition can produce quite a cool operation. So why not do it again? There's a very natural dual operation to graft, which I will denote $x \sqcap y$, that can be defined as follows:
 
@@ -299,7 +302,7 @@ This is almost identical to graft. The only real difference is that the base cas
     ```
   - ```{image} ../../tikz/p2.svg
         :alt: 2 as tree
-        :height: 100px
+        :height: 50px
         :align: center
     ```
   - $2 \sqcap 4 = 2$
@@ -340,8 +343,8 @@ This is almost identical to graft. The only real difference is that the base cas
 Hopefully you can see that pruning is very similar to GCD. In particular, $gcd(x, y) = 1$ iff $x \sqcap y = 1$. Once again there's some important differences: for example, $gcd(4, 8) = 4$ but $4 \sqcap 8 = 2$. As before, you can play around with [the code](sections:draw:ops) if you want. 
 
 Here's a brief highlight of some other properties of these operations. If you don't know what the words mean, don't worry about it.
-- Like any merge-like operation worth its salt, graft is a commutative monoid. 
+- Like any mergey operation worth its salt, graft is a commutative monoid. 
   - The identity is obviously $0$ because of the base case {eq}`GRAFT0`. But $[]$ is also the identity on everything else, which you can check for yourself.
-  - I spent the longest time trying to make it a group, because at the time groups were the only structure I was familiar with, but you can't. For very obvious reasons.
+  - I spent the longest time trying to make it a group, because at the time groups were the only structure I was familiar with, but you can't. Because of the idempotence, for one thing.
 - Although its not the least, graft does give you a common multiple. Similarly, prune gives you a (not-necessarily-greatest) common divisor. 
 - Prune distributes over graft! I'll prove this in the next section, but perhaps you were already wondering. 

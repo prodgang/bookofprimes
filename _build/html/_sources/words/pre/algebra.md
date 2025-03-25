@@ -2,7 +2,7 @@
 # Algebra
 
 
-For unrelated reasons, I once came across this thing called group theory. A group is kind of like a set with some cool powers. Groups are part of abstract algebra, which basically studies the idea of combining the doing of one thing with the doing of another thing. Hence the abstract. The algebra part means shunting meaningless symbols around, just like the one that scarred you in highschool. 
+For unrelated reasons, I once came across this thing called group theory. A group is kind of like a set with some cool powers. Groups are part of abstract algebra, which basically studies the idea of putting things together. Hence the abstract. The algebra part means shunting meaningless symbols around, just like the one that scarred you in highschool. 
 
 A group is a set where the cool power gives you the ability to (a) do nothing, (b) undo everything that you can do and (c) something boring called associativity (which I call *chalkboard grease* because it just makes the symbol shunting easier). Wow so cool! But seriously, whenever you find yourself a set that can do those three things, you'd better get excited because it means that your set posseses some incredibly intricate and elegant structure.
 
@@ -13,33 +13,33 @@ Equipping a set with an operation makes it possible to view that set in many dif
 (sections:algebra:additive)=
 ## Additive Numbers
 
-Let's play a game. You get given a calculator that only adds and a starting number $s$. If you type in $a$ and $b$, you get back $a+b$. You can only use the starting number $s$ or a number that you got out in a previous go. But you can re-use every number as much as you want. 
+Given only the power of addition and a single starting number, how many other numbers can you reach?
 
-My goal is to ask you a number that you cannot write on your calculator. So if your starting number is $0$, you're screwed because I can just ask for $3$ and you'll be stuck doing $0+0=0$ forever. But if you start on $1$, then can do $1+1=2$ and then $1+2=3$. Trying again, starting on $2$ would only get you even numbers. 
-
-Play it here!
-
-Clearly, $1$ is a great number to start with because by doing $1+1+1+...$ you can get to all the numbers. The jargon for this is that $1$ generates $\mathbb{N}$ under addition which just means adding $1$ gives you everything. On the one hand, that's great news because it means you can always win the calculator game. But on the other hand, its almost disappointgly boring. Like if you imagine playing the number line like a musical instrument, then addition is like ambsent-mindedly dragging your hand across an infinite Piano forever. 
+If you start with $0$, you'll get nowhere. But if you start with $1$, you can get to every other number (except $0$). Any other number will only give you a small (albeit infinite) part of the number line. So $1$ is very special in the world of addition.
 
 ## Multiplicative Numbers
 
-Let's play the calculator game again but this time with multiplication. So starting with $0$ still sucks because you're doing $0\times0=0$ forever. $1$ also sucks because $1\times1=1$. $2$ is a bit more useful because you get $4$ and then $8$ and so on. Notice how we missed $6$, meaning $2$ was actually more useful additively. In fact, there's no number that's more useful multiplicatively than it is additively. Nor is there any single number that can multiplicatively get you to every other number. 
+Now what if you only have the power of multiplication?
 
-The next thing to try is getting several numbers together to start with. Because if you start with $2$ and $3$ you still get $\{4,8,...\} \cup \{3, 9, ...\}$ but now you also get $\{6, 12, ...\}$. Better but youre still missing $\{5, 7, 10, ...\}$. You could try choosing a new bunch of starting numbers from the pile you're missing. But no matter what you pick next, there will always be more numbers you can't reach multiplicatively. Technically, you can get away with it by choosing an infinite number of starting numbers. Not in the boring/cheating sense of just choosing the whole of $\mathbb{N}$ for you starting numbers. But in the super-cool/maybe-kind-of-still-cheating sense of choosing $\{2, 3, 5, 7, 11, ...\}$: the *primes* [^primeref]. The primes is the bedrock of multiplicative numbers. You can tell primes is important because its been given a name with less than five syllables. 
+Starting with $0$ still gets you nowhere. So does starting with $1$. Starting with $2$, you can get $2, 4, 8, 16, ...$ - the powers of $2$. Starting with $3$, you get the powers of $3$. Not only is there no single number that can get you everywhere multiplicatively, there's not even a finite set of numbers that will get you there. Instead you need the (infinite) set of *primes* $\{2, 3, 5, 7, 11, 13, ...\}$. This is precisely why the primes are so important - they are the foundation of multiplicative numbers. 
 
-You might recognise primes from drawing those diagrams in elementary school where you divided a number down like a tree until you couldn't continue. That game ends at the primes and is kind of like the calculator game backwards. I'm not going to draw any such diagrams because they look misleadingly similar to the way I'll be drawing productive numbers later on, even though their meaning is completely different so I don't want to confuse the person lazily skimming this section. 
+This is also why I think multiplication is so much more interesting than addition. In add-world, everything is secretly just $1 + 1 + 1 + ...$. But in times-land, there's infinitely more variety and complexity. 
 
-The fact that addition only needed to add $1$, whilst multiplication requires an intricate tapestry of infinite primes to get anywhere may feel like an irritating complication. But as the sudden appearence of a visual metaphor may have suggested, there's also a very compelling aesthetic attraction towards towards it.
+
+I will continue to distinguish additive and multiplicative numbers throughout. At some point, I will also introduce productive numbers which are a new thing as well that's inspired by taking the product of prime powers. Typically, multiplying and taking the product mean the same thing, but I distinguish them here for punning convenience. 
 
 ## Addiplicative Numbers
 
-Last version of the game. I promise. 
+What if you're allowed to use addition *and* multiplication?!
 
-Now you're allowed to use both addition, subtraction and multiplication. 
+The short answer is it depends. If the two numbers are multiples of each other, e.g. $2$ and $4$ then nothing much. But if the two numbers are unrelated, e.g. $2$ and $3$ and you're also allowed to subtract, then you can get to $1$ and then you're off! By the way, the smallest number you can get to is called the greatest common divisor (GCD), which may be familiar. 
 
-...
+Addition and multiplication work very nicely in tandem with each other because of the equation $a \times (b + c) = (a\times b) + (a \times c)$. This is called *distributivity* and you've probably used it your whole life without noticing. Distributivity is nice because it means you can gradually break down complex equations into simpler ones. It also shows up elsewhere: 
+* Sets: $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ 
+* Logic: the statements "the cat is red and (on the mat or outdoors)" has the same meaning as "(the cat is red and on the mat) or (the cat is red and outdoors)"
 
-euclid ... gcd
+
+The differences between addition and multiplication go far beyond numbers. You can add or multiply sets, groups, vector spaces and whatever. This isn't a multiplication in the sense of repeated addition, but in the sense of inheriting the abstract properties/vibes of the operations. Typically, abstract addition puts things alongside each other whereas multiplication interweaves them. Interesting things tend to happen when things are combined, so multiplication is almost always the more interesting operation.
 
 
-[^primeref]: The reason for the primes being infinite is pretty much everyone's first favourite theorem. The idea is multiplying all your candidate primes then adding $1$ gives you a number you couldn't have added before.
+That's all the time we have for algebra unfortunately. Main takeaway: numbers are different in add-world and times-land. Add-world is boring. Times-land is cool.

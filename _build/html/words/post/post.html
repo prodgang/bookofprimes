@@ -34,11 +34,11 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b00eef85" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=afb57fd3" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -69,7 +69,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Next Steps" href="next.html" />
-    <link rel="prev" title="Draw" href="../prod/draw.html" />
+    <link rel="prev" title="Lattices" href="../prod/latt.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,7 +186,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../prod/defs.html">Define</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prod/ops.html">Operate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prod/latt.html">Lattices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prod/draw.html">Draw</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">POST</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -194,6 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="note.html">Note from the author</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prod/draw.html">Draw</a></li>
 </ul>
 
     </div>
@@ -316,7 +317,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -332,6 +335,15 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -343,7 +355,47 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="summary">
 <span id="sections-post-summary"></span><h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
-<p>In case you couldn’t be bothered to read the whole thing, here’s a summary:</p>
+<p>In case you couldn’t be bothered to read the whole thing, here’s a concise summary.</p>
+<section id="definitions">
+<h2>Definitions<a class="headerlink" href="#definitions" title="Link to this heading">#</a></h2>
+<p>The set of prods <span class="math notranslate nohighlight">\(\mathbb{\Pi}\)</span> is defined as:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(0 \in \mathbb{\Pi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_1, ..., x_n \in \mathbb{\Pi} \implies [x_1, ..., x_n] \in \mathbb{\Pi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([x_1, ..., x_n, 0] = [x_1, ..., x_n]\)</span></p></li>
+</ol>
+<p>By convention <span class="math notranslate nohighlight">\([]:= [0] = [0, 0, ...]\)</span> and prods are automatically padded to the same length for comparisons.</p>
+<p>You can interpret any prod as a natural number by:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I(0) &amp;= 0 \\
+I([x_1, ..., x_n]) &amp;= \prod_{i=1}^n p_i^{I(x_i)} \text{ , where } p_i \text{ is the ith prime}
+\end{align*}\]</div>
+<p>Trees are <a class="reference internal" href="../prod/defs.html#sections-prod-examples"><span class="std std-ref">useful</span></a> for visualizing prods.</p>
+<p>The operation <span class="math notranslate nohighlight">\(\sqcup: \mathbb{\Pi} \times \mathbb{\Pi} \to \mathbb{\Pi}\)</span>, called graft, is defined as:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+0 \sqcup x &amp;= x = x \sqcup 0 \\
+[x_1, ..., x_n] \sqcup [y_1, ..., y_n] &amp;= [x_1 \sqcup y_1, ..., x_n \sqcup y_n]
+\end{align*}\]</div>
+<p>The dual operation <span class="math notranslate nohighlight">\(\sqcap: \mathbb{\Pi} \times \mathbb{\Pi} \to \mathbb{\Pi}\)</span>, called prune, is defined similarly as:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+0 \sqcap x &amp;= 0 = x \sqcap 0 \\
+[x_1, ..., x_n] \sqcap [y_1, ..., y_n] &amp;= [x_1 \sqcap y_1, ..., x_n \sqcap y_n]
+\end{align*}\]</div>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(I: \mathbb{\Pi} \to \mathbb{N}\)</span> is an isomorphism (<a class="reference internal" href="../prod/defs.html#ftpa">Theorem 5</a>).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sqcap\)</span> induces a partial order equivalent to <span class="math notranslate nohighlight">\(x \sqsubseteq y \iff x = 0 \lor (x_1 \sqsubseteq y_1 \land ... \land x_n \sqsubseteq y_n)\)</span> (<a class="reference internal" href="../prod/latt.html#sections-lattice-poset"><span class="std std-ref">this section</span></a>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \sqsubseteq y \implies I(x) | I(y)\)</span>, but not vice-versa (<a class="reference internal" href="../prod/latt.html#leqdiv">Theorem 7</a>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{\Pi}, \sqcup, \sqcap\)</span> form a distributive lattice (<a class="reference internal" href="../prod/latt.html#sections-lattice-lattice"><span class="std std-ref">this section</span></a>).</p></li>
+<li><p>For any <span class="math notranslate nohighlight">\(x \in \mathbb{\Pi}\)</span>, the downset <span class="math notranslate nohighlight">\(\downarrow x := \{y | y \sqsubseteq x\}\)</span> is a Heyting algebra (<a class="reference internal" href="../prod/latt.html#sublatt">Theorem 15</a>).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\downarrow x - \{0\}\)</span> is a Boolean algebra iff <span class="math notranslate nohighlight">\(x\)</span>’s only components are <span class="math notranslate nohighlight">\(0, []\)</span> (<a class="reference internal" href="../prod/latt.html#shallowbool">Theorem 16</a>). The condition is analogous to square-free integers.</p></li>
+</ol>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -379,12 +431,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../prod/draw.html"
+       href="../prod/latt.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Draw</p>
+        <p class="prev-next-title">Lattices</p>
       </div>
     </a>
     <a class="right-next"
@@ -402,6 +454,23 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
