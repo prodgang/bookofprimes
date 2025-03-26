@@ -56,6 +56,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "prodgang/bookofprimes");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -343,8 +377,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-number-systems">Other Number Systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-prod">Infinite Prod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic">Logic</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indepedence">Indepedence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">Independence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">Number Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lean">Lean</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you">You</a></li>
 </ul>
             </nav>
@@ -370,21 +405,21 @@
 <section id="infinite-prod">
 <h2>Infinite Prod<a class="headerlink" href="#infinite-prod" title="Link to this heading">#</a></h2>
 <p>As mentioned above, I’m sad that prods are merely countable. So how to make them infinite?</p>
-<p>In set theory, you get infinite sets by taking the limit of an increasing sequence of sets. So what if you took the limit of the following increasing sequence?</p>
+<p>In set theory, you <a class="reference external" href="https://en.wikipedia.org/wiki/Set-theoretic_limit#Definitions">apparently</a> get infinite sets by taking the limit of an increasing sequence of sets. So what if you took the limit of the following increasing sequence?</p>
 <a class="reference internal image-reference" href="../../_images/seq1.svg"><img alt="sequence of prods" class="align-center" src="../../_images/seq1.svg" style="height: 100px;" /></a>
 <p>If that’s allowed, then take an arbitrary function <span class="math notranslate nohighlight">\(f: \mathbb{N} \to \mathbb{N}\)</span> and encode it like so:</p>
 <a class="reference internal image-reference" href="../../_images/seq2.svg"><img alt="sequence of f values" class="align-center" src="../../_images/seq2.svg" style="height: 100px;" /></a>
-<p>Then there’s uncountably many infinite prods. They seem well-defined, but I don’t know how to work with them because I can’t just code them up in python any more. But maybe there’s some fun stuff here.</p>
+<p>If (infinite) prods can encode arbitrary functions, there’s uncountably many of them. They seem well-defined, but I don’t know how to work with them because I can’t just code them up in python any more. But maybe there’s some fun stuff here.</p>
 </section>
 <section id="logic">
 <h2>Logic<a class="headerlink" href="#logic" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>One of the most important insights in defining prods was to make them recursive. This was directly inspired by reading about Godel numbering, which recursively represents logical formulae as numbers through exponentiation. Godel numbering is the key ingredient to the incompleteness theorems, so can they also be proven for productive arithmetic?</p></li>
+<li><p>One of the most important insights in defining prods was to make them recursive. This was directly inspired by reading about Godel numbering, which recursively represents logical formulae as numbers through exponentiation. Godel numbering is the key ingredient to the incompleteness theorems, so can they also be proven for productive arithmetic? If true, would there be any reason to care?</p></li>
 <li><p>We’ve seen that productive Heyting algebras are subtly different from the divisibility lattices. Does this give rise to meaningful differences in the internal logics?</p></li>
 </ul>
 </section>
-<section id="indepedence">
-<h2>Indepedence<a class="headerlink" href="#indepedence" title="Link to this heading">#</a></h2>
+<section id="independence">
+<h2>Independence<a class="headerlink" href="#independence" title="Link to this heading">#</a></h2>
 <p>I’ve claimed that addition can’t be defined productively. I have a hunch that <span class="math notranslate nohighlight">\(\sqcup\)</span> can’t be defined additively. Would be nice to prove those claims. More generally, I reckon a model theoretic analysis on the productive axioms (plus induction schema of course) would be useful.</p>
 </section>
 <section id="number-theory">
@@ -392,9 +427,15 @@
 <p>Do prods simplify the proof of Fermat’s Last Theorem? I wrote down a version of this once, but can’t remember where I put it. What about the Riemmann hypothesis? I wouldn’t be much of a crackpot internet number theorist if I didn’t claim to have solved it, would I?</p>
 <p>But seriously, what can prods do for number theory?</p>
 </section>
+<section id="lean">
+<h2>Lean<a class="headerlink" href="#lean" title="Link to this heading">#</a></h2>
+<p>I had hoped to type up all of the proofs of this book into lean to show that my handwaving was not hiding anything. But unfortunately lean turned out to be harder to learn than I expected, at least for the case of endless nested inductions that prods seems to produce.</p>
+<p>If you do know lean, it would be much appreciated if you could help me write up the proofs <a class="reference external" href="https://github.com/prodgang/proofs">here</a>.</p>
+</section>
 <section id="you">
 <h2>You<a class="headerlink" href="#you" title="Link to this heading">#</a></h2>
-<p>One of the wonderful things about math is how often unexpected connections pop up between things that really have no right to be similar. I don’t know where the next connection might be, but maybe you do. So why not try?</p>
+<p>One of the wonderful things about math is how often unexpected connections pop up between things that really have no right being so similar. I don’t know where the next connection might be, but maybe you do. So why not try?</p>
+<p>I’m hoping this book can become a collaborative space for productive numbers. Please share your thoughts and suggestions in the comments below or on the github page for how to better spread the love.</p>
 <p>That is all, my friends. Go forth and productivize.</p>
 </section>
 </section>
@@ -467,8 +508,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-number-systems">Other Number Systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-prod">Infinite Prod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic">Logic</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indepedence">Indepedence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">Independence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-theory">Number Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lean">Lean</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you">You</a></li>
 </ul>
   </nav></div>

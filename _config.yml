@@ -34,6 +34,9 @@ html:
   use_repository_button: false
   extra_footer: "<p> © Copyright I sure hope you do"
   extra_css: ["_static/custom.css"]
+  comments:
+    utterances:
+      repo: "prodgang/bookofprimes"
   
 
 

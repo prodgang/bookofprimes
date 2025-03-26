@@ -49,6 +49,12 @@ Do prods simplify the proof of Fermat's Last Theorem? I wrote down a version of 
 
 But seriously, what can prods do for number theory?
 
+## Lean
+
+I had hoped to type up all of the proofs of this book into lean to show that my handwaving was not hiding anything. But unfortunately lean turned out to be harder to learn than I expected, at least for the case of endless nested inductions that prods seems to produce.
+
+If you do know lean, it would be much appreciated if you could help me write up the proofs [here](https://github.com/prodgang/proofs).
+
 ## You
 
 One of the wonderful things about math is how often unexpected connections pop up between things that really have no right being so similar. I don't know where the next connection might be, but maybe you do. So why not try? 
