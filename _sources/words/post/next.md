@@ -59,6 +59,6 @@ If you do know lean, it would be much appreciated if you could help me write up 
 
 One of the wonderful things about math is how often unexpected connections pop up between things that really have no right being so similar. I don't know where the next connection might be, but maybe you do. So why not try? 
 
-I'm hoping this book can become a collaborative space for productive numbers. Please share your thoughts and suggestions in the comments below or on the github page for how to better spread the love.
+I'm hoping this book can become a collaborative space for productive numbers. Please share your thoughts and suggestions in the [github discussion](https://github.com/prodgang/bookofprimes/discussions) for how to better spread the love.
 
 That is all, my friends. Go forth and productivize. 
