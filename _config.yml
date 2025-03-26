@@ -32,13 +32,10 @@ repository:
 html:
   use_issues_button: false
   use_repository_button: false
-  extra_footer: "<p> © Copyright I sure hope you do"
+  extra_footer: "<p> © Copyright I sure hope you do </p>"
   extra_css: ["_static/custom.css"]
-  comments:
-    utterances:
-      repo: "prodgang/bookofprimes"
-      label: "[comment]"
-  
+  #extra_javascript: 
+  #  - _static/giscus.js
 
 
 sphinx:

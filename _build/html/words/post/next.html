@@ -56,40 +56,6 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script kind="utterances">
-
-    var commentsRunWhenDOMLoaded = cb => {
-    if (document.readyState != 'loading') {
-        cb()
-    } else if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', cb)
-    } else {
-        document.attachEvent('onreadystatechange', function() {
-        if (document.readyState == 'complete') cb()
-        })
-    }
-}
-
-var addUtterances = () => {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://utteranc.es/client.js";
-    script.async = "async";
-
-    script.setAttribute("repo", "prodgang/bookofprimes");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "github-light");
-    script.setAttribute("label", "[comment]");
-    script.setAttribute("crossorigin", "anonymous");
-
-    sections = document.querySelectorAll("div.section");
-    if (sections !== null) {
-        section = sections[sections.length-1];
-        section.appendChild(script);
-    }
-}
-commentsRunWhenDOMLoaded(addUtterances);
-</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -435,7 +401,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <section id="you">
 <h2>You<a class="headerlink" href="#you" title="Link to this heading">#</a></h2>
 <p>One of the wonderful things about math is how often unexpected connections pop up between things that really have no right being so similar. I don’t know where the next connection might be, but maybe you do. So why not try?</p>
-<p>I’m hoping this book can become a collaborative space for productive numbers. Please share your thoughts and suggestions in the comments below or on the github page for how to better spread the love.</p>
+<p>I’m hoping this book can become a collaborative space for productive numbers. Please share your thoughts and suggestions in the <a class="reference external" href="https://github.com/prodgang/bookofprimes/discussions">github discussion</a> for how to better spread the love.</p>
 <p>That is all, my friends. Go forth and productivize.</p>
 </section>
 </section>
@@ -543,7 +509,7 @@ By ProdGang
   <div class="footer-item">
     
 <div class="extra_footer">
-  <p> © Copyright I sure hope you do
+  <p> © Copyright I sure hope you do </p>
 </div>
   </div>
   
