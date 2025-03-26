@@ -396,6 +396,6 @@ Consider $\lnot [[]] = [[]] \to []$.  By definition, $[[]] \sqcap \lnot [[]] = [
 
 Reassuringly, the same dichotomy happens in the [divisibility lattice](https://en.wikipedia.org/wiki/Division_lattice) for numbers that are *square-free* (which I regrettably only learnt after struggling on this for ages). The lattices of shallow prods are identical to those of square-free numbers which are both basically identical to subset lattices. So all of the interesting differences are amongst Heyting algebras. If I understood them better, that's where I would look next.
 
-That's it. {prf:ref}`shallowbool` gets us to the top of the [map](latt-map). I don't really know where else to go, so I leave it up to you. See the [next section](sections:post:next) for some vague suggestions.
+That's it. {prf:ref}`shallowbool` gets us to the top of the [map](latt-map). I don't really know where else to go, so I leave it up to you. See [this section](sections:post:next) for some vague suggestions.
 
 [^leqref]: Technically, the definition should be written as $x \sqsubseteq y \iff x = 0 \lor$ {eq}`PLEQ1` but you get the idea.

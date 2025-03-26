@@ -1,5 +1,6 @@
 # Symbols and Jargon
 
+Glossary. Let me know what I've missed.
 ```{glossary}
 $\land$
     Logical AND. $a \land b$ means $a$ is true AND $b$ is true

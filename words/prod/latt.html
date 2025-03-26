@@ -56,6 +56,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "prodgang/bookofprimes");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -640,7 +674,7 @@ x \sqcap (y \sqcup z) &amp;= [x_1, ..., x_n] \sqcap [y_1 \sqcup z_1, ..., y_n \s
 <p>Consider <span class="math notranslate nohighlight">\(\lnot [[]] = [[]] \to []\)</span>.  By definition, <span class="math notranslate nohighlight">\([[]] \sqcap \lnot [[]] = []\)</span> and so <span class="math notranslate nohighlight">\(\lnot [[]] = [0, y_2, ..., y_n]\)</span> for some <span class="math notranslate nohighlight">\(y_i\)</span>. But that means <span class="math notranslate nohighlight">\([[]] \sqcup \lnot [[]] = [[], y_2, ..., y_n] \sqsubset [x_1, y_2, ..., y_n] \sqsubseteq x\)</span>. Therefore <span class="math notranslate nohighlight">\([[]] \sqcup \lnot [[]] \neq x\)</span>, so <span class="math notranslate nohighlight">\(\downarrow x\)</span> is not a Boolean algebra.</p>
 </div>
 <p>Reassuringly, the same dichotomy happens in the <a class="reference external" href="https://en.wikipedia.org/wiki/Division_lattice">divisibility lattice</a> for numbers that are <em>square-free</em> (which I regrettably only learnt after struggling on this for ages). The lattices of shallow prods are identical to those of square-free numbers which are both basically identical to subset lattices. So all of the interesting differences are amongst Heyting algebras. If I understood them better, that’s where I would look next.</p>
-<p>That’s it. <a class="reference internal" href="#shallowbool">Theorem 16</a> gets us to the top of the <a class="reference internal" href="#latt-map"><span class="std std-ref">map</span></a>. I don’t really know where else to go, so I leave it up to you. See the <a class="reference internal" href="../post/next.html#sections-post-next"><span class="std std-ref">next section</span></a> for some vague suggestions.</p>
+<p>That’s it. <a class="reference internal" href="#shallowbool">Theorem 16</a> gets us to the top of the <a class="reference internal" href="#latt-map"><span class="std std-ref">map</span></a>. I don’t really know where else to go, so I leave it up to you. See <a class="reference internal" href="../post/next.html#sections-post-next"><span class="std std-ref">this section</span></a> for some vague suggestions.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="leqref" role="doc-footnote">
