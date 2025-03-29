@@ -24,9 +24,12 @@ This difference in writing style goes all the way back to some dead Greeks: Eucl
 
 The reason I keep emphasizing the mortality of former mathematicians is because another thing I am sick of is genius worship. Of course, I am deeply grateful to the millenia of mathematicians who came before us and built the field into the glorious subject it is today. But the way we venerate the giants of old is stunting the progress of the future. There's a popular [youtube channel](https://www.youtube.com/playlist?list=PLATpsZGmpkg98pdBHE3EH2sewzSWL8XPb) that reads papers by dead nerds and treats them with the veneration of holy scripture. I have spoken to mathematicians far more gifted than me who are afraid to try anything radical because they believe they are not suitable for coming up with new ideas. I believe these are linked. Do you think Euler (who is also dead) would have been inspired to make so many contributions if he'd been told his whole life that his textbooks were written by demigods?
 
-To sum up, prods are simple and that's a good thing. I write with feeling because that's how I feel, and hope you do too. It doesn't take a genius to find new math. From what I've gathered it takes three things:
-1. Curiosity: to want to comprehensively understand, just for its own sake, whatever it is you're interested in. With enough curiosity, you stop thinking "I could never understand this" and start thinking "I must understand this". 
-2. Persistance: things rarely work the first time. You'll make so many stupid mistakes. But who cares? Each time, you learn.
-3. An internet connection: wikipedia, youtube and stackexchange are a pretty lethal combination. Chatbots will probably be a game changer soon too.
+To sum up:
+* Prods are simple and that's a good thing. 
+* I write with feeling because that's how I feel, and hope you do too. 
+* It doesn't take a genius to find new math. From what I've gathered it takes three things:
+  1. **Curiosity**: to want to comprehensively understand, just for its own sake, whatever it is you're interested in. With enough curiosity, you stop thinking "I could never understand this" and start thinking "I *must* understand this". 
+  2. **Persistance**: things rarely work the first time. You'll make so many stupid mistakes. But who cares? Each time, you learn.
+  3. **An internet connection**: wikipedia, youtube and stackexchange are a pretty lethal combination. Chatbots will probably be a game changer soon too.
 
 If you've got this far, you clearly have all three. So what are you waiting for?
