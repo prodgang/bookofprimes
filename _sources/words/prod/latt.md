@@ -13,7 +13,7 @@ name: latt-map
 [source](https://en.wikipedia.org/wiki/Map_of_lattices)
 ```
 
-Almost immediately, I realized I had accidentally discovered a distributive lattice. A week later, I had proven it. After a few more months, I finally worked out how to produce Boolean algebras. The following sections detail this journey but with hindsight's gift of clarity.
+Almost immediately, I realized I had accidentally discovered a distributive lattice. A week later, I had proven it. The next week, I looked into connections with [lattice based cryptography](https://en.wikipedia.org/wiki/Lattice-based_cryptography). Turns out to be a completely different lattice and massive waste of time. Just goes to show that not only do mathematicians suck at naming things, they can't even do it uniquely. Anyway, after a few more months, I finally worked out how to produce Boolean algebras. The following sections detail this journey but with hindsight's gift of clarity.
 
 (sections:lattice:poset)=
 ## Poset
@@ -209,7 +209,7 @@ You'd never have guessed - its more inductions!
 ```{admonition} Historical Tangent
 This equivalence was pretty exciting for me when I first noticed it because I had written down the definitions of $\sqsubseteq$ and $\sqcap$ completely independently, years apart, and they ended up working together in the nicest possible way, forming some structure I had barely even heard of. The only link between their definitions was that both times, I had tried to write down the simplest thing I could imagine. This gave the same sense of eery excitement you might get from realizing the way you butter your toast is the same as the way you brush your teeth, and these similiarities could help you solve a rubik's cube. 
 
-The fact that both definitions had split into a $0$ case and a $[x_1, ..., x_n]$ case is what led me to write down {eq}`PROD0` and {eq}`PROD1`, where your journey began. Only then did I realize I could prove things by induction at which point the proofs wrote themselves and I could write this book. So remember that the structure of this book is not chronological but pedagogical. 
+The fact that both definitions had split into a $0$ case and a $[x_1, ..., x_n]$ case is what led me to write down {eq}`PROD0` and {eq}`PROD1`, where your journey began. Only then did I realize I could prove things by induction at which point the proofs wrote themselves and I could write this book. A couple of coincidences like these should be enough to convince anyone that prods (actually all math) are discovered, not invented.
 ```
 
 So we've made it onto the first rung of [the map](latt-map)!

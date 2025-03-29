@@ -3,7 +3,7 @@
 This book is about numbers. But not the usual boring numbers you've had drilled into your head since you could barely talk or the numbers that made you decide math was dull and confusing. Instead, we're going to learn about *productive numbers*.
 
 
-**What makes them new?** Taking prime factorization seriously.
+**What makes them new?** No counting. Just primes.
 
 **What do they look this?** Trees! Here's a few:
 
