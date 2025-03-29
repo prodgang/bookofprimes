@@ -124,6 +124,8 @@ Here's a table of some numbers, their factorization and their productive represe
 | $9$    | $3^2$      | $[0, [[]]]$     |
 | $10$    | $2^1 \times 5^1$      | $[[], 0, []]$     |
 
+Don't be mislead by the fact that these are all small numbers with tiny exponents. The pattern for bigger numbers is less intuitive. For now, make sure you understand why $8 = [[0, []]]$. 
+
 As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human-readable way of writing prods: trees! All you have to do is substitute $0$ to $\circ$, $[]$ to $\bullet$ and $[x_1, ..., x_n]$ to a root node connected to $x_1, ..., x_n$. Here's the same table but with trees:
 
 ```{list-table}
